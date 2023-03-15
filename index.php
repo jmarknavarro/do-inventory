@@ -87,7 +87,7 @@
                     },
                     success: function(response) {
                         if (response == 1) {
-                            alert("Logged In");
+                            // alert("Logged In");
                             window.location = "./dashboard/index.php";
                           } else {
                             // alert("Wrong Details");

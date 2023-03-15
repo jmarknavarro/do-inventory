@@ -37,23 +37,27 @@
 
 					// echo "<table id='example1' class='table table-striped table-bordered no-wrap'>";
 					echo "<thead>";
-					echo "<th></th>";
-					echo "<th>Student Number</th>";
-					echo "<th>First Name</th>";
-					echo "<th>Last Name</th>";
-					echo "<th>Attachment</th>";
-					echo "<th>Actions</th>";
+					echo "<th>Department</th>";
+					echo "<th>Office/Unit</th>";
+					echo "<th>Category</th>";
+					echo "<th>User's Name</th>";
+					echo "<th>Device Description</th>";
+					echo "<th>Year Issued</th>";	
+					echo "<th>Warranty Status</th>";	
+					echo "<th>Status</th>";	
 					echo "</thead>";
 	
 					foreach ($rows as $row) {
-						$myfile = basename($row['fileName']);
+
 						echo "<tr>";
-						echo "<td><center><img src='$row[profilepic]' width='60px' height='auto' class='rounded'></center></td>";
-						echo "<td>$row[stdNumber]</td>";
-						echo "<td>$row[firstName]</td>";
-						echo "<td>$row[lastName]</td>";
-						echo "<td>$myfile
-						</td>";
+						echo "<td>$row[dept_id]</td>";
+						echo "<td>$row[office_id]</td>";
+						echo "<td>$row[category_id]</td>";
+						echo "<td>$row[user_name]</td>";
+						echo "<td>$row[product_name]</td>";
+						echo "<td>$row[year_issued]</td>";
+						echo "<td>$row[warranty_status]</td>";
+						echo "<td>$row[status]</td>";
 						echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
