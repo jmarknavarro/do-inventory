@@ -423,9 +423,9 @@
 
                     <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
                         <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
-                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">Paid</a>
-                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">Pending</a>
-                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#orders-cancelled" role="tab" aria-controls="orders-cancelled" aria-selected="false">Cancelled</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">Desktop</a>
+                        <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">Laptop</a> 
+                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#orders-cancelled" role="tab" aria-controls="orders-cancelled" aria-selected="false">Printer</a>
                     </nav>
 
 
@@ -434,15 +434,46 @@
                             <div class="app-card app-card-orders-table shadow-sm mb-5">
                                 <div class="app-card-body">
                                     <div class="table-responsive">
+                                        <h6>All Devices</h6>
                                         <table id="list_std" class="table app-table-hover mb-0 text-left">
                                             <?php
                                             $view = new class_model();
                                             $row  = $view->fetchAllData();
+
                                             ?>
                                         </table>
                                     </div>
                                     <!--//table-responsive-->
+                                    <div class="table-responsive mt-5">
+                                    <h6>All Desktop</h6>
+                                        <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                            <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllDesktop();
 
+                                            ?>
+                                        </table>
+                                    </div>
+                                    <div class="table-responsive mt-5">
+                                    <h6>All Laptop</h6>
+                                        <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                            <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllLaptop();
+
+                                            ?>
+                                        </table>
+                                    </div>
+                                    <div class="table-responsive mt-5">
+                                    <h6>All Printer</h6>
+                                        <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                            <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllPrinter();
+
+                                            ?>
+                                        </table>
+                                    </div>
                                 </div>
                                 <!--//app-card-body-->
                             </div>
