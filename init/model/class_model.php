@@ -109,6 +109,7 @@ class class_model
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Action</th>";
 				echo "</thead>";
 
 				foreach ($rows as $row) {
@@ -151,6 +152,7 @@ class class_model
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Action</th>";
 				echo "</thead>";
 
 				foreach ($rows as $row) {
@@ -194,6 +196,7 @@ class class_model
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Action</th>";
 				echo "</thead>";
 
 				foreach ($rows as $row) {
@@ -235,45 +238,48 @@ class class_model
 		}
 	}
 
-	public function viewOSDS($dept)
-	{
-		try {
-			$db = DB();
-			$sql = "SELECT * FROM `tbl_product`WHERE `dept_id` = '$dept'";
-			$data = $db->prepare($sql);
-			$data->execute();
-			$rows = $data->fetchAll(PDO::FETCH_OBJ);
+	public function OSDS()
+	{ {
+			try {
+				$db = DB();
+				$sql = "SELECT * FROM `tbl_product` WHERE `dept_id` = 'OSDS'";
+				$data = $db->prepare($sql);
+				$data->execute();
+				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 
-			// echo "<table id='example1' class='table table-striped table-bordered no-wrap'>";
-			echo "<thead>";
-			echo "<th>Department</th>";
-			echo "<th>Office/Unit</th>";
-			echo "<th>Category</th>";
-			echo "<th>User's Name</th>";
-			echo "<th>Device Description</th>";
-			echo "<th>Year Issued</th>";
-			echo "<th>Warranty Status</th>";
-			echo "<th>Status</th>";
-			echo "</thead>";
+				// echo "<table id='example1' class='table table-striped table-bordered no-wrap'>";
+				echo "<thead>";
+				echo "<th>Department</th>";
+				echo "<th>Office/Unit</th>";
+				echo "<th>Category</th>";
+				echo "<th>User's Name</th>";
+				echo "<th>Device Description</th>";
+				echo "<th>Year Issued</th>";
+				echo "<th>Warranty Status</th>";
+				echo "<th>Status</th>";
+				echo "<th>Action</th>";
 
-			foreach ($rows as $row) {
+				echo "</thead>";
 
-				echo "<tr>";
-				echo "<td>$row[dept_id]</td>";
-				echo "<td>$row[office_id]</td>";
-				echo "<td>$row[category_id]</td>";
-				echo "<td>$row[user_name]</td>";
-				echo "<td>$row[product_name]</td>";
-				echo "<td>$row[year_issued]</td>";
-				echo "<td>$row[warranty_status]</td>";
-				echo "<td>$row[status]</td>";
-				echo "<td>
-					<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
-					</td>";
-				echo "</tr>";
+				foreach ($rows as $row) {
+
+					echo "<tr>";
+					echo "<td>$row[dept_id]</td>";
+					echo "<td>$row[office_id]</td>";
+					echo "<td>$row[category_id]</td>";
+					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[product_name]</td>";
+					echo "<td>$row[year_issued]</td>";
+					echo "<td>$row[warranty_status]</td>";
+					echo "<td>$row[status]</td>";
+					echo "<td>
+						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
+						</td>";
+					echo "</tr>";
+				}
+			} catch (PDOException $e) {
+				echo $e->getMessage();
 			}
-		} catch (PDOException $e) {
-			echo $e->getMessage();
 		}
 	}
 }	

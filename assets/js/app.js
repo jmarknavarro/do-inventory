@@ -95,12 +95,39 @@ searchMobileTrigger.addEventListener('click', () => {
 
 
 
-// $(document).ready(function () {
+$(document).ready(function() {
+	$('#list_std').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
 
-   
+$(document).ready(function() {
+	$('#list_std2').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
 
-// });
+$(document).ready(function() {
+	$('#list_std3').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
 
+$(document).ready(function() {
+	$('#list_std4').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
 
+$(document).ready(function() {
+	$('#list_std5').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
 
 
