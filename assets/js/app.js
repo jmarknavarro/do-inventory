@@ -130,4 +130,79 @@ $(document).ready(function() {
 	});
 });
 
+$(document).ready(function() {
+	$('#list_std6').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
 
+$(document).ready(function() {
+	$('#list_std7').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std8').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std9').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std10').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std11').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std12').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std13').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std14').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std15').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std16').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});

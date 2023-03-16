@@ -60,7 +60,7 @@
 
                             <div class="app-utilities col-auto">
                                 <div class="app-utility-item app-notifications-dropdown dropdown">
-                                    
+
                                     <!--//dropdown-toggle-->
 
                                     <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
@@ -428,7 +428,7 @@
                             <div class="tab-pane" id="laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <h6>All Laptop</h6>
                                             <table id="list_std2" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -444,7 +444,7 @@
                             <div class="tab-pane" id="printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <h6>All Printer</h6>
                                             <table id="list_std3" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -461,7 +461,7 @@
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <h6>All Desktop</h6>
                                             <table id="list_std4" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -481,9 +481,9 @@
 
                         <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
                             <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#osds-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#desktop-all" role="tab" aria-controls="desktop-all" aria-selected="false">Desktop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#laptop-all" role="tab" aria-controls="laptop-all" aria-selected="false">Laptop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#printer-all" role="tab" aria-controls="printer-all" aria-selected="false">Printer</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#osds-desktop-all" role="tab" aria-controls="osds-desktop-all" aria-selected="false">Desktop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#osds-laptop-all" role="tab" aria-controls="osds-laptop-all" aria-selected="false">Laptop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#osds-printer-all" role="tab" aria-controls="osds-printer-all" aria-selected="false">Printer</a>
                         </nav>
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" id="osds-all" role="tabpanel" aria-labelledby="orders-all-tab">
@@ -491,7 +491,7 @@
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Devices</h6>
-                                            <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                            <table id="list_std5" class="table app-table-hover mb-0 text-left">
                                                 <?php
                                                 $view = new class_model();
                                                 $row = $view->OSDS();
@@ -502,15 +502,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="laptop-all" role="tabpanel">
+                            <div class="tab-pane" id="osds-laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <h6>All Laptop</h6>
-                                            <table id="list_std2" class="table app-table-hover mb-0 text-left">
+                                            <table id="list_std8" class="table app-table-hover mb-0 text-left">
                                                 <?php
                                                 $view = new class_model();
-                                                $row  = $view->fetchAllLaptop();
+                                                $row  = $view->osdsLaptop();
 
                                                 ?>
                                             </table>
@@ -518,15 +518,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="printer-all" role="tabpanel">
+                            <div class="tab-pane" id="osds-printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <h6>All Printer</h6>
-                                            <table id="list_std3" class="table app-table-hover mb-0 text-left">
+                                            <table id="list_std9" class="table app-table-hover mb-0 text-left">
                                                 <?php
                                                 $view = new class_model();
-                                                $row  = $view->fetchAllPrinter();
+                                                $row  = $view->OSDSPrinter();
 
                                                 ?>
                                             </table>
@@ -534,16 +534,168 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="desktop-all" role="tabpanel">
+                            <div class="tab-pane" id="osds-desktop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <h6>All Desktop</h6>
-                                            <table id="list_std4" class="table app-table-hover mb-0 text-left">
+                                            <table id="list_std10" class="table app-table-hover mb-0 text-left">
                                                 <?php
                                                 $view = new class_model();
-                                                $row  = $view->fetchAllDesktop();
+                                                $row  = $view->osdsDesktop();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cid-3 tabcontent" id="orders-table-tab-content">
+
+                        <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
+                            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#cid-all" role="tab" aria-controls="cid-all" aria-selected="true">All</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#cid-desktop-all" role="tab" aria-controls="cid-desktop-all" aria-selected="false">Desktop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#cid-laptop-all" role="tab" aria-controls="cid-laptop-all" aria-selected="false">Laptop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#cid-printer-all" role="tab" aria-controls="cid-printer-all" aria-selected="false">Printer</a>
+                        </nav>
+                        <div class="tab-content" style="width:100%">
+                            <div class="tab-pane fade show active" id="cid-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive">
+                                            <h6>All Devices</h6>
+                                            <table id="list_std6" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row = $view->CID();
+                                                ?>
+                                            </table>
+                                        </div>
+                                        <!--//table-responsive-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cid-laptop-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Laptop</h6>
+                                            <table id="list_std11" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->cidLaptop();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cid-printer-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Printer</h6>
+                                            <table id="list_std12" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->cidPrinter();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="cid-desktop-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Desktop</h6>
+                                            <table id="list_std13" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->cidDesktop();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sgod-4 tabcontent" id="orders-table-tab-content">
+
+                        <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
+                            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#sgod-all" role="tab" aria-controls="sgod-all" aria-selected="true">All</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#sgod-desktop-all" role="tab" aria-controls="sgod-desktop-all" aria-selected="false">Desktop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#sgod-laptop-all" role="tab" aria-controls="sgod-laptop-all" aria-selected="false">Laptop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#sgod-printer-all" role="tab" aria-controls="sgod-printer-all" aria-selected="false">Printer</a>
+                        </nav>
+                        <div class="tab-content" style="width:100%">
+                            <div class="tab-pane fade show active" id="sgod-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive">
+                                            <h6>All Devices</h6>
+                                            <table id="list_std7" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row = $view->SGOD();
+                                                ?>
+                                            </table>
+                                        </div>
+                                        <!--//table-responsive-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="sgod-laptop-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Laptop</h6>
+                                            <table id="list_std14" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->sgodLaptop();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="sgod-printer-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Printer</h6>
+                                            <table id="list_std15" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->sgodPrinter();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="sgod-desktop-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                    <div class="app-card-body p-3">
+
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Desktop</h6>
+                                            <table id="list_std16" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->sgodDesktop();
 
                                                 ?>
                                             </table>
