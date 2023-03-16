@@ -44,6 +44,8 @@ class class_model
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Action</th>";
+
 				echo "</thead>";
 
 				foreach ($rows as $row) {
@@ -62,7 +64,6 @@ class class_model
 						</td>";
 					echo "</tr>";
 				}
-				echo "</table>";
 			} catch (PDOException $e) {
 				echo $e->getMessage();
 			}
@@ -126,7 +127,6 @@ class class_model
 						</td>";
 					echo "</tr>";
 				}
-				echo "</table>";
 			} catch (PDOException $e) {
 				echo $e->getMessage();
 			}
@@ -169,7 +169,6 @@ class class_model
 						</td>";
 					echo "</tr>";
 				}
-				echo "</table>";
 			} catch (PDOException $e) {
 				echo $e->getMessage();
 			}
@@ -213,7 +212,6 @@ class class_model
 						</td>";
 					echo "</tr>";
 				}
-				echo "</table>";
 			} catch (PDOException $e) {
 				echo $e->getMessage();
 			}
@@ -274,7 +272,6 @@ class class_model
 					</td>";
 				echo "</tr>";
 			}
-			echo "</table>";
 		} catch (PDOException $e) {
 			echo $e->getMessage();
 		}
