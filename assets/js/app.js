@@ -90,7 +90,17 @@ searchMobileTrigger.addEventListener('click', () => {
 	}
 	
 		
-	
+
 });
+
+
+
+// $(document).ready(function () {
+
+   
+
+// });
+
+
 
 

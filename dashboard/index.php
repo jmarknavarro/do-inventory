@@ -84,7 +84,8 @@
                                                     <!--//col-->
                                                     <div class="col">
                                                         <div class="info">
-                                                            <div class="desc">Amy shared a file with you. Lorem ipsum dolor
+                                                            <div class="desc">Amy shared a file with you. Lorem ipsum
+                                                                dolor
                                                                 sit amet, consectetur adipiscing elit. </div>
                                                             <div class="meta"> 2 hrs ago</div>
                                                         </div>
@@ -131,7 +132,8 @@
                                                     <!--//col-->
                                                     <div class="col">
                                                         <div class="info">
-                                                            <div class="desc">Your report is ready. Proin venenatis interdum
+                                                            <div class="desc">Your report is ready. Proin venenatis
+                                                                interdum
                                                                 est.</div>
                                                             <div class="meta"> 3 days ago</div>
                                                         </div>
@@ -313,11 +315,14 @@
                                 <!--//nav-link-->
                                 <div id="submenu-3" class="collapse submenu submenu-3" data-bs-parent="#menu-accordion">
                                     <ul class="submenu-list list-unstyled">
-                                        <li class="submenu-item"><a class="submenu-link" href="login.html">Login</a></li>
-                                        <li class="submenu-item"><a class="submenu-link" href="signup.html">Signup</a></li>
+                                        <li class="submenu-item"><a class="submenu-link" href="login.html">Login</a>
+                                        </li>
+                                        <li class="submenu-item"><a class="submenu-link" href="signup.html">Signup</a>
+                                        </li>
                                         <li class="submenu-item"><a class="submenu-link" href="reset-password.html">Reset
                                                 password</a></li>
-                                        <li class="submenu-item"><a class="submenu-link" href="404.html">404 page</a></li>
+                                        <li class="submenu-item"><a class="submenu-link" href="404.html">404 page</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -396,14 +401,23 @@
                                     </div>
                                     <!--//col-->
                                     <div class="col-auto">
-
-                                        <select class="form-select w-auto">
-                                            <option selected value="option-1">All</option>
-                                            <option value="option-2">Desktop</option>
-                                            <option value="option-3">Laptop</option>
-                                            <option value="option-4"></option>
+                                        <select class="tab form-select w-auto" name="dept" data-live-search="true" value="<?php echo $_GET['dept']; ?>">
+                                            <?php
+                                            $view = new class_model();
+                                            $view->fetchDept();
+                                            ?>
 
                                         </select>
+                                    </div>
+                                    <div class="col-auto">
+                                        <select class="form-select w-auto" data-live-search="true">
+                                            <option selected value="option-1">All</option>
+                                            <option value="option-2">Accounting</option>
+                                            <option value="option-3">CID</option>
+                                            <option value="option-4">SGOD</option>
+
+                                        </select>
+
                                     </div>
                                     <div class="col-auto">
                                         <a class="btn app-btn-secondary" href="#">
@@ -423,14 +437,14 @@
 
                     <nav id="orders-table-tab" class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
                         <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
-                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">Desktop</a>
-                        <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">Laptop</a> 
+                        <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab" href="#desktop-all" role="tab" aria-controls="desktop-all" aria-selected="false">Desktop</a>
+                        <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab" data-bs-toggle="tab" href="#orders-pending" role="tab" aria-controls="orders-pending" aria-selected="false">Laptop</a>
                         <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-bs-toggle="tab" href="#orders-cancelled" role="tab" aria-controls="orders-cancelled" aria-selected="false">Printer</a>
                     </nav>
 
 
-                    <div class="tab-content" id="orders-table-tab-content">
-                        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                    <div class="option-1 tabcontent" id="orders-table-tab-content">
+                        <div class="tab-pane fade " id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
                             <div class="app-card app-card-orders-table shadow-sm mb-5">
                                 <div class="app-card-body">
                                     <div class="table-responsive">
@@ -438,14 +452,14 @@
                                         <table id="list_std" class="table app-table-hover mb-0 text-left">
                                             <?php
                                             $view = new class_model();
-                                            $row  = $view->fetchAllData();
+                                            $row = $view->fetchAllData();
 
                                             ?>
                                         </table>
                                     </div>
                                     <!--//table-responsive-->
                                     <div class="table-responsive mt-5">
-                                    <h6>All Desktop</h6>
+                                        <h6>All Desktop</h6>
                                         <table id="list_std" class="table app-table-hover mb-0 text-left">
                                             <?php
                                             $view = new class_model();
@@ -455,7 +469,7 @@
                                         </table>
                                     </div>
                                     <div class="table-responsive mt-5">
-                                    <h6>All Laptop</h6>
+                                        <h6>All Laptop</h6>
                                         <table id="list_std" class="table app-table-hover mb-0 text-left">
                                             <?php
                                             $view = new class_model();
@@ -465,7 +479,7 @@
                                         </table>
                                     </div>
                                     <div class="table-responsive mt-5">
-                                    <h6>All Printer</h6>
+                                        <h6>All Printer</h6>
                                         <table id="list_std" class="table app-table-hover mb-0 text-left">
                                             <?php
                                             $view = new class_model();
@@ -495,42 +509,86 @@
 
                         </div>
                         <!--//tab-pane-->
+                        <div class="tab-pane" id="desktop-all" role="tabpanel" aria-labelledby="orders-all-tab">
+                            <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card-body">
+                                    <!--//table-responsive-->
+                                    <div class="table-responsive mt-5">
+                                        <h6>All Desktop</h6>
+                                        <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                            <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllDesktop();
 
+                                            ?>
+                                        </table>
+                                    </div>
 
-                        <!--//tab-pane-->
-
-
-                        <!--//tab-pane-->
-                        <!--//tab-content-->
-
-
+                                </div>
+                            </div>
+                            <!--//app-card-body-->
+                        </div>
+                        <!--//app-card-->
 
                     </div>
-                    <!--//container-fluid-->
+
+                    <!--//tab-pane-->
+
+
+                    <!--//tab-pane-->
+                    <!--//tab-content-->
+
+
+
                 </div>
-                <!--//app-content-->
 
-
-
+                <!--//container-fluid-->
             </div>
-            <!--//app-wrapper-->
+            <!--//app-content-->
 
 
-            <!-- Javascript -->
-            <script src="../assets/plugins/popper.min.js"></script>
-            <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+        </div>
+        <!--//app-wrapper-->
 
 
-            <!-- Page Specific JS -->
-            <script src="../assets/js/app.js"></script>
-            <script>
-                $(document).ready(function() {
-                    $('#list_std').DataTable({
-                        lengthChange: false,
-                        ordering: false
-                    });
-                });
-            </script>
+        <!-- Javascript -->
+        <script src="../assets/plugins/popper.min.js"></script>
+        <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+
+
+        <!-- Page Specific JS -->
+        <script src="../assets/js/app.js"></script>
+        <script>
+            $(document).ready(function() {
+
+
+                load_data();
+                var count = 1;
+
+                function load_data() {
+
+
+                    $("select").change(function() {
+                        $(this).find("option:selected").each(function() {
+                            var optionValue = $(this).attr("value");
+                            if (optionValue) {
+                                console.log(optionValue)
+                                $(".tabcontent").not("." + optionValue).hide();
+                                $("." + optionValue).fadeIn();
+                            } else {
+                                $(".tabcontent").fadeOut();
+                            }
+                        });
+                    }).change();
+
+
+                }
+
+
+            });
+        </script>
 
     </body>
 
