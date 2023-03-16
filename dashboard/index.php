@@ -502,6 +502,36 @@
                                             </table>
                                         </div>
                                         <!--//table-responsive-->
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Desktop</h6>
+                                            <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllDesktop();
+
+                                            ?>
+                                            </table>
+                                        </div>
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Laptop</h6>
+                                            <table id="list_std2" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllLaptop();
+
+                                            ?>
+                                            </table>
+                                        </div>
+                                        <div class="table-responsive mt-5">
+                                            <h6>All Printer</h6>
+                                            <table id="list_std3" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllPrinter();
+
+                                            ?>
+                                            </table>
+                                        </div>
 
                                     </div>
                                 </div>
@@ -512,7 +542,16 @@
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body">
                                         
+                                    <div class="table-responsive mt-5">
+                                            <h6>All Desktop</h6>
+                                            <table id="list_std4" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                            $view = new class_model();
+                                            $row  = $view->fetchAllDesktop();
 
+                                            ?>
+                                            </table>
+                                        </div>
 
                             
 
