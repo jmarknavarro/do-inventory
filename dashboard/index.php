@@ -428,7 +428,7 @@
                             <div class="tab-pane" id="laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Laptop</h6>
                                             <table id="list_std2" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -444,7 +444,7 @@
                             <div class="tab-pane" id="printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Printer</h6>
                                             <table id="list_std3" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -461,7 +461,7 @@
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Desktop</h6>
                                             <table id="list_std4" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -505,7 +505,7 @@
                             <div class="tab-pane" id="laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Laptop</h6>
                                             <table id="list_std2" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -521,7 +521,7 @@
                             <div class="tab-pane" id="printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Printer</h6>
                                             <table id="list_std3" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -538,7 +538,7 @@
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Desktop</h6>
                                             <table id="list_std4" class="table app-table-hover mb-0 text-left">
                                                 <?php
