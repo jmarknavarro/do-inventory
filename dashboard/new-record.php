@@ -83,6 +83,11 @@
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
                                 <!--//nav-link-->
+                                <div class="border-bottom mb-2"></div>
+                                <!--//nav-link-->
+                                <!-- Orders -->
+                                <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
+
                                 <!-- Orders -->
                             <li class="nav-item has-submenu">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -193,7 +198,7 @@
                     <h1 class="app-page-title">Add New Record</h1>
                     <div class="row gy-4">
                         <div class="col-12 col-lg-12">
-                            <div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
+                            <div class="app-card app-card-account d-flex flex-column align-items-start">
                                 <div class="app-card-header p-3 border-bottom-0">
                                     <div class="row align-items-center gx-3">
                                         <div class="col-auto">
@@ -324,7 +329,7 @@
                                                 value="Clear" onclick="ResetTransaction()" />
                                             <a class="btn btn-outline-secondary mx-1"
                                                 href="inventory.php">Cancel</a>
-                                            <button type="submit" name="success" class="btn btn-success">Submit</button>
+                                            <button type="submit" name="success" class="btn app-btn-primary">Submit</button>
                                         </div>
                                     </div>
                                 </div>
