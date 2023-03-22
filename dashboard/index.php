@@ -53,151 +53,7 @@
                                 <i class="search-mobile-trigger-icon fas fa-search"></i>
                             </div>
                             <!--//col-->
-                            <div class="app-search-box col">
-                                <form class="app-search-form">
-                                    <input type="text" placeholder="Search..." name="search"
-                                        class="form-control search-input">
-                                    <button type="submit" class="btn search-btn btn-primary" value="Search"><i
-                                            class="fas fa-search"></i></button>
-                                </form>
-                            </div>
-                            <!--//app-search-box-->
 
-                            <div class="app-utilities col-auto">
-                                <div class="app-utility-item app-notifications-dropdown dropdown">
-
-                                    <!--//dropdown-toggle-->
-
-                                    <div class="dropdown-menu p-0" aria-labelledby="notifications-dropdown-toggle">
-                                        <div class="dropdown-menu-header p-3">
-                                            <h5 class="dropdown-menu-title mb-0">Notifications</h5>
-                                        </div>
-                                        <!--//dropdown-menu-title-->
-                                        <div class="dropdown-menu-content">
-                                            <div class="item p-3">
-                                                <div class="row gx-2 justify-content-between align-items-center">
-                                                    <div class="col-auto">
-                                                        <img class="profile-image"
-                                                            src="../assets/images/profiles/profile-1.png" alt="">
-                                                    </div>
-                                                    <!--//col-->
-                                                    <div class="col">
-                                                        <div class="info">
-                                                            <div class="desc">Amy shared a file with you. Lorem ipsum
-                                                                dolor
-                                                                sit amet, consectetur adipiscing elit. </div>
-                                                            <div class="meta"> 2 hrs ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <!--//col-->
-                                                </div>
-                                                <!--//row-->
-                                                <a class="link-mask" href="notifications.html"></a>
-                                            </div>
-                                            <!--//item-->
-                                            <div class="item p-3">
-                                                <div class="row gx-2 justify-content-between align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="app-icon-holder">
-                                                            <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                                                class="bi bi-receipt" fill="currentColor"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zm.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51z" />
-                                                                <path fill-rule="eveno  dd"
-                                                                    d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                    <!--//col-->
-                                                    <div class="col">
-                                                        <div class="info">
-                                                            <div class="desc">You have a new invoice. Proin venenatis
-                                                                interdum est.</div>
-                                                            <div class="meta"> 1 day ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <!--//col-->
-                                                </div>
-                                                <!--//row-->
-                                                <a class="link-mask" href="notifications.html"></a>
-                                            </div>
-                                            <!--//item-->
-                                            <div class="item p-3">
-                                                <div class="row gx-2 justify-content-between align-items-center">
-                                                    <div class="col-auto">
-                                                        <div class="app-icon-holder icon-holder-mono">
-                                                            <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                                                class="bi bi-bar-chart-line" fill="currentColor"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z" />
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                    <!--//col-->
-                                                    <div class="col">
-                                                        <div class="info">
-                                                            <div class="desc">Your report is ready. Proin venenatis
-                                                                interdum
-                                                                est.</div>
-                                                            <div class="meta"> 3 days ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <!--//col-->
-                                                </div>
-                                                <!--//row-->
-                                                <a class="link-mask" href="notifications.html"></a>
-                                            </div>
-                                            <!--//item-->
-                                            <div class="item p-3">
-                                                <div class="row gx-2 justify-content-between align-items-center">
-                                                    <div class="col-auto">
-                                                        <img class="profile-image"
-                                                            src="../assets/images/profiles/profile-2.png" alt="">
-                                                    </div>
-                                                    <!--//col-->
-                                                    <div class="col">
-                                                        <div class="info">
-                                                            <div class="desc">James sent you a new message.</div>
-                                                            <div class="meta"> 7 days ago</div>
-                                                        </div>
-                                                    </div>
-                                                    <!--//col-->
-                                                </div>
-                                                <!--//row-->
-                                                <a class="link-mask" href="notifications.html"></a>
-                                            </div>
-                                            <!--//item-->
-                                        </div>
-                                        <!--//dropdown-menu-content-->
-
-                                        <div class="dropdown-menu-footer p-2 text-center">
-                                            <a href="notifications.html">View all</a>
-                                        </div>
-
-                                    </div>
-                                    <!--//dropdown-menu-->
-                                </div>
-                                <!--//app-utility-item-->
-                                <!--//app-utility-item-->
-
-                                <div class="app-utility-item app-user-dropdown dropdown">
-                                    <a class="dropdown-toggle" id="user-dropdown-toggle" data-bs-toggle="dropdown"
-                                        href="#" role="button" aria-expanded="false"><img
-                                            src="../assets/images/user.png" alt="user profile"></a>
-                                    <ul class="dropdown-menu" aria-labelledby="user-dropdown-toggle">
-                                        <li><a class="dropdown-item" href="account.html">Account</a></li>
-                                        <li><a class="dropdown-item" href="settings.html">Settings</a></li>
-                                        <li>
-                                            <hr class="dropdown-divider">
-                                        </li>
-                                        <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
-                                    </ul>
-                                </div>
-                                <!--//app-user-dropdown-->
-                            </div>
-                            <!--//app-utilities-->
                         </div>
                         <!--//row-->
                     </div>
@@ -211,7 +67,7 @@
                 <div class="sidepanel-inner d-flex flex-column">
                     <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
                     <div class="app-branding">
-                        <a class="app-logo" href="index.html"><img class="logo-icon me-2 "
+                        <a class="app-logo" href="index.html"><img class="logo-icon me-2"
                                 src="../assets/images/logo_do.png" alt="logo"></a>
                     </div>
                     <!--//app-branding-->
@@ -221,8 +77,8 @@
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link" href="index.html">
                                     <span class="nav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-checks-grid" viewBox="0 0 16 16">
-  <path d="M2 10h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1zm9-9h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm0 9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-3zm0-10a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2h-3zM2 9a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H2zm7 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-3zM0 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.354.854a.5.5 0 1 0-.708-.708L3 3.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0l2-2z"/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
 </svg>
                                     </span>
                                     <span class="nav-link-text">Dashboard</span>
@@ -298,14 +154,24 @@
                     </nav>
                     <!--//app-nav-->
                     <div class="app-sidepanel-footer">
-                        <nav class="app-nav app-nav-footer">
-                            <ul class="app-menu footer-menu list-unstyled">
-
-
-                            </ul>
-                            <!--//footer-menu-->
-                        </nav>
-                    </div>
+				    <nav class="app-nav app-nav-footer">
+					    <ul class="app-menu footer-menu list-unstyled">
+						    <li class="nav-item">
+						        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+						        <a class="nav-link" href="logout.php">
+							        <span class="nav-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+</svg>
+							        </span>
+			                        <span class="nav-link-text">Log Out</span>
+						        </a><!--//nav-link-->
+						    </li><!--//nav-item-->
+						   
+					    </ul><!--//footer-menu-->
+				    </nav>
+			    </div>
                     <!--//app-sidepanel-footer-->
                 </div>
                 <!--//sidepanel-inner-->
@@ -357,7 +223,7 @@
                     <div class="all-1 tabcontent" id="orders-table-tab-content">
 
                         <nav id="orders-table-tab"
-                            class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
+                            class="orders-table-tab app-nav-tabs nav flex-column flex-sm-row mb-4">
                             <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab"
                                 data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all"
                                 aria-selected="true">All</a>
@@ -374,7 +240,7 @@
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" id="orders-all" role="tabpanel"
                                 aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Devices</h6>
@@ -389,7 +255,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="laptop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -405,7 +271,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="printer-all" role="tabpanel">
+                            <div class="tab-pane fade" id="printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -421,7 +287,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="desktop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="desktop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
@@ -476,7 +342,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="osds-laptop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="osds-laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -492,7 +358,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="osds-printer-all" role="tabpanel">
+                            <div class="tab-pane fade" id="osds-printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -508,7 +374,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="osds-desktop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="osds-desktop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
@@ -562,7 +428,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="cid-laptop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="cid-laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -578,7 +444,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="cid-printer-all" role="tabpanel">
+                            <div class="tab-pane fade" id="cid-printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -594,11 +460,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="cid-desktop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="cid-desktop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Desktop</h6>
                                             <table id="list_std13" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -648,10 +514,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="sgod-laptop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="sgod-laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive mt-5">
+                                        <div class="table-responsive">
                                             <h6>All Laptop</h6>
                                             <table id="list_std14" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -664,7 +530,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="sgod-printer-all" role="tabpanel">
+                            <div class="tab-pane fade" id="sgod-printer-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
@@ -680,7 +546,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="sgod-desktop-all" role="tabpanel">
+                            <div class="tab-pane fade" id="sgod-desktop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table shadow-sm mb-5">
                                     <div class="app-card-body p-3">
 

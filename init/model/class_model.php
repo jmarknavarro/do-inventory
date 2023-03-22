@@ -40,10 +40,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 
 				echo "</thead>";
@@ -55,10 +57,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -105,10 +109,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -119,10 +125,19 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					// if ($row[serial_no] == "") {
+					// 	echo "No serial No."; 
+					// } else {
+					// 	echo
+					// }
+					echo "<td>$row[serial_no]</td>";
+
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
+
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -149,10 +164,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -163,10 +180,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -193,10 +212,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -207,10 +228,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -237,10 +260,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -251,10 +276,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -281,10 +308,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -295,10 +324,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -325,10 +356,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -339,10 +372,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -369,10 +404,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -383,10 +420,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -413,10 +452,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -427,10 +468,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -457,10 +500,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -471,10 +516,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -501,10 +548,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -515,10 +564,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -545,10 +596,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -559,10 +612,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -589,10 +644,12 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
 				echo "</thead>";
 
@@ -603,10 +660,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -650,12 +709,13 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
-
 				echo "</thead>";
 
 				foreach ($rows as $row) {
@@ -665,10 +725,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -695,14 +757,14 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
-
 				echo "</thead>";
-
 				foreach ($rows as $row) {
 
 					echo "<tr>";
@@ -710,10 +772,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
@@ -740,12 +804,13 @@ class class_model
 				echo "<th>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
 				echo "<th>Device Description</th>";
 				echo "<th>Year Issued</th>";
 				echo "<th>Warranty Status</th>";
 				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
 				echo "<th>Action</th>";
-
 				echo "</thead>";
 
 				foreach ($rows as $row) {
@@ -755,10 +820,12 @@ class class_model
 					echo "<td>$row[office_id]</td>";
 					echo "<td>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
 					echo "<td>$row[year_issued]</td>";
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
 					echo "<td>
 						<a class='btn text-center text-white btn-info btn-sm' data-toggle='modal' data-id='$row[id]'>View Profile</a>
 						</td>";
