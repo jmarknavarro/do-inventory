@@ -48,7 +48,7 @@
                                 </a>
                             </div>
                             <!--//col-->
-                           
+
                             <!--//col-->
 
                         </div>
@@ -86,8 +86,8 @@
                                 <!-- Orders -->
                             <li class="nav-item has-submenu">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                <a class="nav-link submenu-toggle active" href="#"
-                                    data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
+                                <a class="nav-link submenu-toggle active" href="#" data-bs-target="#submenu-1"
+                                    aria-expanded="false" aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -199,9 +199,28 @@
                                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
 
                                     <div class="col-auto">
+                                        <select class="form-select w-100" data-live-search="true">
+                                            <option value="all-1" selected>All</option>
+                                            <option value="acct">Accounting</option>
+                                            <option value="admin_S">Administrative Services</option>
+                                            <option value="budget">Budget</option>
+                                            <option value="cash">Cash</option>
+                                            <option value="legal">Legal Services</option>
+                                            <option value="shn">SHN</option>
+                                            <option value="p_section">Personnel Section</option>
+                                            <option value="property">Property and Supply Section</option>
+                                            <option value="records">Records Section</option>
+                                            <option value="ict">ICT Services</option>
+                                            <option value="lrdms">LRDMS</option>
+                                            <option value="coa">COA</option>
+                                        </select>
+
+
+                                    </div>
+                                    <div class="col-auto">
                                         <select class="form-select w-auto" data-live-search="true">
                                             <option value="all-1" selected>All</option>
-                                            <option value="osds-2">OSDS</option>
+                                            <option id="1" value="osds-2">OSDS</option>
                                             <option value="cid-3">CID</option>
                                             <option value="sgod-4">SGOD</option>
 

@@ -222,11 +222,12 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="col-form-label">Department</label>
-                                                <select class="form-select" name="semester">
-                                                    <option value="all-1" selected>All</option>
-                                                    <option value="osds-2">OSDS</option>
-                                                    <option value="cid-3">CID</option>
-                                                    <option value="sgod-4">SGOD</option>
+                                                <select class="form-select" id="dept" name="dept">
+                                                <option disabled selected>- Select -</option>
+                                                    <?php  
+                                                  $view = new class_model();
+                                                  $view->fetchDept();
+                                                  ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -235,11 +236,12 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="col-form-label">Office/Unit</label>
-                                                <select class="form-select" name="semester">
-                                                    <option value="all-1" selected>All</option>
-                                                    <option value="osds-2">OSDS</option>
-                                                    <option value="cid-3">CID</option>
-                                                    <option value="sgod-4">SGOD</option>
+                                                <select class="form-select" id="office" name="office">
+                                                <option disabled selected>- Select -</option>
+                                                <?php  
+                                                  $view = new class_model();
+                                                  $view->fetchOffice();
+                                                  ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -247,10 +249,12 @@
                                         <div class="col-md-4 mb-2">
                                             <div class="form-group">
                                                 <label class="col-form-label">Category</label>
-                                                <select class="form-select" name="semester">
-                                                    <option>Laptop</option>
-                                                    <option>Desktop</option>
-                                                    <option>Printer</option>
+                                                <select class="form-select" id="cat" name="cat">
+                                                <option disabled selected>- Select -</option>
+                                                <?php  
+                                                  $view = new class_model();
+                                                  $view->fetchCategory();
+                                                  ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -259,31 +263,37 @@
                                         <div class="col-md-6">
                                             <div class="form-group pt-2">
                                                 <label class="col-form-label">Name</label>
-                                                <input type="text" name="transaction_id" class="form-control">
+                                                <input type="text" id="name" name="name" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group pt-2">
                                                 <label class="col-form-label">Serial No.</label>
-                                                <input type="text" name="transaction_id" class="form-control">
+                                                <input type="text" id="s_num" name="s_num" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group pt-2">
                                                 <label class="col-form-label">Device Description</label>
-                                                <input type="text" name="transaction_id" class="form-control">
+                                                <input type="text" id="desc" name="desc" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group pt-2">
                                                 <label class="col-form-label">Year Issued</label>
-                                                <input type="text" name="transaction_id" class="form-control">
+                                                <select class="form-select" id="year" name="year">
+                                                <option disabled selected>- Select -</option>
+                                                <?php  
+                                                  $view = new class_model();
+                                                  $view->years();
+                                                  ?>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group pt-2 ">
                                                 <label class="col-form-label">Warranty Status</label>
-                                                <select class="form-select" name="semester">
+                                                <select class="form-select" id="w_stat" name="w_stat">
                                                     <option disabled selected>- Select -</option>
                                                     <option value="osds-2">UNDER WARRANTY</option>
                                                     <option value="cid-3">OUT OF WARRANTY</option>
@@ -291,9 +301,9 @@
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                        <div class="form-group pt-2 ">
+                                            <div class="form-group pt-2 ">
                                                 <label class="col-form-label">Status</label>
-                                                <select class="form-select" name="semester">
+                                                <select class="form-select" id="stat" name="stat">
                                                     <option disabled selected>- Select -</option>
                                                     <option value="osds-2">FUNCTIONAL</option>
                                                     <option value="cid-3">NOT FUNCTIONAL</option>
@@ -304,7 +314,7 @@
                                             <div class="form-group pt-2">
                                                 <label class="col-form-label">Remarks</label>
                                                 <textarea class="form-control" id="remarks" rows="5"
-                                                    placeholder=""></textarea>
+                                                    placeholder="" name="remarks"></textarea>
 
                                             </div>
                                         </div>
@@ -313,7 +323,7 @@
                                             <input type="button" name="reset" class="btn btn-outline-danger"
                                                 value="Clear" onclick="ResetTransaction()" />
                                             <a class="btn btn-outline-secondary mx-1"
-                                                href="/coco/dashboard/instructor/cog">Cancel</a>
+                                                href="inventory.php">Cancel</a>
                                             <button type="submit" name="success" class="btn btn-success">Submit</button>
                                         </div>
                                     </div>

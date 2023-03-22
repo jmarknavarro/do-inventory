@@ -681,12 +681,46 @@ class class_model
 	{ {
 			try {
 				$db = DB();
-				$sql = "SELECT * FROM `tbl_dept`";
+				$sql = "SELECT * FROM `tbl_dept` WHERE `id` = 2 OR `id` = 3 OR `id` = 4";
 				$data = $db->prepare($sql);
 				$data->execute();
 				$rows = $data->fetchAll(PDO::FETCH_OBJ);
 				foreach ($rows as $row) {
 					echo '<option data-tokens=".' . $row->d_name . '." value="' . $row->d_name . '">' . $row->d_name . '</option>';
+				}
+			} catch (PDOException $e) {
+				echo $e->getMessage();
+			}
+		}
+	}
+
+	public function fetchOffice()
+	{ {
+			try {
+				$db = DB();
+				$sql = "SELECT * FROM `tbl_office`";
+				$data = $db->prepare($sql);
+				$data->execute();
+				$rows = $data->fetchAll(PDO::FETCH_OBJ);
+				foreach ($rows as $row) {
+					echo '<option data-tokens=".' . $row->o_name . '." value="' . $row->o_name . '">' . $row->o_name . '</option>';
+				}
+			} catch (PDOException $e) {
+				echo $e->getMessage();
+			}
+		}
+	}
+
+	public function fetchCategory()
+	{ {
+			try {
+				$db = DB();
+				$sql = "SELECT * FROM `tbl_category`";
+				$data = $db->prepare($sql);
+				$data->execute();
+				$rows = $data->fetchAll(PDO::FETCH_OBJ);
+				foreach ($rows as $row) {
+					echo '<option data-tokens=".' . $row->c_name . '." value="' . $row->c_name . '">' . $row->c_name . '</option>';
 				}
 			} catch (PDOException $e) {
 				echo $e->getMessage();
@@ -836,5 +870,11 @@ class class_model
 			}
 		}
 	}
+
+	public function years()
+  {
+    for ($i = date('Y'); $i >= 2005; $i--)
+      echo '<option data-tokens=".' . $i . '." value="' . $i . '">' . $i . '</option>';
+  }
 }	
 ?>

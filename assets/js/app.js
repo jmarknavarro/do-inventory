@@ -186,3 +186,10 @@ $(document).ready(function() {
 		ordering: false
 	});
 });
+
+function ResetTransaction() {
+	document.getElementById("name").value = "";
+    document.getElementById("s_num").value = "";
+    document.getElementById("desc").value = "";
+	document.getElementById("remarks").value = "";	
+}
