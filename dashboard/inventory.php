@@ -70,6 +70,7 @@
                     <!--//app-branding-->
                     <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
                         <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+
                             <li class="nav-item">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link" href="index.html">
@@ -82,8 +83,11 @@
                                     </span>
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
+                                <div class="border-bottom mb-2"></div>
                                 <!--//nav-link-->
                                 <!-- Orders -->
+                                <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
+
                             <li class="nav-item has-submenu">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link submenu-toggle active" href="#" data-bs-target="#submenu-1"
