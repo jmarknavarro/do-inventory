@@ -20,7 +20,6 @@
 
         <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
         <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
-        <link rel="shortcut icon" href="favicon.ico">
         <link rel="stylesheet" type="text/css"
             href="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.css" />
         <!-- FontAwesome JS-->
@@ -49,9 +48,7 @@
                                 </a>
                             </div>
                             <!--//col-->
-                            <div class="search-mobile-trigger d-sm-none col">
-                                <i class="search-mobile-trigger-icon fas fa-search"></i>
-                            </div>
+                           
                             <!--//col-->
 
                         </div>
@@ -77,9 +74,11 @@
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link" href="index.html">
                                     <span class="nav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
-</svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                                        </svg>
                                     </span>
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
@@ -87,7 +86,7 @@
                                 <!-- Orders -->
                             <li class="nav-item has-submenu">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                <a class="nav-link submenu-toggle active" href="#" data-bs-toggle="collapse"
+                                <a class="nav-link submenu-toggle active" href="#"
                                     data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -154,24 +153,30 @@
                     </nav>
                     <!--//app-nav-->
                     <div class="app-sidepanel-footer">
-				    <nav class="app-nav app-nav-footer">
-					    <ul class="app-menu footer-menu list-unstyled">
-						    <li class="nav-item">
-						        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-						        <a class="nav-link" href="logout.php">
-							        <span class="nav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
-  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
-</svg>
-							        </span>
-			                        <span class="nav-link-text">Log Out</span>
-						        </a><!--//nav-link-->
-						    </li><!--//nav-item-->
-						   
-					    </ul><!--//footer-menu-->
-				    </nav>
-			    </div>
+                        <nav class="app-nav app-nav-footer">
+                            <ul class="app-menu footer-menu list-unstyled">
+                                <li class="nav-item">
+                                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                    <a class="nav-link" href="logout.php">
+                                        <span class="nav-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                                            </svg>
+                                        </span>
+                                        <span class="nav-link-text">Log Out</span>
+                                    </a>
+                                    <!--//nav-link-->
+                                </li>
+                                <!--//nav-item-->
+
+                            </ul>
+                            <!--//footer-menu-->
+                        </nav>
+                    </div>
                     <!--//app-sidepanel-footer-->
                 </div>
                 <!--//sidepanel-inner-->
@@ -205,7 +210,7 @@
                                     </div>
 
                                     <div class="col-auto">
-                                        <a class="btn app-btn-secondary" href="#">
+                                        <a class="btn app-btn-secondary" href="new-record.php">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             &nbsp New Record
                                         </a>

@@ -88,7 +88,7 @@
                     success: function(response) {
                         if (response == 1) {
                             // alert("Logged In");
-                            window.location = "./dashboard/index.php";
+                            window.location = "./dashboard/inventory.php";
                           } else {
                             // alert("Wrong Details");
                             $('#message').html(
