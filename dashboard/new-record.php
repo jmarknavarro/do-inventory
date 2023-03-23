@@ -36,7 +36,6 @@
                 <div class="container-fluid py-2">
                     <div class="app-header-content">
                         <div class="row justify-content-between align-items-center">
-
                             <div class="col-auto">
                                 <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
@@ -47,18 +46,10 @@
                                     </svg>
                                 </a>
                             </div>
-                            <!--//col-->
-
-                            <!--//col-->
-
                         </div>
-                        <!--//row-->
                     </div>
-                    <!--//app-header-content-->
                 </div>
-                <!--//container-fluid-->
             </div>
-            <!--//app-header-inner-->
             <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
                 <div id="sidepanel-drop" class="sidepanel-drop"></div>
                 <div class="sidepanel-inner d-flex flex-column">
@@ -67,11 +58,9 @@
                         <a class="app-logo" href="index.html"><img class="logo-icon me-2"
                                 src="../assets/images/logo_do.png" alt="logo"></a>
                     </div>
-                    <!--//app-branding-->
                     <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
                         <ul class="app-menu list-unstyled accordion" id="menu-accordion">
                             <li class="nav-item">
-                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link" href="index.html">
                                     <span class="nav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -82,19 +71,12 @@
                                     </span>
                                     <span class="nav-link-text">Dashboard</span>
                                 </a>
-                                <!--//nav-link-->
                                 <div class="border-bottom mb-2"></div>
-                                <!--//nav-link-->
-                                <!-- Orders -->
-                                <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
-
-                                <!-- Orders -->
+                            <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
                             <li class="nav-item has-submenu">
-                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link submenu-toggle active" href="inventory.php"
                                     data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
                                     <span class="nav-icon">
-                                        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16">
                                             <path
@@ -104,17 +86,12 @@
                                     <span class="nav-link-text">Inventory</span>
                                     <span class="submenu-arrow">
                                     </span>
-                                    <!--//submenu-arrow-->
                                 </a>
-                                <!--//nav-link-->
                             </li>
-                            <!--//nav-item-->
                             <li class="nav-item has-submenu">
-                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                 <a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
                                     data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
                                     <span class="nav-icon">
-                                        <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-clipboard-data" viewBox="0 0 16 16">
                                             <path
@@ -134,9 +111,7 @@
                                                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                         </svg>
                                     </span>
-                                    <!--//submenu-arrow-->
                                 </a>
-                                <!--//nav-link-->
                                 <div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
                                     <ul class="submenu-list list-unstyled">
                                         <li class="submenu-item"><a class="submenu-link" href="notifications.html">ICT
@@ -151,17 +126,12 @@
                                     </ul>
                                 </div>
                             </li>
-
-
                         </ul>
-                        <!--//app-menu-->
                     </nav>
-                    <!--//app-nav-->
                     <div class="app-sidepanel-footer">
                         <nav class="app-nav app-nav-footer">
                             <ul class="app-menu footer-menu list-unstyled">
                                 <li class="nav-item">
-                                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                     <a class="nav-link" href="logout.php">
                                         <span class="nav-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -174,21 +144,12 @@
                                         </span>
                                         <span class="nav-link-text">Log Out</span>
                                     </a>
-                                    <!--//nav-link-->
                                 </li>
-                                <!--//nav-item-->
-
-                            </ul>
-                            <!--//footer-menu-->
                         </nav>
                     </div>
-                    <!--//app-sidepanel-footer-->
                 </div>
-                <!--//sidepanel-inner-->
             </div>
-            <!--//app-sidepanel-->
         </header>
-        <!--//app-header-->
 
         <div class="app-wrapper">
 
@@ -209,155 +170,145 @@
                                                         d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
                                                 </svg>
                                             </div>
-                                            <!--//icon-holder-->
-
                                         </div>
-                                        <!--//col-->
                                         <div class="col-auto">
                                             <h4 class="app-card-title">Record Info</h4>
+
                                         </div>
-                                        <!--//col-->
                                     </div>
-                                    <!--//row-->
                                 </div>
-                                <!--//app-card-header-->
                                 <div class="app-card-body px-4 w-100">
-                                    <!--//item-->
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Department</label>
-                                                <select class="form-select" id="dept" name="dept">
-                                                <option disabled selected>- Select -</option>
-                                                    <?php  
+                                    <?php require('../init/controllers/form_process.php') ?>
+                                    <form id="user-form" enctype='multipart/form-data' method="POST">
+                                        <?php if ($message != "") {
+                                echo '<div class="alert alert-danger">' . $message . '</div>';
+                            } ?>
+                                        <?php if ($s_message != "") {
+                                echo '<div class="alert alert-success">' . $s_message . '</div>';
+                            } ?>
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">Department</label>
+                                                    <select class="form-select" id="dept" name="dept">
+                                                        <!-- <option value="" disabled selected>- Select -</option> -->
+                                                        <?php  
                                                   $view = new class_model();
                                                   $view->fetchDept();
                                                   ?>
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Office/Unit</label>
-                                                <select class="form-select" id="office" name="office">
-                                                <option disabled selected>- Select -</option>
-                                                <?php  
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">Office/Unit</label>
+                                                    <select class="form-select" id="office" name="office">
+                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                        <?php  
                                                   $view = new class_model();
                                                   $view->fetchOffice();
                                                   ?>
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-md-4 mb-2">
-                                            <div class="form-group">
-                                                <label class="col-form-label">Category</label>
-                                                <select class="form-select" id="cat" name="cat">
-                                                <option disabled selected>- Select -</option>
-                                                <?php  
+                                            <div class="col-md-4 mb-2">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">Category</label>
+                                                    <select class="form-select" id="cat" name="cat">
+                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                        <?php  
                                                   $view = new class_model();
                                                   $view->fetchCategory();
                                                   ?>
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2">
-                                                <label class="col-form-label">Name</label>
-                                                <input type="text" id="name" name="name" class="form-control">
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2">
+                                                    <label class="col-form-label">Name</label>
+                                                    <input type="text" id="name" name="name" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2">
-                                                <label class="col-form-label">Serial No.</label>
-                                                <input type="text" id="s_num" name="s_num" class="form-control">
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2">
+                                                    <label class="col-form-label">Serial No.</label>
+                                                    <input type="text" id="s_num" name="s_num" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2">
-                                                <label class="col-form-label">Device Description</label>
-                                                <input type="text" id="desc" name="desc" class="form-control">
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2">
+                                                    <label class="col-form-label">Device Description</label>
+                                                    <input type="text" id="desc" name="desc" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2">
-                                                <label class="col-form-label">Year Issued</label>
-                                                <select class="form-select" id="year" name="year">
-                                                <option disabled selected>- Select -</option>
-                                                <?php  
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2">
+                                                    <label class="col-form-label">Year Issued</label>
+                                                    <select class="form-select" id="year" name="year">
+                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                        <?php  
                                                   $view = new class_model();
                                                   $view->years();
                                                   ?>
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2 ">
-                                                <label class="col-form-label">Warranty Status</label>
-                                                <select class="form-select" id="w_stat" name="w_stat">
-                                                    <option disabled selected>- Select -</option>
-                                                    <option value="osds-2">UNDER WARRANTY</option>
-                                                    <option value="cid-3">OUT OF WARRANTY</option>
-                                                </select>
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2 ">
+                                                    <label class="col-form-label">Warranty Status</label>
+                                                    <select class="form-select" id="w_stat" name="w_stat">
+                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                        <option>UNDER WARRANTY</option>
+                                                        <option>OUT OF WARRANTY</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2 ">
-                                                <label class="col-form-label">Status</label>
-                                                <select class="form-select" id="stat" name="stat">
-                                                    <option disabled selected>- Select -</option>
-                                                    <option value="osds-2">FUNCTIONAL</option>
-                                                    <option value="cid-3">NOT FUNCTIONAL</option>
-                                                </select>
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2 ">
+                                                    <label class="col-form-label">Status</label>
+                                                    <select class="form-select" id="stat" name="stat">
+                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                        <option>FUNCTIONAL</option>
+                                                        <option>NOT FUNCTIONAL</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group pt-2">
-                                                <label class="col-form-label">Remarks</label>
-                                                <textarea class="form-control" id="remarks" rows="5"
-                                                    placeholder="" name="remarks"></textarea>
+                                            <div class="col-md-6">
+                                                <div class="form-group pt-2">
+                                                    <label class="col-form-label">Remarks</label>
+                                                    <textarea class="form-control" id="remarks" rows="5" placeholder=""
+                                                        name="remarks"></textarea>
 
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="app-card-footer text-end py-4 mt-auto">
-                                            <input type="button" name="reset" class="btn btn-outline-danger"
-                                                value="Clear" onclick="ResetTransaction()" />
-                                            <a class="btn btn-outline-secondary mx-1"
-                                                href="inventory.php">Cancel</a>
-                                            <button type="submit" name="success" class="btn app-btn-primary">Submit</button>
+                                            <div class="app-card-footer text-end py-4 mt-auto">
+                                                <input type="button" name="reset" class="btn btn-outline-danger"
+                                                    value="Clear" onclick="ResetTransaction()" />
+                                                <a class="btn btn-outline-secondary mx-1"
+                                                    href="inventory.php">Cancel</a>
+                                                <input type="submit" name="submitr" class="btn app-btn-primary"></input>
+                                            </div>
+
                                         </div>
-                                    </div>
+                                    </form>
+
                                 </div>
 
                             </div>
-                            <!--//app-card-body-->
-
-                            <!--//app-card-footer-->
-
                         </div>
-                        <!--//app-card-->
                     </div>
-                    <!--//col-->
-
                 </div>
-                <!--//row-->
-
             </div>
-            <!--//container-fluid-->
-
-            <!--//container-fluid-->
-        </div>
-        <!--//app-content-->
-
-
 
         </div>
-        <!--//app-wrapper-->
+
+        </div>
 
 
         <!-- Javascript -->
@@ -373,12 +324,19 @@
         <script src="../assets/js/app.js"></script>
 
 
-
+        <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 2000);
+        </script>
 
         <script>
         $(document).ready(function() {
-
-
             load_data();
             var count = 1;
 
@@ -395,11 +353,7 @@
                         }
                     });
                 }).change();
-
-
             }
-
-
         });
         </script>
 

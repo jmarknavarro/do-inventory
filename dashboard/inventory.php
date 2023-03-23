@@ -86,7 +86,7 @@
                                 <div class="border-bottom mb-2"></div>
                                 <!--//nav-link-->
                                 <!-- Orders -->
-                                <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
+                            <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
 
                             <li class="nav-item has-submenu">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
@@ -261,6 +261,9 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#laptop-all" role="tab" aria-controls="laptop-all"
                                 aria-selected="false">Laptop</a>
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                                data-bs-toggle="tab" href="#tablet-all" role="tab" aria-controls="tablet-all"
+                                aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
                                 data-bs-toggle="tab" href="#printer-all" role="tab" aria-controls="printer-all"
                                 aria-selected="false">Printer</a>
@@ -284,7 +287,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Laptop</h6>
@@ -300,7 +303,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Printer</h6>
@@ -315,8 +318,23 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="tab-pane fade" id="tablet-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive">
+                                            <h6>All Tablet</h6>
+                                            <table id="list_std17" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->fetchAllTablet();
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
 
                                         <div class="table-responsive">
@@ -348,6 +366,9 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#osds-laptop-all" role="tab" aria-controls="osds-laptop-all"
                                 aria-selected="false">Laptop</a>
+                                <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                                data-bs-toggle="tab" href="#osds-tablet-all" role="tab" aria-controls="osds-tablet-all"
+                                aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
                                 data-bs-toggle="tab" href="#osds-printer-all" role="tab"
                                 aria-controls="osds-printer-all" aria-selected="false">Printer</a>
@@ -355,7 +376,7 @@
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" id="osds-all" role="tabpanel"
                                 aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Devices</h6>
@@ -371,7 +392,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="osds-laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Laptop</h6>
@@ -387,7 +408,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="osds-printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Printer</h6>
@@ -403,7 +424,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="osds-desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
 
                                         <div class="table-responsive">
@@ -412,6 +433,22 @@
                                                 <?php
                                                 $view = new class_model();
                                                 $row  = $view->osdsDesktop();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="osds-tablet-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive">
+                                            <h6>All Printer</h6>
+                                            <table id="list_std18" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->osdsTablet();
 
                                                 ?>
                                             </table>
@@ -434,6 +471,9 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#cid-laptop-all" role="tab" aria-controls="cid-laptop-all"
                                 aria-selected="false">Laptop</a>
+                                <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                                data-bs-toggle="tab" href="#cid-tablet-all" role="tab" aria-controls="cid-tablet-all"
+                                aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
                                 data-bs-toggle="tab" href="#cid-printer-all" role="tab" aria-controls="cid-printer-all"
                                 aria-selected="false">Printer</a>
@@ -441,7 +481,7 @@
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" id="cid-all" role="tabpanel"
                                 aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Devices</h6>
@@ -457,7 +497,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="cid-laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Laptop</h6>
@@ -473,7 +513,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="cid-printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Printer</h6>
@@ -488,8 +528,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="tab-pane fade" id="cid-tablet-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive">
+                                            <h6>All Printer</h6>
+                                            <table id="list_std19" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->cidTablet();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="cid-desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
 
                                         <div class="table-responsive">
@@ -520,6 +576,9 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#sgod-laptop-all" role="tab" aria-controls="sgod-laptop-all"
                                 aria-selected="false">Laptop</a>
+                                <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                                data-bs-toggle="tab" href="#sgod-tablet-all" role="tab" aria-controls="sgod-tablet-all"
+                                aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
                                 data-bs-toggle="tab" href="#sgod-printer-all" role="tab"
                                 aria-controls="sgod-printer-all" aria-selected="false">Printer</a>
@@ -527,7 +586,7 @@
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" id="sgod-all" role="tabpanel"
                                 aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Devices</h6>
@@ -543,7 +602,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="sgod-laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Laptop</h6>
@@ -559,7 +618,7 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="sgod-printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
                                             <h6>All Printer</h6>
@@ -574,8 +633,24 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="tab-pane fade" id="sgod-tablet-all" role="tabpanel">
+                                <div class="app-card app-card-orders-table mb-5">
+                                    <div class="app-card-body p-3">
+                                        <div class="table-responsive">
+                                            <h6>All Printer</h6>
+                                            <table id="list_std20" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->sgodTablet();
+
+                                                ?>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="sgod-desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table shadow-sm mb-5">
+                                <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
 
                                         <div class="table-responsive">

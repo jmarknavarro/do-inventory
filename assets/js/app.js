@@ -187,6 +187,38 @@ $(document).ready(function() {
 	});
 });
 
+$(document).ready(function() {
+	$('#list_std17').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+
+$(document).ready(function() {
+	$('#list_std18').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std19').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+$(document).ready(function() {
+	$('#list_std20').DataTable({
+		lengthChange: false,
+		ordering: false
+	});
+});
+
+
+
+
 function ResetTransaction() {
 	document.getElementById("name").value = "";
     document.getElementById("s_num").value = "";
