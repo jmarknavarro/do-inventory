@@ -13,11 +13,11 @@
     $office = $product->office_id;
     $cat = $product->category_id;
     $uname = $product->user_name;
-    $serial = $product->serial_no;
+    $s_num = $product->serial_no;
     $pname = $product->product_name;
-    $year = $product->year_issued;
-    $wstatus = $product->warranty_status;
-    $status = $product->status;
+    $yissued = $product->year_issued;
+    $w_stat = $product->warranty_status;
+    $stat = $product->status;
     $remarks = $product->remarks;
 
     ?>
@@ -192,7 +192,7 @@
                                     </div>
                                 </div>
                                 <div class="app-card-body px-4 w-100">
-                                    <?php require('../init/controllers/form_process.php') ?>
+                                    <?php require('../init/controllers/edit_process.php') ?>
                                     <form id="user-form" enctype='multipart/form-data' method="POST">
                                         <?php if ($message != "") {
                                 echo '<div class="alert alert-danger">' . $message . '</div>';
@@ -245,26 +245,26 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Name</label>
-                                                    <input type="text" id="name" name="name" class="form-control" value="<?php echo $uname ?>">
+                                                    <input type="text" id="uname" name="uname" class="form-control" value="<?php echo $uname ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Serial No.</label>
                                                     <input type="text" id="s_num" name="s_num" class="form-control"
-                                                        value="<?php echo $serial ?>">
+                                                        value="<?php echo $s_num ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Device Description</label>
-                                                    <input type="text" id="desc" name="desc" class="form-control" value="<?php echo $pname ?>">
+                                                    <input type="text" id="pname" name="pname" class="form-control" value="<?php echo $pname ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Year Issued</label>
-                                                    <select class="form-select" id="year" name="year"  value="<?php echo $year ?>">
+                                                    <select class="form-select" id="yissued" name="yissued"  value="<?php echo $yissued ?>">
                                                         <!-- <option disabled selected>- Select -</option> -->
                                                         <?php  
                                                   $view = new class_model();
@@ -301,6 +301,7 @@
 
                                                 </div>
                                             </div>
+                                            <input type=hidden name="id" value="<?php echo $id; ?>">
 
                                             <div class="app-card-footer text-end py-4 mt-auto">
                                                 <input type="button" name="reset" class="btn btn-outline-danger"
