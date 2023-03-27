@@ -366,7 +366,7 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#osds-laptop-all" role="tab" aria-controls="osds-laptop-all"
                                 aria-selected="false">Laptop</a>
-                                <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#osds-tablet-all" role="tab" aria-controls="osds-tablet-all"
                                 aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
@@ -471,7 +471,7 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#cid-laptop-all" role="tab" aria-controls="cid-laptop-all"
                                 aria-selected="false">Laptop</a>
-                                <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#cid-tablet-all" role="tab" aria-controls="cid-tablet-all"
                                 aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
@@ -576,7 +576,7 @@
                             <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#sgod-laptop-all" role="tab" aria-controls="sgod-laptop-all"
                                 aria-selected="false">Laptop</a>
-                                <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
+                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
                                 data-bs-toggle="tab" href="#sgod-tablet-all" role="tab" aria-controls="sgod-tablet-all"
                                 aria-selected="false">Tablet</a>
                             <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
@@ -668,11 +668,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
 
                 <!--//container-fluid-->
@@ -720,12 +715,9 @@
                         }
                     });
                 }).change();
-
-
             }
-
-
         });
+
         </script>
 
     </body>
