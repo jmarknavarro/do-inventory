@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 16, 2023 at 04:45 AM
--- Server version: 5.7.36
--- PHP Version: 7.1.33
+-- Host: localhost
+-- Generation Time: Mar 27, 2023 at 02:26 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,13 +27,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl_admin`
 --
 
-DROP TABLE IF EXISTS `tbl_admin`;
-CREATE TABLE IF NOT EXISTS `tbl_admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) COLLATE utf8_bin NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `tbl_admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_admin`
@@ -48,12 +46,10 @@ INSERT INTO `tbl_admin` (`id`, `username`, `password`) VALUES
 -- Table structure for table `tbl_category`
 --
 
-DROP TABLE IF EXISTS `tbl_category`;
-CREATE TABLE IF NOT EXISTS `tbl_category` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `c_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `tbl_category` (
+  `id` int(11) NOT NULL,
+  `c_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_category`
@@ -62,7 +58,8 @@ CREATE TABLE IF NOT EXISTS `tbl_category` (
 INSERT INTO `tbl_category` (`id`, `c_name`) VALUES
 (1, 'Desktop'),
 (2, 'Laptop'),
-(3, 'Printer');
+(3, 'Tablet'),
+(4, 'Printer');
 
 -- --------------------------------------------------------
 
@@ -70,12 +67,10 @@ INSERT INTO `tbl_category` (`id`, `c_name`) VALUES
 -- Table structure for table `tbl_dept`
 --
 
-DROP TABLE IF EXISTS `tbl_dept`;
-CREATE TABLE IF NOT EXISTS `tbl_dept` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `d_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `tbl_dept` (
+  `id` int(11) NOT NULL,
+  `d_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_dept`
@@ -93,12 +88,10 @@ INSERT INTO `tbl_dept` (`id`, `d_name`) VALUES
 -- Table structure for table `tbl_office`
 --
 
-DROP TABLE IF EXISTS `tbl_office`;
-CREATE TABLE IF NOT EXISTS `tbl_office` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `o_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `tbl_office` (
+  `id` int(11) NOT NULL,
+  `o_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_office`
@@ -124,35 +117,108 @@ INSERT INTO `tbl_office` (`id`, `o_name`) VALUES
 -- Table structure for table `tbl_product`
 --
 
-DROP TABLE IF EXISTS `tbl_product`;
-CREATE TABLE IF NOT EXISTS `tbl_product` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dept_id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `office_id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `category_id` varchar(255) COLLATE utf8_bin NOT NULL,
-  `user_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  `product_name` varchar(255) COLLATE utf8_bin NOT NULL,
-  `year_issued` varchar(255) COLLATE utf8_bin NOT NULL,
-  `warranty_status` varchar(255) COLLATE utf8_bin NOT NULL,
-  `status` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+CREATE TABLE `tbl_product` (
+  `id` int(11) NOT NULL,
+  `dept_id` varchar(255) DEFAULT NULL,
+  `office_id` varchar(255) DEFAULT NULL,
+  `category_id` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `serial_no` varchar(255) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `year_issued` varchar(255) DEFAULT NULL,
+  `warranty_status` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `remarks` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`id`, `dept_id`, `office_id`, `category_id`, `user_name`, `product_name`, `year_issued`, `warranty_status`, `status`) VALUES
-(1, 'OSDS', 'ICT Services', 'Desktop', 'Giselle Sacha G. Dela Cruz', 'HP 285 GT', '2019', 'OUT OF WARRANTY', 'FUNCTIONAL'),
-(2, 'OSDS', 'Legal Services', 'Laptop', 'Atty. Anna Dominique L. Guison', 'Lenovo Ideapad', '2021', 'OUT OF WARRANTY', 'NOT FUNCTIONAL'),
-(3, 'OSDS ', 'ICT Services', 'Printer', 'Michael A. Ramos', 'EPSON L369', '2020', 'OUT OF WARRANTY', 'FUNCTIONAL'),
-(4, 'OSDS', 'ICT Services', 'Laptop', 'Giselle Sacha G. Dela Cruz', 'ACER TRAVELMATE P2', '2022', 'UNDER WARRANTY', 'FUNCTIONAL'),
-(5, 'OSDS', 'Legal Services', 'Desktop', 'Atty. Anna Dominique L. Guison', 'HP 285 GT', '2022', 'UNDER WARRANTY', 'FUNCTIONAL'),
-(6, 'CID', 'ALS', 'Laptop', 'Anna Leily De Guzman', 'ACER TRAVELMATE P2', '2022', 'UNDER WARRANTY', 'FUNCTIONAL'),
-(7, 'CID', 'DIS', 'Laptop', 'Marco Rhonel Eusebio', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL'),
-(8, 'SGOD', 'SHN', 'Laptop', 'Cirilo Cabral', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL'),
-(9, 'SGOD', 'SHN ', 'Laptop', 'Joseph Rommel De Leon', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL'),
-(10, 'SGOD', 'HRD', 'Laptop', 'Bernadette B. Robles', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL');
+INSERT INTO `tbl_product` (`id`, `dept_id`, `office_id`, `category_id`, `user_name`, `serial_no`, `product_name`, `year_issued`, `warranty_status`, `status`, `remarks`) VALUES
+(1, 'OSDS', 'ICT Services', 'Desktop', 'Giselle Sacha G. Dela Cruz', '5CG6284J34', 'HP 285 GT', '2019', 'OUT OF WARRANTY', 'FUNCTIONAL', ''),
+(2, 'OSDS', 'Legal Services', 'Laptop', 'Atty. Anna Dominique L. Guison', '5CG6284J4V', 'Lenovo Ideapad', '2021', 'OUT OF WARRANTY', 'NOT FUNCTIONAL', 'Transfer to Mr.Bobot'),
+(3, 'OSDS ', 'ICT Services', 'Printer', 'Michael A. Ramos', '5CG6284J21', 'EPSON L369', '2020', 'OUT OF WARRANTY', 'FUNCTIONAL', ''),
+(4, 'OSDS', 'ICT Services', 'Laptop', 'Giselle Sacha G. Dela Cruz', '5CG6284J3G', 'ACER TRAVELMATE P2', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(5, 'OSDS', 'Legal Services', 'Desktop', 'Atty. Anna Dominique L. Guison', '5CG6284J4V', 'HP 285 GT', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(6, 'CID', 'ALS', 'Laptop', 'Anna Leily De Guzman', '5CG6284J0K', 'ACER TRAVELMATE P2', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(7, 'CID', 'DIS', 'Laptop', 'Marco Rhonel Eusebio', '5CG6284JMF', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(8, 'SGOD', 'SHN', 'Laptop', 'Cirilo Cabral', '5CG6284JT2', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(9, 'SGOD', 'SHN ', 'Laptop', 'Joseph Rommel De Leon', '5CG6284JLV', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(10, 'SGOD', 'HRD', 'Laptop', 'Bernadette B. Robles', '5CG6284J2P', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(22, 'OSDS', 'Records Section', 'Tablet', 'Christelle Leigh Ubalde', 'HVAORDJ', 'Lenovo TB - X606X', '2023', 'osds-2', 'osds-2', ''),
+(23, 'OSDS', 'ICT Services', 'Tablet', 'Giselle Sacha Dela Cruz', 'HVAORDNS', 'Lenovo TB-X606X', '2023', 'cid-3', 'osds-2', ''),
+(24, 'OSDS', 'Legal Services', 'Tablet', 'Atty. Anna Dominique Guison', 'HVAORDJN', 'Lenovo TB-X606X', '2023', 'cid-3', 'osds-2', ''),
+(25, 'CID', 'Accounting', 'Tablet', 'Fatima Punongbayan', 'HVAORDSZ', 'Lenovo TB-X606X', '2023', 'cid-3', 'osds-2', ''),
+(26, 'SGOD', 'Accounting', 'Tablet', 'Cynthia Briones', 'HVAORDWZ', 'Lenovo TB-X606X', '2021', 'cid-3', 'osds-2', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_dept`
+--
+ALTER TABLE `tbl_dept`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_office`
+--
+ALTER TABLE `tbl_office`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_admin`
+--
+ALTER TABLE `tbl_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_dept`
+--
+ALTER TABLE `tbl_dept`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_office`
+--
+ALTER TABLE `tbl_office`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
