@@ -15,7 +15,7 @@
     $uname = $product->user_name;
     $s_num = $product->serial_no;
     $pname = $product->product_name;
-    $yissued = $product->year_issued;
+    $year_i = $product->year_issued;
     $w_stat = $product->warranty_status;
     $stat = $product->status;
     $remarks = $product->remarks;
@@ -264,7 +264,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Year Issued</label>
-                                                    <select class="form-select" id="yissued" name="yissued"  value="<?php echo $yissued ?>">
+                                                    <select class="form-select" id="year_i" name="year_i"  value="<?php echo $year_i ?>">
                                                         <!-- <option disabled selected>- Select -</option> -->
                                                         <?php  
                                                   $view = new class_model();

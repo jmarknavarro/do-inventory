@@ -42,29 +42,31 @@ class class_model
         }
     }
 
-	public function EditRecords($id, $dept, $office, $cat, $uname, $s_num, $pname, $yissued, $w_stat, $stat, $remarks)
-    {
-        try {
+	public function UpdateRecord($id,$dept,$office,$cat,$uname,$s_num,$pname,$year_i,$w_stat,$stat,$remarks)
+	{
+		try {
             $db = DB();
-            $sql = "UPDATE `tbl_product` SET  `dept_id` = :dept, `office_id` = :office, `category_id` = :cat, `user_name` = :uname, `serial_no` = :s_num, `product_name` = :pname, `year_issued` = :yissued, `warranty_status` = :w_stat, `status` = :stat, `remarks` = :remarks WHERE id = :id";
-            $query = $db->prepare($sql);
-            $query->execute(array(
-				':id' => $id,
-				':dept_id' => $dept,
-				':office_id' => $office,
-				':category_id' => $cat,
-				':user_name' => $uname,
-                ':serial_no' => $s_num,
-				':product_name' => $pname,
-				':year_issued' => $yissued,
-				':warranty_status' => $w_stat,
-				':status' => $stat,
+			$sql = "UPDATE `tbl_product` SET `dept_id` = :dept, `office_id` = :office, `category_id` = :cat,`user_name` = :uname, `serial_no` = :s_num, `product_name` = :pname, `year_issued` = :year_i, `warranty_status` = :w_stat, `status` = :stat, `remarks` = :remarks WHERE id = :id";
+			$query = $db->prepare($sql);
+			$query->execute(array(
+                ':id' => $id,
+				':dept' => $dept,
+				':office' => $office,
+				':cat' => $cat,
+				':s_num' => $s_num,
+				':uname' => $uname,
+                ':pname' => $pname,
+				':year_i' => $year_i,
+				':w_stat' => $w_stat,
+				':stat' => $stat,
 				':remarks' => $remarks,
             ));
-        } catch (PDOException $e) {
-            exit($e->getMessage());
-        }
-    }
+
+		}
+		catch (PDOException $e){
+			echo $e->getMessage();
+		}
+	}
 
 	public function fetch_product($id)
     {

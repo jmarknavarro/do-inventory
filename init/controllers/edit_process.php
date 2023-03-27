@@ -15,8 +15,15 @@ if (!empty($_POST['submitr'])) {
      else {
         $s_message = 'Form Updated';
         $conn = new class_model();
-        $user = $conn->EditRecords($_POST['id'], $_POST['dept'],$_POST['office'],$_POST['cat'],$_POST['uname'], $_POST['s_num'], 
-        $_POST['pname'],$_POST['yissued'],$_POST['w_stat'],$_POST['stat'],$_POST['remarks']);
+        // $user = $conn->EditRecords($_POST['id'], $_POST['dept'],$_POST['office'],$_POST['cat'],$_POST['uname'], $_POST['s_num'], 
+        // $_POST['pname'],$_POST['yissued'],$_POST['w_stat'],$_POST['stat'],$_POST['remarks']);
+        $send = $conn->UpdateRecord($_POST['id'], $_POST['dept'],$_POST['office'], $_POST['cat'], $_POST['uname'],$_POST['s_num'], $_POST['pname'], $_POST['year_i'],$_POST['w_stat'], $_POST['stat'],$_POST['remarks']);
+        if(!$send == TRUE){
+            echo '<script> setTimeout(function() {  window.history.go(-0); }, 2500); </script>';
+    
+          }else{
+            echo '<script> setTimeout(function() {  window.history.go(-0); }, 2500); </script>';
+        }
     }
 }
 ?>
