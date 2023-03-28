@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 27, 2023 at 02:26 AM
+-- Generation Time: Mar 28, 2023 at 08:03 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -136,11 +136,11 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`id`, `dept_id`, `office_id`, `category_id`, `user_name`, `serial_no`, `product_name`, `year_issued`, `warranty_status`, `status`, `remarks`) VALUES
-(1, 'OSDS', 'ICT Services', 'Desktop', 'Giselle Sacha G. Dela Cruz', '5CG6284J34', 'HP 285 GT', '2019', 'OUT OF WARRANTY', 'FUNCTIONAL', ''),
-(2, 'OSDS', 'Legal Services', 'Laptop', 'Atty. Anna Dominique L. Guison', '5CG6284J4V', 'Lenovo Ideapad', '2021', 'OUT OF WARRANTY', 'NOT FUNCTIONAL', 'Transfer to Mr.Bobot'),
+(1, 'OSDS', 'Accounting', 'Desktop', 'John Mark Navarro', '12345', 'HP GT250S', '2020', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(2, 'OSDS', 'Legal Services', 'Laptop', 'Atty. Anna Dominique L. Guison', '5CG6284J4V', 'Lenovo Ideapad', '2021', 'OUT OF WARRANTY', 'NOT FUNCTIONAL', 'Transfer to Sir. Bobot'),
 (3, 'OSDS ', 'ICT Services', 'Printer', 'Michael A. Ramos', '5CG6284J21', 'EPSON L369', '2020', 'OUT OF WARRANTY', 'FUNCTIONAL', ''),
 (4, 'OSDS', 'ICT Services', 'Laptop', 'Giselle Sacha G. Dela Cruz', '5CG6284J3G', 'ACER TRAVELMATE P2', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
-(5, 'OSDS', 'Legal Services', 'Desktop', 'Atty. Anna Dominique L. Guison', '5CG6284J4V', 'HP 285 GT', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
+(5, 'OSDS', 'Legal Services', 'Desktop', 'Atty. Anna Dominique L. Guison', '5CG6284J4B', 'HP 285 GT', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', 'Transfer to Ms.Bing ey'),
 (6, 'CID', 'ALS', 'Laptop', 'Anna Leily De Guzman', '5CG6284J0K', 'ACER TRAVELMATE P2', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
 (7, 'CID', 'DIS', 'Laptop', 'Marco Rhonel Eusebio', '5CG6284JMF', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
 (8, 'SGOD', 'SHN', 'Laptop', 'Cirilo Cabral', '5CG6284JT2', 'ACER TRAVELMATE P', '2022', 'UNDER WARRANTY', 'FUNCTIONAL', ''),
@@ -218,7 +218,7 @@ ALTER TABLE `tbl_office`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
