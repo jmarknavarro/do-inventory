@@ -41,6 +41,8 @@
 
         <!-- App CSS -->
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
+        <link rel="stylesheet" href="../assets/css/selectize.css">
+
 
     </head>
 
@@ -204,8 +206,8 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Department</label>
-                                                    <select class="form-select" id="dept" name="dept">
-                                                        <!-- <option value="" disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="dept" name="dept" value="<?php echo $dept ?>">
+                                                    <option value="<?= $dept; ?>" hidden><?= $dept; ?></option>
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->fetchDept();
@@ -218,8 +220,8 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Office/Unit</label>
-                                                    <select class="form-select" id="office" name="office">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="office" name="office" value="<?php echo $office ?>">
+                                                    <option value="<?= $office; ?>" hidden><?= $office; ?></option>
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->fetchOffice();
@@ -231,8 +233,8 @@
                                             <div class="col-md-4 mb-2">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Category</label>
-                                                    <select class="form-select" id="cat" name="cat">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="cat" name="cat" value="<?php echo $cat ?>">
+                                                    <option value="<?= $cat; ?>" hidden><?= $cat; ?></option>
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->fetchCategory();
@@ -245,7 +247,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Name</label>
-                                                    <input type="text" id="uname" name="uname" class="form-control" value="<?php echo $uname ?>">
+                                                    <input type="text" id="uname" name="uname" class="form-control"
+                                                        value="<?php echo $uname ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -258,14 +261,16 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Device Description</label>
-                                                    <input type="text" id="pname" name="pname" class="form-control" value="<?php echo $pname ?>">
+                                                    <input type="text" id="pname" name="pname" class="form-control"
+                                                        value="<?php echo $pname ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Year Issued</label>
-                                                    <select class="form-select" id="year_i" name="year_i"  value="<?php echo $year_i ?>">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="year_i" name="year_i"
+                                                        value="<?php echo $year_i ?>">
+                                                        <option value="<?= $year_i; ?>" hidden><?= $year_i; ?></option>
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->years();
@@ -276,8 +281,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2 ">
                                                     <label class="col-form-label">Warranty Status</label>
-                                                    <select class="form-select" id="w_stat" name="w_stat">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="w_stat" name="w_stat" value="<?php echo $w_stat ?>">
+                                                    <option value="<?= $w_stat; ?>" hidden><?= $w_stat; ?></option>
                                                         <option>UNDER WARRANTY</option>
                                                         <option>OUT OF WARRANTY</option>
                                                     </select>
@@ -286,8 +291,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2 ">
                                                     <label class="col-form-label">Status</label>
-                                                    <select class="form-select" id="stat" name="stat">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="stat" name="stat" value="<?php echo $stat ?>">
+                                                    <option value="<?= $stat; ?>" hidden><?= $stat; ?></option>
                                                         <option>FUNCTIONAL</option>
                                                         <option>NOT FUNCTIONAL</option>
                                                     </select>
@@ -331,14 +336,22 @@
         <script src="../assets/plugins/popper.min.js"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="../assets/js/app.js"></script>
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
         </script>
 
 
-        <!-- Page Specific JS -->
-        <script src="../assets/js/app.js"></script>
-
+        <!-- Selectize JS -->
+        <script src="../assets/js/selectize.js"></script>
+        <script>
+        var $dept = $('#dept').selectize();
+        var $office = $('#office').selectize();
+        var $cat = $('#cat').selectize();
+        var $year_i = $('#year_i').selectize();
+        var $w_stat = $('#w_stat').selectize();
+        var $stat = $('#stat').selectize();
+        </script>
 
         <script>
         if (window.history.replaceState) {
@@ -357,7 +370,6 @@
             var count = 1;
 
             function load_data() {
-
                 $("select").change(function() {
                     $(this).find("option:selected").each(function() {
                         var optionValue = $(this).attr("value");

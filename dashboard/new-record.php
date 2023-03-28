@@ -27,6 +27,8 @@
 
         <!-- App CSS -->
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
+        <link rel="stylesheet" href="../assets/css/selectize.css">
+
 
     </head>
 
@@ -318,11 +320,19 @@
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
         </script>
-
-
-        <!-- Page Specific JS -->
         <script src="../assets/js/app.js"></script>
 
+
+        <!-- Selectize JS -->
+        <script src="../assets/js/selectize.js"></script>
+        <script>
+        var $dept = $('#dept').selectize();
+        var $office = $('#office').selectize();
+        var $cat = $('#cat').selectize();
+        var $year = $('#year').selectize();
+        var $w_stat = $('#w_stat').selectize();
+        var $stat = $('#stat').selectize();
+        </script>
 
         <script>
         if (window.history.replaceState) {
