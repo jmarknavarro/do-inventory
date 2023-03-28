@@ -27,7 +27,7 @@
 
         <!-- App CSS -->
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
-        <link  rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
+        <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
 
     </head>
 
@@ -247,6 +247,9 @@
                         <!--//col-auto-->
                     </div>
                     <!--//row-->
+                    
+                    <div id="message"></div>
+
                     <div class="all-1 tabcontent" id="orders-table-tab-content">
 
                         <nav id="orders-table-tab"
@@ -687,7 +690,6 @@
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
         </script>
 
-
         <!-- Page Specific JS -->
         <script src="../assets/js/app.js"></script>
         <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
@@ -703,47 +705,47 @@
 
             function load_data() {
 
-                $(document).on('click', '.delete', function () {
-            var id = $(this).attr("data-id");
+                $(document).on('click', '.delete', function() {
+                    var id = $(this).attr("data-id");
 
-            if (Swal.fire({
-                icon: 'warning',
-                title: 'Are you sure?',
-                confirmButtonText: 'Confirm',
-                cancelButtonText: "Cancel",
-                text: 'Do you really want to delete these record? This process cannot be undone.',
-                showCancelButton: true,
-                reverseButtons: true
+                    if (Swal.fire({
+                            icon: 'warning',
+                            title: 'Are you sure?',
+                            confirmButtonText: 'Confirm',
+                            cancelButtonText: "Cancel",
+                            text: 'Do you really want to delete these record? This process cannot be undone.',
+                            showCancelButton: true,
+                            reverseButtons: true
 
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Deleteds',
-                        text: 'Record has been removed.',
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    $.ajax({
-                        url: "/do-inventory/init/controllers/delete_process.php",
-                        method: "POST",
-                        data: {
-                            id: id
-                        },
-                        success: function (response) {
-                            $("#message").html(response);
-                        },
-                        error: function (response) {
-                            console.log("Failed");
-                        }
-                    })
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Deleteds',
+                                    text: 'Record has been removed.',
+                                    showCancelButton: false,
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                                $.ajax({
+                                    url: "/do-inventory/init/controllers/delete_process.php",
+                                    method: "POST",
+                                    data: {
+                                        id: id
+                                    },
+                                    success: function(response) {
+                                        $("#message").html(response);
+                                    },
+                                    error: function(response) {
+                                        console.log("Failed");
+                                    }
+                                })
 
-                } else if (result.isDenied) {
-                    Swal.fire('Changes are not saved', '', 'info')
-                }
-            }));
-        });
+                            } else if (result.isDenied) {
+                                Swal.fire('Changes are not saved', '', 'info')
+                            }
+                        }));
+                });
 
                 $("select").change(function() {
                     $(this).find("option:selected").each(function() {
@@ -758,7 +760,6 @@
                 }).change();
             }
         });
-
         </script>
 
     </body>
