@@ -32,7 +32,7 @@ class class_model
 			$db = DB();
 			$sql = "INSERT INTO `tbl_product` (`dept_id`, `office_id`, `category_id`, `user_name`, `serial_no`, `product_name`, `year_issued`, `warranty_status`, 
 			`status`, `remarks`) 
-            VALUE ('$dept', '$office', '$cat', '$name', '$s_num', '$desc', '$year', '$w_stat', '$stat', '$remarks')";
+            VALUES ('$dept', '$office', '$cat', '$name', '$s_num', '$desc', '$year', '$w_stat', '$stat', '$remarks')";
 			$query = $db->prepare($sql);
 			$query->execute();
 			return $db->lastInsertId();
@@ -1146,6 +1146,59 @@ class class_model
 		}
 	}
 
+	public function fetchUnit($dept, $office)
+	{ {
+			try {
+				$db = DB();
+				$sql = "SELECT * FROM `tbl_product` WHERE `dept_id` = '$dept' AND `office_id` = '$office'";
+				$data = $db->prepare($sql);
+				$data->execute();
+				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
+
+				// echo "<table id='example1' class='table table-striped table-bordered no-wrap'>";
+				echo "<thead>";
+				echo "<th>Department</th>";
+				echo "<th>Office/Unit</th>";
+				echo "<th>Category</th>";
+				echo "<th>User's Name</th>";
+				echo "<th>Serial No.</th>";
+				echo "<th>Device Description</th>";
+				echo "<th>Year Issued</th>";
+				echo "<th>Warranty Status</th>";
+				echo "<th>Status</th>";
+				echo "<th>Remarks</th>";
+				echo "<th>Action</th>";
+				echo "</thead>";
+
+				foreach ($rows as $row) {
+
+					echo "<tr>";
+					echo "<td>$row[dept_id]</td>";
+					echo "<td>$row[office_id]</td>";
+					echo "<td>$row[category_id]</td>";
+					echo "<td>$row[user_name]</td>";
+					echo "<td>$row[serial_no]</td>";
+					echo "<td>$row[product_name]</td>";
+					echo "<td>$row[year_issued]</td>";
+					echo "<td>$row[warranty_status]</td>";
+					echo "<td>$row[status]</td>";
+					echo "<td>$row[remarks]</td>";
+					echo "<td>
+					<a class='btn text-center btn-sm' data-toggle='modal' data-id='$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+					<path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
+					<path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
+				  </svg></a>
+					</td>";
+					echo "</tr>";
+				}
+			} catch (PDOException $e) {
+				echo $e->getMessage();
+			}
+		}
+	}
+
+	
+	
 	public function SGOD()
 	{ {
 			try {
@@ -1197,6 +1250,7 @@ class class_model
 		}
 	}
 
+	
 	public function years()
 	{
 		for ($i = date('Y'); $i >= 2005; $i--)

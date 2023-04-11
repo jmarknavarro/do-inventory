@@ -28,6 +28,8 @@
         <!-- App CSS -->
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
         <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
+        <link rel="stylesheet" href="../assets/css/selectize.css">
+
 
     </head>
 
@@ -195,49 +197,41 @@
             <div class="app-content pt-3 p-md-3 p-lg-4">
                 <div class="container-xl">
 
+                    <!-- <div class="control-group">
+                        <label for="select-animal">Department:</label>
+                        <select class="form-select w-100" id="select-animal" name="dept" placeholder="Select a Department"></select>
+                        <div class="separator">&nbsp;</div>
+                        <label for="select-size" style="margin-top: 20px;">Select Unit/Office:</label>
+                        <select id="select-size" name="office"></select>
+                    </div> -->
+                    <div id="choice"></div>
+
                     <div class="row g-3 mb-4 align-items-center justify-content-between">
                         <div class="col-auto">
                             <h1 class="app-page-title mb-0">Inventory</h1>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-md-8">
                             <div class="page-utilities">
                                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
 
-                                    <div class="col-auto">
-                                        <select class="form-select w-100" data-live-search="true">
-                                            <option value="all-1" selected>All</option>
-                                            <option value="acct">Accounting</option>
-                                            <option value="admin_S">Administrative Services</option>
-                                            <option value="budget">Budget</option>
-                                            <option value="cash">Cash</option>
-                                            <option value="legal">Legal Services</option>
-                                            <option value="shn">SHN</option>
-                                            <option value="p_section">Personnel Section</option>
-                                            <option value="property">Property and Supply Section</option>
-                                            <option value="records">Records Section</option>
-                                            <option value="ict">ICT Services</option>
-                                            <option value="lrdms">LRDMS</option>
-                                            <option value="coa">COA</option>
-                                        </select>
-
-
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <select class="form-select w-100" id="select-animal" name="dept" placeholder="Select a Department"></select>
+                                        </div>
+                                        </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                    <select  class="form-select w-100" id="select-size" name="office"></select>
                                     </div>
-                                    <div class="col-auto">
-                                        <select class="form-select w-auto" data-live-search="true">
-                                            <option value="all-1" selected>All</option>
-                                            <option id="1" value="osds-2">OSDS</option>
-                                            <option value="cid-3">CID</option>
-                                            <option value="sgod-4">SGOD</option>
-
-                                        </select>
-
                                     </div>
 
                                     <div class="col-auto">
+                                        <div class="form-group">
                                         <a class="btn app-btn-secondary" href="new-record.php">
                                             <i class="fa fa-plus" aria-hidden="true"></i>
                                             &nbsp New Record
                                         </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--//row-->
@@ -247,7 +241,7 @@
                         <!--//col-auto-->
                     </div>
                     <!--//row-->
-                    
+
                     <div id="message"></div>
 
                     <div class="all-1 tabcontent" id="orders-table-tab-content">
@@ -271,7 +265,7 @@
                                 aria-selected="false">Printer</a>
                         </nav>
                         <div class="tab-content" style="width:100%">
-                            <div class="tab-pane fade show active" id="orders-all" role="tabpanel"
+                            <div class="tab-pane fade show active" name="orders-all" id="orders-all" role="tabpanel"
                                 aria-labelledby="orders-all-tab">
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
@@ -288,6 +282,7 @@
                                     </div>
                                 </div>
                             </div>
+                           
                             <div class="tab-pane fade" id="laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
@@ -389,6 +384,7 @@
                                                 ?>
                                             </table>
                                         </div>
+                                        
                                         <!--//table-responsive-->
                                     </div>
                                 </div>
@@ -670,6 +666,8 @@
                             </div>
                         </div>
                     </div>
+                   
+                    <!-- end of line -->
                 </div>
 
                 <!--//container-fluid-->
@@ -686,12 +684,14 @@
         <script src="../assets/plugins/popper.min.js"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="../assets/js/selectize.js"></script>
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
         </script>
 
         <!-- Page Specific JS -->
         <script src="../assets/js/app.js"></script>
+
         <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
 
 
@@ -721,7 +721,7 @@
                             if (result.isConfirmed) {
                                 Swal.fire({
                                     icon: 'success',
-                                    title: 'Deleteds',
+                                    title: 'Deleted',
                                     text: 'Record has been removed.',
                                     showCancelButton: false,
                                     showConfirmButton: false,
@@ -759,8 +759,133 @@
                     });
                 }).change();
             }
+
+
+
         });
         </script>
+        <script>
+        var timeOutA, timeOUtS;
+        
+
+        var setAnimalOptions = function(callback) {
+            clearTimeout(timeOutA);
+
+            options = [{
+                    name: 'All Department',
+                    value: 'all-1',
+                    
+                    
+                },
+                {
+                    name: 'OSDS',
+                    value: 'osds-2'
+                },
+                {
+                    name: 'CID',
+                    value: 'cid-3'
+                },
+                {
+                    name: 'SGOD',
+                    value: 'sgod-4'
+                }
+            ];
+            callback(options);
+        };
+
+        var setSizeOptions = function(callback, value) {
+            clearTimeout(timeOutS);
+
+            var options = []; 
+            if (value === 'all-1') {
+                selectSize.hide();
+            }else if (value === 'osds-2') {
+                options = [{
+                        name: 'ICT Services',
+                        value: 'ict'
+                    },
+                    {
+                        name: 'Legal Services',
+                        value: 'legal'
+                    },
+                    {
+                        name: 'Accounting',
+                        value: 'acct'
+                    },
+                    {
+                        name: 'Personnel Section',
+                        value: 'p_section'
+                    },
+                    {
+                        name: 'Cash',
+                        value: 'cash'
+                    }
+                ];
+            } else if (value === 'cid-3') {
+                options = [{
+                    name: 'ALS',
+                    value: 'als'
+                }, {
+                    name: 'Chief',
+                    value: 'chief'
+                }, {
+                    name: 'LRMDS',
+                    value: 'lrdms'
+                }];
+            } else if (value === 'sgod-4') {
+                options = [{
+                    name: 'Chief',
+                    value: 'chief'
+                }, {
+                    name: 'SMMNE',
+                    value: 'smmne'
+                }, {
+                    name: 'Research',
+                    value: 'research'
+                }];
+            }
+            callback(options);
+            selectSize.settings.placeholder = "Pick a size";
+            selectSize.updatePlaceholder();
+            selectSize.enable();
+        };
+
+        var $selectAnimal = $('#select-animal').selectize({
+            loadingClass: 'selectizeLoading',
+            valueField: 'value',
+            labelField: 'name',
+            searchField: ['name'],
+            onChange: function(value) {
+                if (!value.length) return;
+                selectSize.disable();
+                selectSize.clearOptions();
+                selectSize.load(function(callback) {
+                    timeOutS = setTimeout(setSizeOptions, 300, callback, value);
+                });
+            }
+        });
+
+        $('#select-size').selectize({
+            loadingClass: 'selectizeLoading',
+            placeholder: "Choose a Office or Unit",
+            closeAfterSelect: true,
+            valueField: 'value',
+            labelField: 'name',
+            searchField: ['name'],
+            onChange: function(value) {
+                if (!value.length) return;
+            }
+        });
+
+        var selectAnimal = $selectAnimal[0].selectize;
+        selectAnimal.load(function(callback) {
+            timeOutA = setTimeout(setAnimalOptions, 1000, callback);
+        });
+        var selectSize = $('#select-size').data('selectize');
+        selectSize.disable();
+        </script>
+
+
 
     </body>
 

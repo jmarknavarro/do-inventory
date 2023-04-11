@@ -321,8 +321,6 @@
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
         </script>
         <script src="../assets/js/app.js"></script>
-
-
         <!-- Selectize JS -->
         <script src="../assets/js/selectize.js"></script>
         <script>
@@ -366,6 +364,7 @@
             }
         });
         </script>
+       
 
     </body>
 
