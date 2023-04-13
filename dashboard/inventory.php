@@ -197,13 +197,6 @@
             <div class="app-content pt-3 p-md-3 p-lg-4">
                 <div class="container-xl">
 
-                    <!-- <div class="control-group">
-                        <label for="select-animal">Department:</label>
-                        <select class="form-select w-100" id="select-animal" name="dept" placeholder="Select a Department"></select>
-                        <div class="separator">&nbsp;</div>
-                        <label for="select-size" style="margin-top: 20px;">Select Unit/Office:</label>
-                        <select id="select-size" name="office"></select>
-                    </div> -->
                     <div id="choice"></div>
 
                     <div class="row g-3 mb-4 align-items-center justify-content-between">
@@ -216,13 +209,23 @@
 
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <select class="form-select w-100" id="select-department" name="dept"
-                                                placeholder="Select a Department"></select>
+                                            <select class="form-select w-100" name="dept" id="categoryDropdown"
+                                                onchange="updateProductDropdown()">
+                                                <option value="all-1">All Department</option>
+                                                <option value="osds">OSDS</option>
+                                                <option value="vegetable">CID</option>
+                                                <option value="vegetable">SGOD</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <select class="form-select w-100" id="select-size" name="office"></select>
+                                            <!-- <select class="form-select w-100" id="select-size" name="office"></select> -->
+
+                                            <select class="form-select w-100" id="productDropdown">
+                                                <option value="">All Office</option>
+                                            </select>
+
                                         </div>
                                     </div>
 
@@ -351,7 +354,7 @@
                         </div>
                     </div>
 
-                    <div class="osds-2 tabcontent" id="orders-table-tab-content">
+                    <div class="ICT-Services tabcontent" id="orders-table-tab-content">
 
                         <nav id="orders-table-tab"
                             class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
@@ -768,138 +771,39 @@
         });
         </script>
         <script>
-            
-        var timeOutA, timeOUtS;
-        var setDeparmentOptions = function(callback) {
-            clearTimeout(timeOutA);
-
-            options = [{
-                    name: 'All Department',
-                    value: 'all-1',
-
-
-                },
-                {
-                    name: 'OSDS',
-                    value: 'osds-2'
-                },
-                {
-                    name: 'CID',
-                    value: 'cid-3'
-                },
-                {
-                    name: 'SGOD',
-                    value: 'sgod-4'
-                }
-            ];
-            callback(options);
+        // Define the products for each category
+        const products = {
+            osds: ['ICT Services', 'Banana', 'Orange'],
+            vegetable: ['Carrot', 'Broccoli', 'Cauliflower'],
+            vegetable: ['Carrot', 'Broccoli', 'Cauliflower']
         };
 
-        var setOfficeOptions = function(callback, value) {
-            clearTimeout(timeOutS);
+        // Function to update the options in the product dropdown based on the category selection
+        function updateProductDropdown() {
+            const categoryDropdown = document.getElementById('categoryDropdown');
+            const productDropdown = document.getElementById('productDropdown');
 
-            var options = [];
-            if (value === 'all-1') {
-                selectSize.hide();
-                
-            } else if (value === 'osds-2') {
-                options = [{
-                        name: 'ICT Services',
-                        value: 'ict'
-                    },
-                    {
-                        name: 'Legal Services',
-                        value: 'legal'
-                    },
-                    {
-                        name: 'Accounting',
-                        value: 'acct'
-                    },
-                    {
-                        name: 'Personnel Section',
-                        value: 'p_section'
-                    },
-                    {
-                        name: 'Cash',
-                        value: 'cash'
-                    }
-                ];
-            } else if (value === 'cid-3') {
-                options = [{
-                    name: 'ALS',
-                    value: 'als'
-                }, {
-                    name: 'Chief',
-                    value: 'chief'
-                }, {
-                    name: 'LRMDS',
-                    value: 'lrdms'
-                }];
-            } else if (value === 'sgod-4') {
-                options = [{
-                    name: 'Chief',
-                    value: 'chief'
-                }, {
-                    name: 'SMMNE',
-                    value: 'smmne'
-                }, {
-                    name: 'Research',
-                    value: 'research'
-                }];
-            }
-            callback(options);
-            selectSize.settings.placeholder = "Choose a Office or Unit";
-            selectSize.updatePlaceholder();
-            selectSize.enable();
-        };
+            // Get the selected category
+            const selectedCategory = categoryDropdown.value;
 
-        // FIRST BOX
-        var $selectDepartment = $('#select-department').selectize({
-            loadingClass: 'selectizeLoading',
-            valueField: 'value',
-            labelField: 'name',
-            searchField: ['name'],
-            onChange: function(value) {
-                if (!value.length) return;
-                selectSize.disable();
-                selectSize.clearOptions();
-                selectSize.load(function(callback) {
-                    timeOutS = setTimeout(setOfficeOptions, 300, callback, value);
+            // Clear the current options in the product dropdown
+            productDropdown.innerHTML = '<option value="">All Office</option>';
+
+            // If a category is selected, add the corresponding products to the product dropdown
+            if (selectedCategory) {
+                // Get the products for the selected category
+                const categoryProducts = products[selectedCategory];
+
+                // Add the products to the product dropdown
+                categoryProducts.forEach(product => {
+                    const option = document.createElement('option');
+                    option.text = product;
+                    option.value = product;
+                    productDropdown.add(option);
                 });
             }
-        });
-
-        var selectDepartment = $selectDepartment[0].selectize;
-
-        $selectDepartment[0].selectize.setValue("all-1");
-
-        selectDepartment.load(function(callback) {
-            timeOutA = setTimeout(setDeparmentOptions, 1000, callback);
-        });
-
-
-
-        // SECOND BOX
-        $('#select-size').selectize({
-            loadingClass: 'selectizeLoading',
-            placeholder: "Choose a Office or Unit",
-            closeAfterSelect: true,
-            valueField: 'value',
-            labelField: 'name',
-            searchField: ['name'],
-            onChange: function(value) {
-                if (!value.length) return;
-            }
-        });
-
-        // DISABLE
-        var selectSize = $('#select-size').data('selectize');
-        selectSize.disable();
-
+        }
         </script>
-
-
-
     </body>
 
     </html>
