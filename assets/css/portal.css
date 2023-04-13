@@ -12629,8 +12629,7 @@ hr {
 
 .table th,
 .table td {
-    border-color: #e7e9ed;
-  white-space: nowrap;
+    border-color: #e7e9ed
 }
 
 .table thead th {

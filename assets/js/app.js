@@ -78,9 +78,7 @@ sidePanelDrop.addEventListener('click', (e) => {
 $(document).ready(function() {
 	$('#list_std').DataTable({
 		lengthChange: false,
-		ordering: false,
-		scrollX: true,
-
+		ordering: false
 	});
 });
 
@@ -219,130 +217,7 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-	$('#list_std21').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
 
-
-$(document).ready(function() {
-	$('#list_std22').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-
-$(document).ready(function() {
-	$('#list_std23').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std24').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std25').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std26').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std27').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std28').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std29').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std30').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std31').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std32').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std33').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std34').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std35').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-
-$(document).ready(function() {
-	$('#list_std36').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std37').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std38').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std39').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
-$(document).ready(function() {
-	$('#list_std40').DataTable({
-		lengthChange: false,
-		ordering: false
-	});
-});
 
 function ResetTransaction() {
 	document.getElementById("name").value = "";
