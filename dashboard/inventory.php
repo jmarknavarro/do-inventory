@@ -214,24 +214,30 @@
                             <div class="page-utilities">
                                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
 
+<<<<<<< HEAD
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <select class="form-select w-100" id="select-department" name="dept"
                                                 placeholder="Select a Department"></select>
+=======
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                        <select class="form-select w-100" id="select-animal" name="dept" placeholder="Select a Department"></select>
                                         </div>
-                                    </div>
+>>>>>>> parent of a5185c9 (Add backup)
+                                        </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <select class="form-select w-100" id="select-size" name="office"></select>
-                                        </div>
+                                    <select  class="form-select w-100" id="select-size" name="office"></select>
+                                    </div>
                                     </div>
 
                                     <div class="col-auto">
                                         <div class="form-group">
-                                            <a class="btn app-btn-secondary" href="new-record.php">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                &nbsp New Record
-                                            </a>
+                                        <a class="btn app-btn-secondary" href="new-record.php">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                            &nbsp New Record
+                                        </a>
                                         </div>
                                     </div>
                                 </div>
@@ -283,7 +289,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                           
                             <div class="tab-pane fade" id="laptop-all" role="tabpanel">
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
@@ -385,7 +391,7 @@
                                                 ?>
                                             </table>
                                         </div>
-
+                                        
                                         <!--//table-responsive-->
                                     </div>
                                 </div>
@@ -667,7 +673,7 @@
                             </div>
                         </div>
                     </div>
-
+                   
                     <!-- end of line -->
                 </div>
 
@@ -748,8 +754,6 @@
                         }));
                 });
 
-
-                // HIDE DIVS
                 $("select").change(function() {
                     $(this).find("option:selected").each(function() {
                         var optionValue = $(this).attr("value");
@@ -766,6 +770,7 @@
 
 
         });
+<<<<<<< HEAD
         </script>
         <script>
             
@@ -896,7 +901,130 @@
         var selectSize = $('#select-size').data('selectize');
         selectSize.disable();
 
+=======
+>>>>>>> parent of a5185c9 (Add backup)
         </script>
+        <script>
+        var timeOutA, timeOUtS;
+        
+
+        var setAnimalOptions = function(callback) {
+            clearTimeout(timeOutA);
+
+            options = [{
+                    name: 'All Department',
+                    value: 'all-1',
+                    
+                    
+                },
+                {
+                    name: 'OSDS',
+                    value: 'osds-2'
+                },
+                {
+                    name: 'CID',
+                    value: 'cid-3'
+                },
+                {
+                    name: 'SGOD',
+                    value: 'sgod-4'
+                }
+            ];
+            callback(options);
+        };
+
+        var setSizeOptions = function(callback, value) {
+            clearTimeout(timeOutS);
+
+            var options = []; 
+            if (value === 'all-1') {
+                selectSize.hide();
+            }else if (value === 'osds-2') {
+                options = [{
+                        name: 'ICT Services',
+                        value: 'ict'
+                    },
+                    {
+                        name: 'Legal Services',
+                        value: 'legal'
+                    },
+                    {
+                        name: 'Accounting',
+                        value: 'acct'
+                    },
+                    {
+                        name: 'Personnel Section',
+                        value: 'p_section'
+                    },
+                    {
+                        name: 'Cash',
+                        value: 'cash'
+                    }
+                ];
+            } else if (value === 'cid-3') {
+                options = [{
+                    name: 'ALS',
+                    value: 'als'
+                }, {
+                    name: 'Chief',
+                    value: 'chief'
+                }, {
+                    name: 'LRMDS',
+                    value: 'lrdms'
+                }];
+            } else if (value === 'sgod-4') {
+                options = [{
+                    name: 'Chief',
+                    value: 'chief'
+                }, {
+                    name: 'SMMNE',
+                    value: 'smmne'
+                }, {
+                    name: 'Research',
+                    value: 'research'
+                }];
+            }
+            callback(options);
+            selectSize.settings.placeholder = "Pick a size";
+            selectSize.updatePlaceholder();
+            selectSize.enable();
+        };
+
+        var $selectAnimal = $('#select-animal').selectize({
+            loadingClass: 'selectizeLoading',
+            valueField: 'value',
+            labelField: 'name',
+            searchField: ['name'],
+            onChange: function(value) {
+                if (!value.length) return;
+                selectSize.disable();
+                selectSize.clearOptions();
+                selectSize.load(function(callback) {
+                    timeOutS = setTimeout(setSizeOptions, 300, callback, value);
+                });
+            }
+        });
+
+        $('#select-size').selectize({
+            loadingClass: 'selectizeLoading',
+            placeholder: "Choose a Office or Unit",
+            closeAfterSelect: true,
+            valueField: 'value',
+            labelField: 'name',
+            searchField: ['name'],
+            onChange: function(value) {
+                if (!value.length) return;
+            }
+        });
+
+        var selectAnimal = $selectAnimal[0].selectize;
+        selectAnimal.load(function(callback) {
+            timeOutA = setTimeout(setAnimalOptions, 1000, callback);
+        });
+        var selectSize = $('#select-size').data('selectize');
+        selectSize.disable();
+        </script>
+
 
 
 
