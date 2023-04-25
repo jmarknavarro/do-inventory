@@ -2034,7 +2034,7 @@ progress {
 
 .table {
     --bs-table-color: var(--bs-body-color);
-    --bs-table-bg: transparent;
+    --bs-table-bg: #fff;
     --bs-table-border-color: var(--bs-border-color);
     --bs-table-accent-bg: transparent;
     --bs-table-striped-color: var(--bs-body-color);
@@ -14057,4 +14057,6 @@ button.close:focus {
     border-radius: 50% !important;
     padding-top: 1em !important;
   }
+
+  
   

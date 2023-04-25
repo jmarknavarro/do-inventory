@@ -278,17 +278,16 @@
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
-                                        <label>
- <input type="checkbox" id="osds-box"> OSDS
-</label>
-<label>
- <input type="checkbox" id="cid-box"> CID
-</label>
+
                                             <h6>All Devices</h6>
-                                            <table id="list_std55" class="table table-hover mb-0 text-left">
-                                              
+                                            <table id="list_std" class="table app-table-hover mb-0 text-left">
+                                                <?php
+                                                $view = new class_model();
+                                                $row  = $view->fetchAllData();
+
+                                                ?>
                                             </table>
-                                            
+                                        </div>
                                         </div>
                                         <!--//table-responsive-->
                                     </div>

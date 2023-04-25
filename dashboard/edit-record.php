@@ -301,7 +301,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Remarks</label>
-                                                    <textarea class="form-control" id="remarks" rows="5" placeholder=""
+                                                    <textarea class="form-control" id="remarks" maxlength="40" placeholder=""
                                                         name="remarks"><?php echo $remarks ?></textarea>
 
                                                 </div>
