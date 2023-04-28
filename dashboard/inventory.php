@@ -213,7 +213,7 @@
                                                 Filter</button>
                                             <a class="btn app-btn-primary" href="new-record.php">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                                &nbsp New Record    
+                                                &nbsp New Record
                                             </a>
                                         </div>
                                     </div>
@@ -242,7 +242,7 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form action="" method="POST">
                                         <div class="mb-3">
                                             <div class="form-group">
                                                 <label class="col-form-label">Office/Unit</label>
@@ -272,21 +272,14 @@
                                             <div class="form-group pt-2 ">
                                                 <label class="col-form-label">Warranty Status</label>
                                                 <div class="row">
-                                                    <div class="col-md-5 ml-1">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="u_warranty" name="w_stat" value="Under Warranty">
-                                                            <label class="form-check-label" for="u_warranty">UNDER
-                                                                WARRANTY</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="o_warranty" name="w_stat" value="Out of Warranty">
-                                                            <label class="form-check-label" for="o_warranty">OUT OF
-                                                                WARRANTY</label>
-                                                        </div>
+
+                                                    <div class="col-md-12">
+                                                        <select class="form-select" id="w_stats" name="w_stats">
+                                                            <option value="" selected disabled>Select Warranty Status
+                                                            </option>
+                                                            <option>UNDER WARRANTY</option>
+                                                            <option>OUT OF WARRANTY</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
@@ -295,31 +288,27 @@
                                             <div class="form-group pt-2 ">
                                                 <label class="col-form-label">Status</label>
                                                 <div class="row">
-                                                    <div class="col-md-5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="functional" name="stat" value="FUNCTIONAL">
-                                                            <label class="form-check-label" for="functional">FUNCTIONAL</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-5">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                id="not_functional" name="stat" value="NOT FUNCTIONAL">
-                                                            <label class="form-check-label" for="not_functional">NOT FUNCTIONAL</label>
-                                                        </div>
+                                                <div class="col-md-12">
+                                                        <select class="form-select" id="stat" name="stat">
+                                                            <option value="" selected disabled>Select Status
+                                                            </option>
+                                                            <option>FUNCTIONAL</option>
+                                                            <option>NOT FUNCTIONAL</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn app-btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn app-btn-primary">Apply Filter</button>
+                                    <button type="submit" name="submit" class="btn app-btn-primary">Apply
+                                        Filter</button>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
 
@@ -329,17 +318,19 @@
                                 aria-labelledby="orders-all-tab">
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-
-                                            <h6>All Devices</h6>
-                                            <table id="list_std" class="table app-table-hover mb-0 text-left">
-                                                <?php
+                                            <?php
                                                 $view = new class_model();
-                                                $row = $view->fetchAllData();
+                                                    if (isset($_POST['submit'])) {
+                                                        $office = $_POST['office'];
+                                                        $cat = $_POST['cat'];
+                                                        $w_stats = $_POST['w_stats'];
+                                                        $stat = $_POST['stat'];
+                                                        echo $row = $view->filterData($office,$cat,$w_stats,$stat);
+                                                } else {
+                                                    echo $row = $view->fetchAllData();
+                                                }
+                                                
                                                 ?>
-                                            </table>
-                                        </div>
-                                        <!--//table-responsive-->
                                     </div>
                                 </div>
                             </div>
@@ -378,6 +369,10 @@
 
 
         <script>
+            $office = $('#office').selectize();
+        $stat = $('#stat').selectize();
+        $cat = $('#cat').selectize();
+        $w_stat = $('#w_stats').selectize();
         $(document).ready(function() {
 
 
@@ -447,48 +442,8 @@
 
         });
         </script>
-        <script>
-        var $office = $('#office').selectize({
-            maxItems: 3
-        });
-        var $cat = $('#cat').selectize({
-            maxItems: 5
-        });
-        var $w_stat = $('#w_stat').selectize({
-            maxItems: 2
-        });
-        var $stat = $('#stat').selectize({
-            maxItems: 2
-        });
-        </script>
 
-        <!-- <script>
-        var cities = $('#animals').filterMultiSelect({
-            placeholderText: " Select Departmment"
-        });
-        </script> -->
-        <!-- 
-<script>
-    $(function () {
-        // Apply the plugin 
-        var notifications = $('#notifications');
-        $('#animals').on("optionselected", function(e) {
-          createNotification("selected", e.detail.label);
-        });
-        $('#animals').on("optiondeselected", function(e) {
-          createNotification("deselected", e.detail.label);
-        });
-        function createNotification(event,label) {
-          var n = $(document.createElement('span'))
-            .text(event + ' ' + label + "  ")
-            .addClass('notification')
-            .appendTo(notifications)
-            .fadeOut(3000, function() {
-              n.remove();
-            });
-        }
-    })
-</script> -->
+
 
     </body>
 
