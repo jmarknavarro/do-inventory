@@ -236,6 +236,7 @@
                                                     <input type="text" id="name" name="name" class="form-control" value="<?php echo isset($name) ? $name : ''; ?>">
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Serial No.</label>
