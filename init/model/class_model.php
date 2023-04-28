@@ -155,11 +155,11 @@ class class_model
 		}
 	}
 
-	public function fetchAllData1($dept)
+	public function filterData($office, $cat, $w_stat, $stat)
 	{ {
 			try {
 				$db = DB();
-				$sql = "SELECT * FROM `tbl_product` WHERE `dept_id` = '$dept'";
+				$sql = "SELECT * FROM `tbl_product` WHERE `office_id` = '$office' AND `category_id` = '$cat' AND `warranty_status` = '$w_stat' AND `status` = '$stat'";
 				$data = $db->prepare($sql);
 				$data->execute();
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
