@@ -275,7 +275,7 @@
                                                     <div class="col-md-5 ml-1">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox"
-                                                                id="u_warranty" name="source" value="Under Warranty">
+                                                                id="u_warranty" name="w_stat" value="Under Warranty">
                                                             <label class="form-check-label" for="u_warranty">UNDER
                                                                 WARRANTY</label>
                                                         </div>
@@ -283,7 +283,7 @@
                                                     <div class="col-md-5">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox"
-                                                                id="o_warranty" name="source" value="Out of Warranty">
+                                                                id="o_warranty" name="w_stat" value="Out of Warranty">
                                                             <label class="form-check-label" for="o_warranty">OUT OF
                                                                 WARRANTY</label>
                                                         </div>
@@ -298,14 +298,14 @@
                                                     <div class="col-md-5">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox"
-                                                                id="functional" name="source" value="FUNCTIONAL">
+                                                                id="functional" name="stat" value="FUNCTIONAL">
                                                             <label class="form-check-label" for="functional">FUNCTIONAL</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-check">
                                                             <input class="form-check-input" type="checkbox"
-                                                                id="not_functional" name="source" value="NOT FUNCTIONAL">
+                                                                id="not_functional" name="stat" value="NOT FUNCTIONAL">
                                                             <label class="form-check-label" for="not_functional">NOT FUNCTIONAL</label>
                                                         </div>
                                                     </div>
