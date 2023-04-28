@@ -30,7 +30,6 @@
         <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
         <link rel="stylesheet" href="../assets/css/selectize.css">
 
-
     </head>
 
     <body class="app">
@@ -195,15 +194,8 @@
         <div class="app-wrapper">
 
             <div class="app-content pt-3 p-md-3 p-lg-4">
-                <div class="container-xl">
+                <div class="container-fluid">
 
-                    <!-- <div class="control-group">
-                        <label for="select-animal">Department:</label>
-                        <select class="form-select w-100" id="select-animal" name="dept" placeholder="Select a Department"></select>
-                        <div class="separator">&nbsp;</div>
-                        <label for="select-size" style="margin-top: 20px;">Select Unit/Office:</label>
-                        <select id="select-size" name="office"></select>
-                    </div> -->
                     <div id="choice"></div>
 
                     <div class="row g-3 mb-4 align-items-center justify-content-between">
@@ -213,31 +205,16 @@
                         <div class="col-md-8">
                             <div class="page-utilities">
                                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
-
-<<<<<<< HEAD
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <select class="form-select w-100" id="select-department" name="dept"
-                                                placeholder="Select a Department"></select>
-=======
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                        <select class="form-select w-100" id="select-animal" name="dept" placeholder="Select a Department"></select>
-                                        </div>
->>>>>>> parent of a5185c9 (Add backup)
-                                        </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                    <select  class="form-select w-100" id="select-size" name="office"></select>
-                                    </div>
-                                    </div>
-
                                     <div class="col-auto">
                                         <div class="form-group">
-                                        <a class="btn app-btn-secondary" href="new-record.php">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                            &nbsp New Record
-                                        </a>
+                                            <button type="button" class="btn btn app-btn-secondary me-1"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
+                                                    class="fa fa-sliders" aria-hidden="true"></i>
+                                                Filter</button>
+                                            <a class="btn app-btn-primary" href="new-record.php">
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                                &nbsp New Record    
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -251,32 +228,109 @@
 
                     <div id="message"></div>
 
-                    <div class="all-1 tabcontent" id="orders-table-tab-content">
 
-                        <nav id="orders-table-tab"
-                            class="orders-table-tab app-nav-tabs nav flex-column flex-sm-row mb-4">
-                            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab"
-                                data-bs-toggle="tab" href="#orders-all" role="tab" aria-controls="orders-all"
-                                aria-selected="true">All</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab"
-                                href="#desktop-all" role="tab" aria-controls="desktop-all"
-                                aria-selected="false">Desktop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#laptop-all" role="tab" aria-controls="laptop-all"
-                                aria-selected="false">Laptop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#tablet-all" role="tab" aria-controls="tablet-all"
-                                aria-selected="false">Tablet</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
-                                data-bs-toggle="tab" href="#printer-all" role="tab" aria-controls="printer-all"
-                                aria-selected="false">Printer</a>
-                        </nav>
+
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"> <i class="fa fa-sliders"
+                                            aria-hidden="true"></i>
+                                        Filter</button></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Office/Unit</label>
+                                                <select class="form-select" id="office" name="office">
+                                                    <option value="" selected disabled>Select Office/Unit</option>;
+                                                    <?php  
+                                                  $view = new class_model();
+                                                  $view->fetchOffice();
+                                                  ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-group">
+                                                <label class="col-form-label">Category</label>
+                                                <select class="form-select" id="cat" name="cat">
+                                                    <option value="" selected disabled>Select Category</option>;
+                                                    <?php  
+                                                  $view = new class_model();
+                                                  $view->fetchCategory();
+                                                  ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+
+                                            <div class="form-group pt-2 ">
+                                                <label class="col-form-label">Warranty Status</label>
+                                                <div class="row">
+                                                    <div class="col-md-5 ml-1">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="u_warranty" name="w_stat" value="Under Warranty">
+                                                            <label class="form-check-label" for="u_warranty">UNDER
+                                                                WARRANTY</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="o_warranty" name="w_stat" value="Out of Warranty">
+                                                            <label class="form-check-label" for="o_warranty">OUT OF
+                                                                WARRANTY</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-group pt-2 ">
+                                                <label class="col-form-label">Status</label>
+                                                <div class="row">
+                                                    <div class="col-md-5">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="functional" name="stat" value="FUNCTIONAL">
+                                                            <label class="form-check-label" for="functional">FUNCTIONAL</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-5">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                id="not_functional" name="stat" value="NOT FUNCTIONAL">
+                                                            <label class="form-check-label" for="not_functional">NOT FUNCTIONAL</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn app-btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn app-btn-primary">Apply Filter</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="all-1" id="orders-table-tab-content">
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" name="orders-all" id="orders-all" role="tabpanel"
                                 aria-labelledby="orders-all-tab">
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
                                         <div class="table-responsive">
+
                                             <h6>All Devices</h6>
                                             <table id="list_std" class="table app-table-hover mb-0 text-left">
                                                 <?php
@@ -289,391 +343,8 @@
                                     </div>
                                 </div>
                             </div>
-                           
-                            <div class="tab-pane fade" id="laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Laptop</h6>
-                                            <table id="list_std2" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->fetchAllLaptop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std3" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->fetchAllPrinter();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tablet-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Tablet</h6>
-                                            <table id="list_std17" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->fetchAllTablet();
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-
-                                        <div class="table-responsive">
-                                            <h6>All Desktop</h6>
-                                            <table id="list_std4" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->fetchAllDesktop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-
-                    <div class="osds-2 tabcontent" id="orders-table-tab-content">
-
-                        <nav id="orders-table-tab"
-                            class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
-                            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab"
-                                data-bs-toggle="tab" href="#osds-all" role="tab" aria-controls="orders-all"
-                                aria-selected="true">All</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab"
-                                href="#osds-desktop-all" role="tab" aria-controls="osds-desktop-all"
-                                aria-selected="false">Desktop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#osds-laptop-all" role="tab" aria-controls="osds-laptop-all"
-                                aria-selected="false">Laptop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#osds-tablet-all" role="tab" aria-controls="osds-tablet-all"
-                                aria-selected="false">Tablet</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
-                                data-bs-toggle="tab" href="#osds-printer-all" role="tab"
-                                aria-controls="osds-printer-all" aria-selected="false">Printer</a>
-                        </nav>
-                        <div class="tab-content" style="width:100%">
-                            <div class="tab-pane fade show active" id="osds-all" role="tabpanel"
-                                aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Devices</h6>
-                                            <table id="list_std5" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row = $view->OSDS();
-                                                ?>
-                                            </table>
-                                        </div>
-                                        
-                                        <!--//table-responsive-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="osds-laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Laptop</h6>
-                                            <table id="list_std8" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->osdsLaptop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="osds-printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std9" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->OSDSPrinter();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="osds-desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-
-                                        <div class="table-responsive">
-                                            <h6>All Desktop</h6>
-                                            <table id="list_std10" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->osdsDesktop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="osds-tablet-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std18" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->osdsTablet();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cid-3 tabcontent" id="orders-table-tab-content">
-
-                        <nav id="orders-table-tab"
-                            class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
-                            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab"
-                                data-bs-toggle="tab" href="#cid-all" role="tab" aria-controls="cid-all"
-                                aria-selected="true">All</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab"
-                                href="#cid-desktop-all" role="tab" aria-controls="cid-desktop-all"
-                                aria-selected="false">Desktop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#cid-laptop-all" role="tab" aria-controls="cid-laptop-all"
-                                aria-selected="false">Laptop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#cid-tablet-all" role="tab" aria-controls="cid-tablet-all"
-                                aria-selected="false">Tablet</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
-                                data-bs-toggle="tab" href="#cid-printer-all" role="tab" aria-controls="cid-printer-all"
-                                aria-selected="false">Printer</a>
-                        </nav>
-                        <div class="tab-content" style="width:100%">
-                            <div class="tab-pane fade show active" id="cid-all" role="tabpanel"
-                                aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Devices</h6>
-                                            <table id="list_std6" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row = $view->CID();
-                                                ?>
-                                            </table>
-                                        </div>
-                                        <!--//table-responsive-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="cid-laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Laptop</h6>
-                                            <table id="list_std11" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->cidLaptop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="cid-printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std12" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->cidPrinter();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="cid-tablet-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std19" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->cidTablet();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="cid-desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-
-                                        <div class="table-responsive">
-                                            <h6>All Desktop</h6>
-                                            <table id="list_std13" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->cidDesktop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sgod-4 tabcontent" id="orders-table-tab-content">
-
-                        <nav id="orders-table-tab"
-                            class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
-                            <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab"
-                                data-bs-toggle="tab" href="#sgod-all" role="tab" aria-controls="sgod-all"
-                                aria-selected="true">All</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-bs-toggle="tab"
-                                href="#sgod-desktop-all" role="tab" aria-controls="sgod-desktop-all"
-                                aria-selected="false">Desktop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#sgod-laptop-all" role="tab" aria-controls="sgod-laptop-all"
-                                aria-selected="false">Laptop</a>
-                            <a class="flex-sm-fill text-sm-center nav-link " id="orders-pending-tab"
-                                data-bs-toggle="tab" href="#sgod-tablet-all" role="tab" aria-controls="sgod-tablet-all"
-                                aria-selected="false">Tablet</a>
-                            <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab"
-                                data-bs-toggle="tab" href="#sgod-printer-all" role="tab"
-                                aria-controls="sgod-printer-all" aria-selected="false">Printer</a>
-                        </nav>
-                        <div class="tab-content" style="width:100%">
-                            <div class="tab-pane fade show active" id="sgod-all" role="tabpanel"
-                                aria-labelledby="orders-all-tab">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Devices</h6>
-                                            <table id="list_std7" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row = $view->SGOD();
-                                                ?>
-                                            </table>
-                                        </div>
-                                        <!--//table-responsive-->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="sgod-laptop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Laptop</h6>
-                                            <table id="list_std14" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->sgodLaptop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="sgod-printer-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std15" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->sgodPrinter();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="sgod-tablet-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-                                        <div class="table-responsive">
-                                            <h6>All Printer</h6>
-                                            <table id="list_std20" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->sgodTablet();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="sgod-desktop-all" role="tabpanel">
-                                <div class="app-card app-card-orders-table mb-5">
-                                    <div class="app-card-body p-3">
-
-                                        <div class="table-responsive">
-                                            <h6>All Desktop</h6>
-                                            <table id="list_std16" class="table app-table-hover mb-0 text-left">
-                                                <?php
-                                                $view = new class_model();
-                                                $row  = $view->sgodDesktop();
-
-                                                ?>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
                     <!-- end of line -->
                 </div>
 
@@ -694,6 +365,9 @@
         <script src="../assets/js/selectize.js"></script>
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
+        </script>
+        <script type="text/javascript"
+            src="https://cdn.datatables.net/fixedcolumns/4.2.2/js/dataTables.fixedColumns.min.js"></script>
         </script>
 
         <!-- Page Specific JS -->
@@ -754,6 +428,8 @@
                         }));
                 });
 
+
+                // HIDE DIVS
                 $("select").change(function() {
                     $(this).find("option:selected").each(function() {
                         var optionValue = $(this).attr("value");
@@ -770,263 +446,49 @@
 
 
         });
-<<<<<<< HEAD
         </script>
         <script>
-            
-        var timeOutA, timeOUtS;
-        var setDeparmentOptions = function(callback) {
-            clearTimeout(timeOutA);
-
-            options = [{
-                    name: 'All Department',
-                    value: 'all-1',
-
-
-                },
-                {
-                    name: 'OSDS',
-                    value: 'osds-2'
-                },
-                {
-                    name: 'CID',
-                    value: 'cid-3'
-                },
-                {
-                    name: 'SGOD',
-                    value: 'sgod-4'
-                }
-            ];
-            callback(options);
-        };
-
-        var setOfficeOptions = function(callback, value) {
-            clearTimeout(timeOutS);
-
-            var options = [];
-            if (value === 'all-1') {
-                selectSize.hide();
-                
-            } else if (value === 'osds-2') {
-                options = [{
-                        name: 'ICT Services',
-                        value: 'ict'
-                    },
-                    {
-                        name: 'Legal Services',
-                        value: 'legal'
-                    },
-                    {
-                        name: 'Accounting',
-                        value: 'acct'
-                    },
-                    {
-                        name: 'Personnel Section',
-                        value: 'p_section'
-                    },
-                    {
-                        name: 'Cash',
-                        value: 'cash'
-                    }
-                ];
-            } else if (value === 'cid-3') {
-                options = [{
-                    name: 'ALS',
-                    value: 'als'
-                }, {
-                    name: 'Chief',
-                    value: 'chief'
-                }, {
-                    name: 'LRMDS',
-                    value: 'lrdms'
-                }];
-            } else if (value === 'sgod-4') {
-                options = [{
-                    name: 'Chief',
-                    value: 'chief'
-                }, {
-                    name: 'SMMNE',
-                    value: 'smmne'
-                }, {
-                    name: 'Research',
-                    value: 'research'
-                }];
-            }
-            callback(options);
-            selectSize.settings.placeholder = "Choose a Office or Unit";
-            selectSize.updatePlaceholder();
-            selectSize.enable();
-        };
-
-        // FIRST BOX
-        var $selectDepartment = $('#select-department').selectize({
-            loadingClass: 'selectizeLoading',
-            valueField: 'value',
-            labelField: 'name',
-            searchField: ['name'],
-            onChange: function(value) {
-                if (!value.length) return;
-                selectSize.disable();
-                selectSize.clearOptions();
-                selectSize.load(function(callback) {
-                    timeOutS = setTimeout(setOfficeOptions, 300, callback, value);
-                });
-            }
+        var $office = $('#office').selectize({
+            maxItems: 3
         });
-
-        var selectDepartment = $selectDepartment[0].selectize;
-
-        $selectDepartment[0].selectize.setValue("all-1");
-
-        selectDepartment.load(function(callback) {
-            timeOutA = setTimeout(setDeparmentOptions, 1000, callback);
+        var $cat = $('#cat').selectize({
+            maxItems: 5
         });
-
-
-
-        // SECOND BOX
-        $('#select-size').selectize({
-            loadingClass: 'selectizeLoading',
-            placeholder: "Choose a Office or Unit",
-            closeAfterSelect: true,
-            valueField: 'value',
-            labelField: 'name',
-            searchField: ['name'],
-            onChange: function(value) {
-                if (!value.length) return;
-            }
+        var $w_stat = $('#w_stat').selectize({
+            maxItems: 2
         });
-
-        // DISABLE
-        var selectSize = $('#select-size').data('selectize');
-        selectSize.disable();
-
-=======
->>>>>>> parent of a5185c9 (Add backup)
-        </script>
-        <script>
-        var timeOutA, timeOUtS;
-        
-
-        var setAnimalOptions = function(callback) {
-            clearTimeout(timeOutA);
-
-            options = [{
-                    name: 'All Department',
-                    value: 'all-1',
-                    
-                    
-                },
-                {
-                    name: 'OSDS',
-                    value: 'osds-2'
-                },
-                {
-                    name: 'CID',
-                    value: 'cid-3'
-                },
-                {
-                    name: 'SGOD',
-                    value: 'sgod-4'
-                }
-            ];
-            callback(options);
-        };
-
-        var setSizeOptions = function(callback, value) {
-            clearTimeout(timeOutS);
-
-            var options = []; 
-            if (value === 'all-1') {
-                selectSize.hide();
-            }else if (value === 'osds-2') {
-                options = [{
-                        name: 'ICT Services',
-                        value: 'ict'
-                    },
-                    {
-                        name: 'Legal Services',
-                        value: 'legal'
-                    },
-                    {
-                        name: 'Accounting',
-                        value: 'acct'
-                    },
-                    {
-                        name: 'Personnel Section',
-                        value: 'p_section'
-                    },
-                    {
-                        name: 'Cash',
-                        value: 'cash'
-                    }
-                ];
-            } else if (value === 'cid-3') {
-                options = [{
-                    name: 'ALS',
-                    value: 'als'
-                }, {
-                    name: 'Chief',
-                    value: 'chief'
-                }, {
-                    name: 'LRMDS',
-                    value: 'lrdms'
-                }];
-            } else if (value === 'sgod-4') {
-                options = [{
-                    name: 'Chief',
-                    value: 'chief'
-                }, {
-                    name: 'SMMNE',
-                    value: 'smmne'
-                }, {
-                    name: 'Research',
-                    value: 'research'
-                }];
-            }
-            callback(options);
-            selectSize.settings.placeholder = "Pick a size";
-            selectSize.updatePlaceholder();
-            selectSize.enable();
-        };
-
-        var $selectAnimal = $('#select-animal').selectize({
-            loadingClass: 'selectizeLoading',
-            valueField: 'value',
-            labelField: 'name',
-            searchField: ['name'],
-            onChange: function(value) {
-                if (!value.length) return;
-                selectSize.disable();
-                selectSize.clearOptions();
-                selectSize.load(function(callback) {
-                    timeOutS = setTimeout(setSizeOptions, 300, callback, value);
-                });
-            }
+        var $stat = $('#stat').selectize({
+            maxItems: 2
         });
-
-        $('#select-size').selectize({
-            loadingClass: 'selectizeLoading',
-            placeholder: "Choose a Office or Unit",
-            closeAfterSelect: true,
-            valueField: 'value',
-            labelField: 'name',
-            searchField: ['name'],
-            onChange: function(value) {
-                if (!value.length) return;
-            }
-        });
-
-        var selectAnimal = $selectAnimal[0].selectize;
-        selectAnimal.load(function(callback) {
-            timeOutA = setTimeout(setAnimalOptions, 1000, callback);
-        });
-        var selectSize = $('#select-size').data('selectize');
-        selectSize.disable();
         </script>
 
-
-
+        <!-- <script>
+        var cities = $('#animals').filterMultiSelect({
+            placeholderText: " Select Departmment"
+        });
+        </script> -->
+        <!-- 
+<script>
+    $(function () {
+        // Apply the plugin 
+        var notifications = $('#notifications');
+        $('#animals').on("optionselected", function(e) {
+          createNotification("selected", e.detail.label);
+        });
+        $('#animals').on("optiondeselected", function(e) {
+          createNotification("deselected", e.detail.label);
+        });
+        function createNotification(event,label) {
+          var n = $(document.createElement('span'))
+            .text(event + ' ' + label + "  ")
+            .addClass('notification')
+            .appendTo(notifications)
+            .fadeOut(3000, function() {
+              n.remove();
+            });
+        }
+    })
+</script> -->
 
     </body>
 

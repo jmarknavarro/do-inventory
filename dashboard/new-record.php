@@ -192,8 +192,8 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Department</label>
-                                                    <select class="form-select" id="dept" name="dept">
-                                                        <!-- <option value="" disabled selected>- Select -</option> -->
+                                                    <select class="form-select" id="dept" name="dept" >
+                                                    <option value="" selected disabled>Select Department</option>;
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->fetchDept();
@@ -207,7 +207,7 @@
                                                 <div class="form-group">
                                                     <label class="col-form-label">Office/Unit</label>
                                                     <select class="form-select" id="office" name="office">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <option value="" selected disabled>Select Office/Unit</option>;
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->fetchOffice();
@@ -220,7 +220,7 @@
                                                 <div class="form-group">
                                                     <label class="col-form-label">Category</label>
                                                     <select class="form-select" id="cat" name="cat">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                <option value="" selected disabled>Select Category</option>;
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->fetchCategory();
@@ -233,26 +233,29 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Name</label>
-                                                    <input type="text" id="name" name="name" class="form-control">
+                                                    <input type="text" id="name" name="name" class="form-control" value="<?php echo isset($name) ? $name : ''; ?>">
                                                 </div>
                                             </div>
+                                            
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Serial No.</label>
-                                                    <input type="text" id="s_num" name="s_num" class="form-control">
+                                                    <input type="text" id="s_num" name="s_num" class="form-control" value="<?php echo isset($s_num) ? $s_num : ''; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Device Description</label>
-                                                    <input type="text" id="desc" name="desc" class="form-control">
+                                                    <input type="text" id="desc" name="desc" class="form-control" value="<?php echo isset($desc) ? $desc : ''; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Year Issued</label>
+                                                    
                                                     <select class="form-select" id="year" name="year">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <option value="" selected disabled>Select Year</option>;
+
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->years();
@@ -264,7 +267,7 @@
                                                 <div class="form-group pt-2 ">
                                                     <label class="col-form-label">Warranty Status</label>
                                                     <select class="form-select" id="w_stat" name="w_stat">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+					                            <option value="" selected disabled>Select Warranty Status</option>
                                                         <option>UNDER WARRANTY</option>
                                                         <option>OUT OF WARRANTY</option>
                                                     </select>
@@ -274,7 +277,7 @@
                                                 <div class="form-group pt-2 ">
                                                     <label class="col-form-label">Status</label>
                                                     <select class="form-select" id="stat" name="stat">
-                                                        <!-- <option disabled selected>- Select -</option> -->
+                                                    <option value="" selected disabled>Select Status</option>;
                                                         <option>FUNCTIONAL</option>
                                                         <option>NOT FUNCTIONAL</option>
                                                     </select>
@@ -283,8 +286,8 @@
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
                                                     <label class="col-form-label">Remarks</label>
-                                                    <textarea class="form-control" id="remarks" rows="5" placeholder=""
-                                                        name="remarks"></textarea>
+                                                    <textarea class="form-control" id="remarks" maxlength="40" placeholder=""
+                                                        name="remarks" ><?php echo isset($remarks) ? $remarks : ''; ?></textarea>
 
                                                 </div>
                                             </div>
@@ -338,11 +341,11 @@
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
-        window.setTimeout(function() {
-            $(".alert").fadeTo(500, 0).slideUp(500, function() {
-                $(this).remove();
-            });
-        }, 2000);
+        // window.setTimeout(function() {
+        //     $(".alert").fadeTo(500, 0).slideUp(500, function() {
+        //         $(this).remove();
+        //     });
+        // }, 2000);
         </script>
 
         <script>

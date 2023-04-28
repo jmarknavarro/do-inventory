@@ -2,21 +2,54 @@
 
 $s_message = "";
 $message = "";
+
+
+
 if (!empty($_POST['submitr'])) {
-    if ($_POST['name'] == "") {
+    $dept = $_POST['dept'];
+    $office = $_POST['office'];
+    $cat = $_POST['cat'];
+    $name = $_POST['name'];
+    $s_num = $_POST['s_num'];
+    $desc = $_POST['desc'];
+    $w_status = $_POST['w_stat'];
+    $status = $_POST['stat'];
+    $remarks = $_POST['remarks'];
+
+    if (empty($name))  {
         $message = 'Name field is required!';
-    } else if ($_POST['s_num'] == "") {
+    } else if (empty($s_num)) {
         $message = 'Serial Number field is required!';
-    } else if ($_POST['desc'] == "") {
+    } else if (empty($desc)) {
         $message = 'Device Description field is required!';
-    } else if ($_POST['dept'] == "") {
+    } else if (empty($office)) {
+        $message = 'Office field is required!';
+    } else if (empty($cat)) {
+        $message = 'Category field is required!';
+    } else if (empty($dept)) {
         $message = 'Department field is required!';
-     }
+    } else if (empty($w_status)) {
+        $message = 'Warranty Status field is required!';
+    } else if (empty($status)) {
+        $message = 'Status field is required!';
+    }
      else {
         $s_message = 'Form Submitted';
         $conn = new class_model();
-        $user = $conn->AddRecords($_POST['dept'],$_POST['office'],$_POST['cat'],$_POST['name'], $_POST['s_num'], 
-        $_POST['desc'],$_POST['year'],$_POST['w_stat'],$_POST['stat'],$_POST['remarks']);
-    }
+        $submit = $conn->AddRecords($dept,$office,$cat,$name, $s_num, 
+                $desc,$_POST['year'],$w_status,$status,$remarks);
+                if(!$submit==TRUE)
+                {        echo '<script> setTimeout(function() {  window.history.go(-0); }, 1000); </script>';
+
+                }
+                    else{
+                        echo '<script> setTimeout(function() {  window.history.go(-0); }, 2000); </script>';
+
+                    
+                }
+              
+    }   
+
+ 
 }
 ?>

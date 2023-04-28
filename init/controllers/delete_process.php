@@ -11,8 +11,3 @@ if (isset($_POST)) {
         echo '<script> setTimeout(function() {  window.history.go(-0); }, 1000); </script>';
     }
 }
-
-
-
-
-?>
