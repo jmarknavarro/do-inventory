@@ -210,7 +210,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <select class="form-select w-100" name="dept" id="categoryDropdown"
-                                                onchange="updateProductDropdown()">
+                                                onchange="document.getElementById('report_filter').submit();">
                                                 <option value="all-1">All Department</option>
                                                 <option value="osds">OSDS</option>
                                                 <option value="vegetable">CID</option>
@@ -283,7 +283,14 @@
                                             <table id="list_std" class="table app-table-hover mb-0 text-left">
                                                 <?php
                                                 $view = new class_model();
-                                                $row  = $view->fetchAllData();
+                                                if (isset($_GET['dept'])) {
+                                                    $strArray = explode($_GET['dept']);
+                                                    $dept = $strArray[0];
+                                                    echo $view->fetchAllData1($dept);
+                                                } else {
+                                                    echo $view->fetchAllData();
+                                                }
+                                                // $row  = $view->fetchAllData();
 
                                                 ?>
                                             </table>

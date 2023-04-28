@@ -13,7 +13,7 @@ alertList.forEach(function (alert) {
   new bootstrap.Alert(alert)
 });
 
-
+	
 /* ===== Responsive Sidepanel ====== */
 const sidePanelToggler = document.getElementById('sidepanel-toggler'); 
 const sidePanel = document.getElementById('app-sidepanel');  
@@ -70,85 +70,16 @@ sidePanelDrop.addEventListener('click', (e) => {
 });
 
 
-
-
-
-
-
-$(document).ready(function() {
-
-	// FILTERING
-	var data = [
-		{temperature: "OSDS", date: "01/07/2018"},
-		{temperature: "CID", date: '02/07/2018'},
-		{temperature: "OSDS", date: '03/07/2018'},
-		{temperature: 27, date: '04/07/2018'},
-		{temperature: 23, date: '05/07/2018'},
-		{temperature: 24, date: '06/07/2018'},
-
-	   ]
-	   var table = $('#list_std55').DataTable({
-		 data: data,
-		 columns: [
-		   { data: 'temperature', title: 'temperature' },
-		   { data: 'date', title: 'date' }
-		 ]  
-	   })  
-	
-	   $('#osds-box').on('change', function() {
-		if ($(this).is(':checked')) {
-		  $.fn.dataTable.ext.search.push(
-			function(settings, data, dataIndex) {  
-			   return data[0] == "OSDS";
-			}
-		  )
-		} else {
-		  $.fn.dataTable.ext.search.pop()
-		  
-		}
-		table.draw()
-	  })
-	  $('#cid-box').on('change', function() {
-		if ($(this).is(':checked')) {
-		  $.fn.dataTable.ext.search.push(
-			function(settings, data, dataIndex) {  
-			   return data[0] == "CID";
-			}
-		  )
-		} else {
-		  $.fn.dataTable.ext.search.pop()
-		  
-		}
-		table.draw()
-	  })
-
-	  // END OF FILTERING
-
-	// var table = $('#list_std').DataTable({
-	// 	lengthChange: false,
-	// 	scrollX: true,
-	// 	pageLength: 15,
-	// 	columnDefs: [
-    //         { 'max-width': '10%', 'targets': 9 }
-    //     ],
-	// 	fixedColumns: { left: 0	, right: 1 }
-	// })
-	
-	
-
-	
-});
-
-
-
 $(document).ready(function() {
 	$('#list_std').DataTable({
-		lengthChange: false,
-		ordering: false,
-		columnDefs: [
-            { 'max-width': '10%', 'targets': 9 }
-        ]
-	});
+			lengthChange: false,
+			scrollX: true,
+			pageLength: 15,
+			columnDefs: [
+		        { 'max-width': '10%', 'targets': 9 }
+		    ],
+			fixedColumns: { left: 0	, right: 1 }
+		})
 });
 
 $(document).ready(function() {
