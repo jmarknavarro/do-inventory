@@ -70,28 +70,36 @@ sidePanelDrop.addEventListener('click', (e) => {
 });
 
 
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
+
+
 $(document).ready(function() {
-	$('#list_std').DataTable({
+	$('#table').DataTable({
 			lengthChange: false,
 			scrollX: true,
 			pageLength: 15,
 			columnDefs: [
 		        { 'max-width': '10%', 'targets': 9 }
 		    ],
-			fixedColumns: { left: 0	, right: 1 }
+			fixedColumns: { left: 0	, right: 1 },
 		});
+		addTableButtons();
+
 });
 
 $(document).ready(function() {
-	$('#list_result_std').DataTable({
+	$('#table_result').DataTable({
 		lengthChange: false,
 			scrollX: true,
 			pageLength: 15,
 			columnDefs: [
 		        { 'max-width': '10%', 'targets': 9 }
 		    ],
-			fixedColumns: { left: 0	, right: 1 }
+			fixedColumns: { left: 0	, right: 1 },
 	});
+	addTableResultButtons();
 });
 
 function ResetTransaction() {
@@ -99,4 +107,72 @@ function ResetTransaction() {
     document.getElementById("s_num").value = "";
     document.getElementById("desc").value = "";
 	document.getElementById("remarks").value = "";	
+}
+
+
+function addTableButtons() {
+	var table = $('#table').DataTable();
+ 
+	new $.fn.dataTable.Buttons( table, {
+		buttons: [
+				{
+                extend: 'collection',
+                text: 'Export',
+				className: "btn app-btn-secondary",
+				background: false,
+                buttons: [  
+					{ 	extend: "pdf",
+					title: `Inventory Logs ${ new Date().toLocaleDateString().replace(/\//g, '-')}`,
+					footer: false,
+						orientation: 'landscape',
+		   				pageSize: 'LEGAL',
+						exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
+					},
+					{ 	extend: "excel",
+						title: `${ new Date().toLocaleDateString()}`,
+						footer: false,
+						orientation: 'landscape',
+		   				pageSize: 'LEGAL',
+						exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
+					}, 
+			] }
+		] } 
+	);
+	 
+	table.buttons( 0, null ).containers().appendTo( '#filterTopCriteria' );
+}
+
+function addTableResultButtons() {
+	var table = $('#table_result').DataTable();
+ 
+	new $.fn.dataTable.Buttons( table, {
+		buttons: [
+				{
+                extend: 'collection',
+                text: 'Export',
+				className: "btn app-btn-secondary",
+				background: false,
+                buttons: [  
+					{ 	extend: "pdf",
+						title: `${ new Date().toLocaleDateString()}`,
+						footer: false,
+						orientation: 'landscape',
+		   				pageSize: 'LEGAL',
+						exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
+					},
+					{ 	extend: "excel",
+						title: `${ new Date().toLocaleDateString()}`,
+						footer: false,
+						orientation: 'landscape',
+		   				pageSize: 'LEGAL',
+						exportOptions: {
+						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
+					}, 
+			] }
+		] } 
+	);
+	table.buttons( 0, null ).containers().appendTo( '#filterTopCriteria' );
 }

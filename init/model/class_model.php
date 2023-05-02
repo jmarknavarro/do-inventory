@@ -1,4 +1,3 @@
-
 <?php
 
 require 'config/connection.php';
@@ -159,7 +158,7 @@ class class_model
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
 				echo "<h6>All Devices</h6>";
-				echo "<table id='list_std' class='table app-table-hover mb-0 text-left'>";
+				echo "<table id='table' class='table table-hover table-striped mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
@@ -211,17 +210,59 @@ class class_model
 		}
 	}
 
-	public function filterData($office,$cat,$w_stats,$stat)
+	public function filterData($dept,$office,$cat,$w_stats,$stat)
 	{ {
 			try {
 				$db = DB();
-				$sql = "SELECT * FROM `tbl_product` WHERE `office_id` = '$office' AND `category_id` = '$cat' AND `warranty_status` = '$w_stats' AND `status` = '$stat'";
+				// $sql = "SELECT * FROM `tbl_product` WHERE `office_id` LIKE '$office' OR `category_id` LIKE '$cat' OR `warranty_status` LIKE '$w_stats' OR `status` LIKE '$stat'";
+
+				$sql = "SELECT * FROM `tbl_product` WHERE 1=1";
+
+				if (!empty($dept)) {
+					$sql .= " AND `dept_id` LIKE :dept";
+				}
+				// Add the name filter to the SQL query
+				if (!empty($office)) {
+					$sql .= " AND `office_id` LIKE :office";
+				}
+
+				// Add the category filter to the SQL query
+				if (!empty($cat)) {
+					$sql .= " AND `category_id` LIKE :cat";
+				}
+
+				if (!empty($w_stats)) {
+					$sql .= " AND `warranty_status` = :w_stats";
+				}
+
+				if (!empty($stat)) {
+					$sql .= " AND `status` = :stat";
+				}
+
+
+
 				$data = $db->prepare($sql);
-				$data->execute();
+				if (!empty($dept)) {
+					$data->bindValue(':dept', '%' . $dept . '%');
+				}
+				if (!empty($office)) {
+					$data->bindValue(':office', $office);
+				}
+				if (!empty($cat)) {
+					$data->bindValue(':cat', $cat);
+				}
+				if (!empty($w_stats)) {
+					$data->bindValue(':w_stats', $w_stats);
+				}
+				if (!empty($stat)) {
+					$data->bindValue(':stat', $stat);
+				}
+				
+				$data->execute();	
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
 				echo "<h6>All Devices</h6>";
-				echo "<table id='list_result_std' class='table app-table-hover mb-0 text-left'>";
+				echo "<table id='table_result' class='table app-table-hover mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
