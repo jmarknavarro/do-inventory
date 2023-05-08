@@ -99,7 +99,7 @@ $(document).ready(function() {
 		    ],
 			fixedColumns: { left: 0	, right: 1 },
 	});
-	addTableResultButtons();
+	// addTableResultButtons();
 });
 
 function ResetTransaction() {
@@ -130,7 +130,7 @@ function addTableButtons() {
 						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
 					},
 					{ 	extend: "excel",
-						title: `${ new Date().toLocaleDateString()}`,
+						title: `Inventory Logs${ new Date().toLocaleDateString()}`,
 						footer: false,
 						orientation: 'landscape',
 		   				pageSize: 'LEGAL',
@@ -144,35 +144,35 @@ function addTableButtons() {
 	table.buttons( 0, null ).containers().appendTo( '#filterTopCriteria' );
 }
 
-function addTableResultButtons() {
-	var table = $('#table_result').DataTable();
+// function addTableResultButtons() {
+// 	var table = $('#table_result').DataTable();
  
-	new $.fn.dataTable.Buttons( table, {
-		buttons: [
-				{
-                extend: 'collection',
-                text: 'Export',
-				className: "btn app-btn-secondary",
-				background: false,
-                buttons: [  
-					{ 	extend: "pdf",
-						title: `${ new Date().toLocaleDateString()}`,
-						footer: false,
-						orientation: 'landscape',
-		   				pageSize: 'LEGAL',
-						exportOptions: {
-						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
-					},
-					{ 	extend: "excel",
-						title: `${ new Date().toLocaleDateString()}`,
-						footer: false,
-						orientation: 'landscape',
-		   				pageSize: 'LEGAL',
-						exportOptions: {
-						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
-					}, 
-			] }
-		] } 
-	);
-	table.buttons( 0, null ).containers().appendTo( '#filterTopCriteria' );
-}
+// 	new $.fn.dataTable.Buttons( table, {
+// 		buttons: [
+// 				{
+//                 extend: 'collection',
+//                 text: 'Export',
+// 				className: "btn app-btn-secondary",
+// 				background: false,
+//                 buttons: [  
+// 					{ 	extend: "pdf",
+// 						title: `${ new Date().toLocaleDateString()}`,
+// 						footer: false,
+// 						orientation: 'landscape',
+// 		   				pageSize: 'LEGAL',
+// 						exportOptions: {
+// 						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
+// 					},
+// 					{ 	extend: "excel",
+// 						title: `${ new Date().toLocaleDateString()}`,
+// 						footer: false,
+// 						orientation: 'landscape',
+// 		   				pageSize: 'LEGAL',
+// 						exportOptions: {
+// 						columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] }						 
+// 					}, 
+// 			] }
+// 		] } 
+// 	);
+// 	table.buttons( 0, null ).containers().appendTo( '#filterTopCriteria' );
+// }

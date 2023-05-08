@@ -100,7 +100,7 @@ class class_model
 	{ {
 			try {
 				$db = DB();
-				$sql = "SELECT * FROM `tbl_office`";
+				$sql = "SELECT *, (SELECT `d_name` FROM `tbl_dept` WHERE `tbl_dept`.`id`= `tbl_office`.`dept_id`) as deptname FROM `tbl_office`";
 				$data = $db->prepare($sql);
 				$data->execute();
 				$rows = $data->fetchAll(PDO::FETCH_OBJ);
@@ -112,6 +112,36 @@ class class_model
 			}
 		}
 	}
+
+	public function fetchFilterOffice($id)
+	{ {
+			try {
+				$db = DB();
+				$sql = "SELECT * FROM `tbl_office`  WHERE `tbl_office`.`dept_id`= :id;";
+				$data = $db->prepare($sql);
+				$data->execute(array(
+					':id' => $id
+				));
+				// Fetch the results and create an array of subcategories
+				$subcategories = array();
+				while($row = $data->fetch(PDO::FETCH_ASSOC)) {
+  				$subcategory = array(
+    			'dept_id' => $row['dept_id'],
+    			'o_name' => $row['o_name']
+  					);
+  				array_push($subcategories, $subcategory);
+				}
+
+				// Return the subcategories as a JSON object
+				echo json_encode($subcategories);
+
+			} catch (PDOException $e) {
+				echo $e->getMessage();
+			}
+		}
+	}
+
+
 
 	public function fetchCategory()
 	{ {
@@ -210,7 +240,7 @@ class class_model
 		}
 	}
 
-	public function filterData($dept,$office,$cat,$w_stats,$stat)
+	public function filterData($dept = null, $office = null, $cat=null, $w_stats=null, $stat=null, $y_from=null, $y_to=null)
 	{ {
 			try {
 				$db = DB();
@@ -238,7 +268,9 @@ class class_model
 				if (!empty($stat)) {
 					$sql .= " AND `status` = :stat";
 				}
-
+				if(!empty($y_from) && !empty($y_to)) {
+					$sql .= " AND YEAR(year_issued) BETWEEN :y_from AND :y_to";
+				  }
 
 
 				$data = $db->prepare($sql);
@@ -257,7 +289,10 @@ class class_model
 				if (!empty($stat)) {
 					$data->bindValue(':stat', $stat);
 				}
-				
+				if(!empty($y_from) && !empty($y_to)) {
+					$data->bindValue(':y_from', $y_from);
+					$data->bindValue(':y_to', $y_to);
+				}
 				$data->execute();	
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";

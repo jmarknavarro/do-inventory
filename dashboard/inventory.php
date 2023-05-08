@@ -17,19 +17,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
-        <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
         <link rel="stylesheet" type="text/css"
             href="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.css" />
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
+        <link
+            href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.css"
+            rel="stylesheet" />
+
         <!-- FontAwesome JS-->
         <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
+
 
         <!-- App CSS -->
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
         <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
         <link rel="stylesheet" href="../assets/css/selectize.css">
+        <link rel="stylesheet" href="../assets/css/datepicker.css">
+
 
     </head>
 
@@ -79,8 +83,8 @@
 
                             <li class="nav-item has-submenu">
                                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                                <a class="nav-link submenu-toggle active" href="inventory.php" data-bs-target="#submenu-1"
-                                    aria-expanded="false" aria-controls="submenu-1">
+                                <a class="nav-link submenu-toggle active" href="inventory.php"
+                                    data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -97,7 +101,7 @@
                                 <!--//nav-link-->
                             </li>
                             <!--//nav-item-->
-                            
+
 
 
                         </ul>
@@ -157,7 +161,7 @@
                                                 data-bs-toggle="modal" data-bs-target="#exampleModal"> <i
                                                     class="fa fa-sliders" aria-hidden="true"></i>
                                                 Filter</button>
-                                                <div id="filterTopCriteria"></div>
+                                            <div id="filterTopCriteria"></div>
                                             <a class="btn app-btn-primary" href="new-record.php">
                                                 <i class="fa fa-plus" aria-hidden="true"></i>
                                                 &nbsp New Record
@@ -186,11 +190,11 @@
                                 </div>
                                 <div class="modal-body">
                                     <form action="" method="POST">
-                                    <div class="mb-3">
+                                        <div class="mb-3">
                                             <div class="form-group">
                                                 <label class="col-form-label">Department</label>
                                                 <select class="form-select" id="dept" name="dept">
-                                                    <option value="" selected disabled>Select Department</option>;
+                                                    <option value="" selected>All Department</option>;
                                                     <?php  
                                                   $view = new class_model();
                                                   $view->fetchDept();
@@ -202,11 +206,6 @@
                                             <div class="form-group">
                                                 <label class="col-form-label">Office/Unit</label>
                                                 <select class="form-select" id="office" name="office">
-                                                    <option value="" selected disabled>Select Office/Unit</option>;
-                                                    <?php  
-                                                  $view = new class_model();
-                                                  $view->fetchOffice();
-                                                  ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -214,7 +213,7 @@
                                             <div class="form-group">
                                                 <label class="col-form-label">Category</label>
                                                 <select class="form-select" id="cat" name="cat">
-                                                    <option value="" selected disabled>Select Category</option>;
+                                                    <option value="" selected>Select Category</option>;
                                                     <?php  
                                                   $view = new class_model();
                                                   $view->fetchCategory();
@@ -230,7 +229,7 @@
 
                                                     <div class="col-md-12">
                                                         <select class="form-select" id="w_stats" name="w_stats">
-                                                            <option value="" selected disabled>Select Warranty Status
+                                                            <option value="" selected>Select Warranty Status
                                                             </option>
                                                             <option>UNDER WARRANTY</option>
                                                             <option>OUT OF WARRANTY</option>
@@ -243,13 +242,29 @@
                                             <div class="form-group pt-2 ">
                                                 <label class="col-form-label">Status</label>
                                                 <div class="row">
-                                                <div class="col-md-12">
+                                                    <div class="col-md-12">
                                                         <select class="form-select" id="stat" name="stat">
-                                                            <option value="" selected disabled>Select Status
+                                                            <option value="" selected>Select Status
                                                             </option>
                                                             <option>FUNCTIONAL</option>
                                                             <option>NOT FUNCTIONAL</option>
                                                         </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-group pt-2 ">
+                                                <label class="col-form-label">Year Issued</label>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="input-daterange input-group" id="datepicker">
+                                                            <input type="text" class="input-sm form-control me-2"
+                                                                name="y_from" placeholder="From" />
+                                                            <input type="text" class="input-sm form-control" name="y_to"
+                                                                placeholder="To" />
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -273,7 +288,7 @@
                                 aria-labelledby="orders-all-tab">
                                 <div class="app-card app-card-orders-table mb-5">
                                     <div class="app-card-body p-3">
-                                            <?php
+                                        <?php
                                                 $view = new class_model();
                                                     if (isset($_POST['submit'])) {
                                                         $dept = $_POST['dept'];
@@ -281,7 +296,9 @@
                                                         $cat = $_POST['cat'];
                                                         $w_stats = $_POST['w_stats'];
                                                         $stat = $_POST['stat'];
-                                                        echo $row = $view->filterData($dept,$office,$cat,$w_stats,$stat);
+                                                        $y_from = $_POST['y_from'];
+                                                        $y_to = $_POST['y_to'];
+                                                        echo $row = $view->filterData($dept,$office,$cat,$w_stats,$stat,$y_from,$y_to);
                                                 } else {
                                                     echo $row = $view->fetchAllData();
                                                 }
@@ -308,13 +325,14 @@
         <!-- Javascript -->
         <script src="../assets/plugins/popper.min.js"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="../assets/js/selectize.js"></script>
-        <link href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.css" rel="stylesheet"/>
- 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.js"></script>
+        <script src="../assets/js/datepicker.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+        <script
+            src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.js">
+        </script>
 
 
 
@@ -323,13 +341,39 @@
 
         <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
         <script>
-                        $dept = $('#dept').selectize();
-            $office = $('#office').selectize();
-        $stat = $('#stat').selectize();
-        $cat = $('#cat').selectize();
-        $w_stat = $('#w_stats').selectize();
         $(document).ready(function() {
 
+            // DATE RANGE
+            $('#datepicker').datepicker({
+                format: "yyyy",
+                minViewMode: 2,
+                maxViewMode: 2,
+                clearBtn: true,
+
+            });
+            // DROPDOWN
+            $('#dept').change(function() {
+                var dept_id = $(this).val();
+                console.log(dept_id);
+                $.ajax({
+                    url: "/do-inventory/init/controllers/filter_process.php",
+                    method: "POST",
+                    data: {
+                        id: dept_id
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+
+                        var options = '<option value="" selected>All Office/Unit</option>';
+                        for (var i = 0; i < response.length; i++) {
+                            options += '<option value="' + response[i].o_name + '">' +
+                                response[
+                                    i].o_name + '</option>';
+                        }
+                        $('#office').html(options);
+                    }
+                })
+            });
 
             load_data();
             var count = 1;

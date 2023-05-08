@@ -12,6 +12,7 @@ if (!empty($_POST['submitr'])) {
     $name = $_POST['name'];
     $s_num = $_POST['s_num'];
     $desc = $_POST['desc'];
+    $y_issued = $_POST['year'];
     $w_status = $_POST['w_stat'];
     $status = $_POST['stat'];
     $remarks = $_POST['remarks'];
@@ -28,6 +29,8 @@ if (!empty($_POST['submitr'])) {
         $message = 'Category field is required!';
     } else if (empty($dept)) {
         $message = 'Department field is required!';
+    } else if (empty($y_issued)) {
+        $message = 'Year Issued field is required!';
     } else if (empty($w_status)) {
         $message = 'Warranty Status field is required!';
     } else if (empty($status)) {
@@ -37,7 +40,7 @@ if (!empty($_POST['submitr'])) {
         $s_message = 'Form Submitted';
         $conn = new class_model();
         $submit = $conn->AddRecords($dept,$office,$cat,$name, $s_num, 
-                $desc,$_POST['year'],$w_status,$status,$remarks);
+                $desc,$y_issued,$w_status,$status,$remarks);
                 if(!$submit==TRUE)
                 {        echo '<script> setTimeout(function() {  window.history.go(-0); }, 1000); </script>';
 

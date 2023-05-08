@@ -1,13 +1,8 @@
 <?php
-
-if (isset($_POST['submitr'])) {
-    $w_stat = $_POST['office'];
-    $w_stat = $_POST['cat'];
-    $w_stat = $_POST['w_stat'];
-    $stat = $_POST['stat'];
-    $conn = new class_model();
-    $submit = $conn->filterData($office,$w_stat, $stat);
-}   
-
-
+require_once "../model/class_model.php";;
+if(isset($_POST['id'])){
+    $id = $_POST['id'];
+    $view = new class_model();
+$view->fetchFilterOffice($id);
+ }
 ?>
