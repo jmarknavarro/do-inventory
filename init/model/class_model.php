@@ -269,7 +269,7 @@ class class_model
 					$sql .= " AND `status` = :stat";
 				}
 				if(!empty($y_from) && !empty($y_to)) {
-					$sql .= " AND YEAR(year_issued) BETWEEN :y_from AND :y_to";
+					$sql .= " AND YEAR(year_issued) BETWEEN :y_from AND :y_to ORDER BY year_issued DESC";
 				  }
 
 
