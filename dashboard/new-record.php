@@ -136,7 +136,7 @@
                                                     <label class="col-form-label">Year Issued</label>
                                                     
                                                     <select class="form-select" id="year" name="year">
-                                                    <option value="" selected disabled></option>;
+                                                    <option value="0000" selected disabled>Select Year</option>;
                                                         <?php  
                                                   $view = new class_model();
                                                   $view->years();

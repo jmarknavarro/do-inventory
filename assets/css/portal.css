@@ -12815,9 +12815,7 @@ button.close:focus {
     display: none !important
 }
 
-.app-header {
-    border-bottom: 1px solid #e7e9ed;
-}
+
 
 .app-header-inner {
     position: relative
@@ -13072,7 +13070,7 @@ button.close:focus {
     left: 0;
     top: 0;
     font-size: .875rem;
-    border-right: 1px solid #e7e9ed
+    border-right: 1px solid #e7e9ed;
 }
 .app-sidepanel .nav-small-cap {
     font-size: 12px;
@@ -13097,7 +13095,7 @@ button.close:focus {
     z-index: 10;
     background: red;
     box-shadow: rgba(0, 0, 0, .05) 0px 8px 15px;
-    width: 250px;
+    width: 90px;
     height: 100%;
     background-color: #fff;
 }
@@ -13140,12 +13138,12 @@ button.close:focus {
     height: 60px;
     padding-top: 1rem;
     padding-left: 1rem;
-    margin-bottom: 1rem
+    margin-bottom: 2.5rem
 }
 
 .app-branding .logo-icon {
-    width: 220px;
-    height: 36px;
+    width: 60px;
+    height: 60px;
     margin-top: 10px;
     margin-bottom: 30px;    
 }
@@ -13160,7 +13158,6 @@ button.close:focus {
 .app-nav {
     color: #5d6778;
     display: block;
-    padding: 15px;
     width: 100%;
 
 }
@@ -13172,31 +13169,27 @@ button.close:focus {
 .app-nav .nav-item {
     display: block;
     color: #5d6778;
+    
 }
 
 .app-nav .nav-link {
     display: block;
-    padding: .875rem 1rem;
+    padding-bottom: 2.875rem;
+    margin: 1.25rem 0rem;
     color: #151515;
     font-size: 13px;
     position: relative;
     display: block;
-    padding-left: 3rem;
-    margin-bottom: 8px;
-    border-left: 3px solid rgba(0, 0, 0, 0)
 }
 
 .app-nav .nav-link.active {
     color: #fff;
-    background-color: #dd2a3b;
-    border-left: 3px solid #dd2a3b;
+    background-color: transparent;
     font-weight: 700;
-    border-radius: 0.375rem;
 }
 
 .app-nav .nav-link.active:hover {
     color: #fff;
-    background-color: #dd2a3b;
 }
 
 .app-nav .nav-link.submenu-toggle.active {
@@ -13205,20 +13198,23 @@ button.close:focus {
 
 .app-nav .nav-link:hover {
     color: #000;
-    background-color: #f8f9fa;
     border-radius: 0.375rem;
 
 }
 
 .app-nav .nav-icon {
     position: absolute;
-    left: 1rem;
-    top: .7rem
+    top: 0.2rem;
+    left: 1.5rem;
 }
 
 .app-nav .nav-icon .bi {
-    width: 1.25rem;
-    height: 1.25rem
+    width: 2.25rem;
+    height: 2.25rem;
+    color: #dd2a3b;
+}
+.app-nav .nav-link .bi:hover {
+    color: #fff;
 }
 
 .app-nav .submenu-arrow {
@@ -13299,6 +13295,14 @@ button.close:focus {
 
 }
 
+.sidepanel-toggler{
+    padding: 0.35rem;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #ffffff;
+}
+
 .app-sidepanel-footer .app-nav-footer {
     margin-bottom: 0
 }
@@ -13344,7 +13348,7 @@ button.close:focus {
 
 @media(min-width: 1200px) {
     .app-wrapper {
-        margin-left: 250px
+        margin-left: 100px
     }
 }
 
