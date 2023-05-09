@@ -18,7 +18,6 @@
                     </div>
                 </div>
             </div>
-            
             <!--//app-header-inner-->
             <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
                 <div id="sidepanel-drop" class="sidepanel-drop"></div>

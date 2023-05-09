@@ -17,6 +17,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="16x16" href="/do-inventory/assets/images/favicon.ico">
         <link rel="stylesheet" type="text/css"
             href="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.css" />
         <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
@@ -26,8 +27,8 @@
 
         <!-- FontAwesome JS-->
         <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
-
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        
         <!-- App CSS -->
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
         <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">

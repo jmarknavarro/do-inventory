@@ -31,6 +31,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="16x16" href="/do-inventory/assets/images/favicon.ico">
         <link rel="stylesheet" type="text/css"
             href="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.css" />
         <!-- FontAwesome JS-->
@@ -189,7 +190,7 @@
                                                 <input type="button" name="reset" class="btn btn-outline-danger"
                                                     value="Clear" onclick="ResetTransaction()" />
                                                 <a class="btn btn-outline-secondary mx-1"
-                                                    href="inventory.php">Cancel</a>
+                                                    href="../dashboard">Cancel</a>
                                                 <input type="submit" name="submitr" class="btn app-btn-primary"></input>
                                             </div>
 
