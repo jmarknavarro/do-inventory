@@ -17,33 +17,32 @@
             </div>
         </div>
     </div>
-    <!--//app-header-inner-->
     <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
         <div id="sidepanel-drop" class="sidepanel-drop"></div>
         <div class="sidepanel-inner d-flex flex-column">
             <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
             <div class="app-branding">
+
                 <a class="app-logo" href="../dashboard"><img class="logo-icon" src="../assets/images/logo.png"
                         alt="logo"></a>
+                        
             </div>
-            <!--//app-branding-->
             <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
                 <ul class="app-menu list-unstyled align-items-center justify-content-center" id="menu-accordion">
                     <li class="nav-item">
+
+
                         <a class="nav-link submenu-toggle active" href="../dashboard" aria-expanded="false"
                             aria-controls="submenu-1">
                             <span class="nav-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-house" viewBox="0 0 16 16">
+                                    class="bi-active bi bi-house" viewBox="0 0 16 16">
                                     <path
                                         d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                                 </svg>
                             </span>
-
-                            <!--//submenu-arrow-->
                         </a>
 
-                        <!--//nav-link-->
                         <a class="nav-link" href="archive" aria-expanded="false" aria-controls="submenu-1">
                             <span class="nav-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -53,19 +52,15 @@
                                 </svg>
                             </span>
                         </a>
-                        <!--//nav-link-->
 
                     </li>
-                    <!--//nav-item-->
                 </ul>
-                <!--//app-menu-->
             </nav>
-            <!--//app-nav-->
             <div class="app-sidepanel-footer">
                 <nav class="app-nav app-nav-footer">
                     <ul class="app-menu footer-menu list-unstyled">
                         <li class="nav-item">
-                            <!--//nav-link-->
+
                             <a class="nav-link" href="logout" aria-expanded="false" aria-controls="submenu-1">
                                 <span class="nav-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -77,16 +72,11 @@
                                     </svg>
                                 </span>
                             </a>
-                            <!--//nav-link-->
+
                         </li>
-                        <!--//nav-item-->
                     </ul>
-                    <!--//footer-menu-->
                 </nav>
             </div>
-            <!--//app-sidepanel-footer-->
         </div>
-        <!--//sidepanel-inner-->
     </div>
-    <!--//app-sidepanel-->
 </header>
