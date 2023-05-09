@@ -1,3 +1,11 @@
+<?php
+session_start();
+session_destroy(); 
+session_unset();
+
+unset($_SESSION['user']);
+?>
+
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
@@ -88,7 +96,7 @@
                     success: function(response) {
                         if (response == 1) {
                             // alert("Logged In");
-                            window.location = "./dashboard/inventory.php";
+                            window.location = "./dashboard/";
                           } else {
                             // alert("Wrong Details");
                             $('#message').html(

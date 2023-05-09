@@ -25,7 +25,7 @@ class class_model
 	}
 
 
-	public function AddRecords($dept, $office, $cat, $name, $s_num, $desc, $year, $w_stat, $stat, $remarks)
+	public function AddRecords($dept, $office, $cat, $name, $s_num, $desc, $year = null, $w_stat, $stat, $remarks)
 	{
 		try {
 			$db = DB();
@@ -182,7 +182,7 @@ class class_model
 	{ {
 			try {
 				$db = DB();
-				$sql = "SELECT * FROM `tbl_product`";
+				$sql = "SELECT * FROM `tbl_product` ORDER BY id ASC";
 				$data = $db->prepare($sql);
 				$data->execute();
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
@@ -213,12 +213,18 @@ class class_model
 					echo "<td>$row[user_name]</td>";
 					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
-					echo "<td>$row[year_issued]</td>";
+
+					if($row['year_issued'] == '0000' || $row['year_issued'] == ''){
+						echo "<td>N/A</td>";
+					} else {
+						echo "<td>$row[year_issued]</td>";
+					  };
+
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
 					echo "<td>$row[remarks]</td>";
 					echo "<td>
-					<a class='btn text-center btn-sm' href='edit-record.php?id=$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+					<a class='btn text-center btn-sm' href='edit-record?id=$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
 					<path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
 					<path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
 				  </svg></a>
@@ -244,27 +250,21 @@ class class_model
 	{ {
 			try {
 				$db = DB();
-				// $sql = "SELECT * FROM `tbl_product` WHERE `office_id` LIKE '$office' OR `category_id` LIKE '$cat' OR `warranty_status` LIKE '$w_stats' OR `status` LIKE '$stat'";
 
 				$sql = "SELECT * FROM `tbl_product` WHERE 1=1";
 
 				if (!empty($dept)) {
 					$sql .= " AND `dept_id` LIKE :dept";
 				}
-				// Add the name filter to the SQL query
 				if (!empty($office)) {
 					$sql .= " AND `office_id` LIKE :office";
 				}
-
-				// Add the category filter to the SQL query
 				if (!empty($cat)) {
 					$sql .= " AND `category_id` LIKE :cat";
 				}
-
 				if (!empty($w_stats)) {
 					$sql .= " AND `warranty_status` = :w_stats";
 				}
-
 				if (!empty($stat)) {
 					$sql .= " AND `status` = :stat";
 				}
@@ -297,7 +297,7 @@ class class_model
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
 				echo "<h6>All Devices</h6>";
-				echo "<table id='table_result' class='table app-table-hover mb-0 text-left'>";
+				echo "<table id='result_table' class='table app-table-hover mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
@@ -327,7 +327,7 @@ class class_model
 					echo "<td>$row[status]</td>";
 					echo "<td>$row[remarks]</td>";
 					echo "<td>
-					<a class='btn text-center btn-sm' href='edit-record.php?id=$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
+					<a class='btn text-center btn-sm' href='edit-record?id=$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
 					<path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
 					<path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
 				  </svg></a>

@@ -1,0 +1,24 @@
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^\.]+)$ $1.php [NC,L]
+# DirectoryIndex index.php
+
+
+# RewriteEngine On
+# RewriteBase /
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^([^\.]+)$ $1.php [NC,L]
+# # RewriteRule ^(.*)\?*$ index.php/$1 [L,QSA]
+
+Options +FollowSymLinks -MultiViews
+# Turn mod_rewrite on
+RewriteEngine On
+RewriteBase /
+
+## hide .php extension
+# To externally redirect /dir/foo.php to /dir/foo
+
+## To internally redirect /dir/foo to /dir/foo.php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]

@@ -14066,3 +14066,9 @@ button.close:focus {
 button.dt-button,div.dt-button,a.dt-button,input.dt-button {
     background: #fff;
 }
+
+span.select2-dropdown.select2-dropdown--below {
+    top: 30px !important;    
+    width:100vw !important;
+    transform:translate(-100px,0) !important;
+}

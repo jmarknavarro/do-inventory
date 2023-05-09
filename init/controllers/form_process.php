@@ -29,9 +29,11 @@ if (!empty($_POST['submitr'])) {
         $message = 'Category field is required!';
     } else if (empty($dept)) {
         $message = 'Department field is required!';
-    } else if (empty($y_issued)) {
-        $message = 'Year Issued field is required!';
-    } else if (empty($w_status)) {
+    } 
+    // else if (empty($y_issued)) {
+    //     $message = 'Year Issued field is required!';
+    // } 
+    else if (empty($w_status)) {
         $message = 'Warranty Status field is required!';
     } else if (empty($status)) {
         $message = 'Status field is required!';
