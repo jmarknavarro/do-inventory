@@ -76,6 +76,12 @@ $(document).ready(function () {
     pageLength: 15,
     columnDefs: [{ "max-width": "10%", targets: 9 }],
     fixedColumns: { left: 0, right: 1 },
+    language: {
+    paginate: {
+        next: '&#8594;', // or '→'
+        previous: '&#8592;' // or '←' 
+      }
+    }
   });
 
   new $.fn.dataTable.Buttons(table, {
@@ -123,6 +129,12 @@ $(document).ready(function () {
     pageLength: 15,
     columnDefs: [{ "max-width": "10%", targets: 9 }],
     fixedColumns: { left: 0, right: 1 },
+    language: {
+      paginate: {
+          next: '&#8594;', // or '→'
+          previous: '&#8592;' // or '←' 
+        }
+      }
   });
 
   new $.fn.dataTable.Buttons(table, {

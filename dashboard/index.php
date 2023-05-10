@@ -265,7 +265,7 @@
                             title: 'Are you sure?',
                             confirmButtonText: 'Confirm',
                             cancelButtonText: "Cancel",
-                            text: 'Do you really want to delete these record? This process cannot be undone.',
+                            text: 'Do you really want to archive these record?',
                             showCancelButton: true,
                             reverseButtons: true
 
