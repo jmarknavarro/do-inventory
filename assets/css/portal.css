@@ -5130,7 +5130,7 @@ fieldset:disabled .btn {
     --bs-pagination-hover-color: #440000;
     --bs-pagination-hover-bg: #e9ecef;
     --bs-pagination-hover-border-color: #dee2e6;
-    --bs-pagination-focus-color: var(--bs-link-hover-color);
+    --bs-pagination-focus-color:#000;
     --bs-pagination-focus-bg: #e9ecef;
     --bs-pagination-focus-box-shadow: #f0f0f000;
     --bs-pagination-active-color: #fff;
