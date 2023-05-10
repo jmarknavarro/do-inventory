@@ -1,5 +1,13 @@
 "use strict";
 
+window.addEventListener("load", function() {
+  var preloader = document.getElementById("preloader");
+  preloader.classList.add('fade-out');
+  setTimeout(function() {
+      preloader.style.display = 'none';
+  }, 300);
+});
+
 /* ===== Enable Bootstrap Popover (on element  ====== */
 
 var popoverTriggerList = [].slice.call(

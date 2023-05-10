@@ -14103,3 +14103,44 @@ button.dt-button,div.dt-button,a.dt-button,input.dt-button {
     margin-top: 0.2rem;
     margin-right: 5px;
 }
+
+
+.swal2-styled.swal2-confirm {
+    background-color: #dd2a3b !important;
+    border: 1px solid #dd2a3b !important;
+}
+
+.swal2-styled.swal2-confirm:focus {
+    box-shadow: 0 0 0 3px transparent !important;
+  }
+.swal2-styled.swal2-cancel {
+    background: #fff !important;
+    color: #5d6778 !important;
+    border: 1px solid #bcc1cb !important;
+}
+
+#preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    background-color: #fff;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+}
+
+#status {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 53%;
+    top: 50%;
+    margin: -100px 0 0 -100px;
+}

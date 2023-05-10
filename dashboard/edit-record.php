@@ -45,6 +45,11 @@
     </head>
 
     <body class="app">
+    <div id="preloader">
+            <div id="status">
+                <img src="../assets/images/loader.gif" alt="Loading..." />
+            </div>
+        </div>
          <!-- Header -->
        <?php include './header/main_header.php';?>
         <!-- Header -->

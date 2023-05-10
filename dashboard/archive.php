@@ -36,6 +36,11 @@
     </head>
 
     <body class="app">
+    <div id="preloader">
+            <div id="status">
+                <img src="../assets/images/loader.gif" alt="Loading..." />
+            </div>
+        </div>
        <!-- Header -->
        <header class="app-header fixed-top">
     <div class="app-header-inner">
