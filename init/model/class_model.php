@@ -188,7 +188,7 @@ class class_model
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
 				echo "<h6>All Devices</h6>";
-				echo "<table id='table' class='table table-hover table-striped mb-0 text-left'>";
+				echo "<table id='table' style='width:100%' class='table table-hover table-striped mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
@@ -296,7 +296,7 @@ class class_model
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
 				echo "<h6>All Devices</h6>";
-				echo "<table id='result_table' class='table table-hover table-striped mb-0 text-left'>";
+				echo "<table id='result_table' style='width:100%' class='table table-hover table-striped mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
