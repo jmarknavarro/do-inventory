@@ -213,13 +213,7 @@ class class_model
 					echo "<td>$row[user_name]</td>";
 					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
-
-					if($row['year_issued'] == '0000' || $row['year_issued'] == ''){
-						echo "<td>N/A</td>";
-					} else {
-						echo "<td>$row[year_issued]</td>";
-					  };
-
+					if($row['year_issued'] == '0000' || $row['year_issued'] == ''){echo "<td>N/A</td>";} else {echo "<td>$row[year_issued]</td>";};
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
 					echo "<td>$row[remarks]</td>";
@@ -295,7 +289,9 @@ class class_model
 				$data->execute();	
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
-				echo "<h6>All Devices</h6>";
+				echo "<h6>Filtered By</h6>";
+				echo "<span class='badge app-filter-badge rounded-pill'>$dept</span><span class='badge app-filter-badge rounded-pill'>$office</span><span class='badge app-filter-badge rounded-pill'>$cat</span><span class='badge app-filter-badge rounded-pill'>$w_stats</span><span class='badge app-filter-badge rounded-pill'>$stat</span>";
+				if($y_from == ''){} else { echo "<span class='badge app-filter-badge rounded-pill'>$y_from - $y_to</span>";}
 				echo "<table id='result_table' style='width:100%' class='table table-hover table-striped mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
@@ -321,7 +317,7 @@ class class_model
 					echo "<td>$row[user_name]</td>";
 					echo "<td>$row[serial_no]</td>";
 					echo "<td>$row[product_name]</td>";
-					echo "<td>$row[year_issued]</td>";
+					if($row['year_issued'] == '0000' || $row['year_issued'] == ''){echo "<td>N/A</td>";} else {echo "<td>$row[year_issued]</td>";};
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
 					echo "<td>$row[remarks]</td>";

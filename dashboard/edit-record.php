@@ -104,6 +104,10 @@
                                                     <label class="col-form-label">Office/Unit</label>
                                                     <select class="form-select" id="office" name="office" value="<?php echo $office ?>">
                                                     <option value="<?= $office; ?>" hidden><?= $office; ?></option>
+                                                    <?php  
+                                                  $view = new class_model();
+                                                  $view->fetchOffice();
+                                                  ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -241,7 +245,6 @@
 
         <script>
         $(document).ready(function() {
-            FilterDept2();
 
             load_data();
             var count = 1;
