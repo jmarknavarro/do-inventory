@@ -350,9 +350,7 @@ caption {
 
 th {
     text-align: inherit;
-    padding-top: .75rem !important;
-    padding-bottom: .75rem !important;
-    text-align: -webkit-]-parent;
+    text-align: -webkit-parent;
     text-transform: uppercase;
 
 }
