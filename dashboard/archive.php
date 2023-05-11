@@ -10,8 +10,9 @@
     <!DOCTYPE html>
     <html lang="en">
 
+
     <head>
-        <title>Dashboard</title>
+        <title>Archive Records</title>
 
         <!-- Meta -->
         <meta charset="utf-8">
@@ -25,103 +26,102 @@
             href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.css"
             rel="stylesheet" />
 
-        <!-- FontAwesome JS-->
-        <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-        
-        <!-- App CSS -->
+        <link rel="stylesheet" href="https://use.typekit.net/xit8hti.css">
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
         <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
         <link rel="stylesheet" href="../assets/css/bootstrap-datepicker.css">
     </head>
 
     <body class="app">
-    <div id="preloader">
+        <div id="preloader">
             <div id="status">
                 <img src="../assets/images/loader.gif" alt="Loading..." />
             </div>
         </div>
-       <!-- Header -->
-       <header class="app-header fixed-top">
-    <div class="app-header-inner">
-        <div class="container-fluid py-2">
-            <div class="app-header-content">
-                <div class="row">
+        <!-- Header -->
+        <header class="app-header fixed-top">
+            <div class="app-header-inner">
+                <div class="container-fluid py-2">
+                    <div class="app-header-content">
+                        <div class="row">
 
-                    <div class="col-auto">
-                        <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-chevron-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                        </a>
+                            <div class="col-auto">
+                                <a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
-        <div id="sidepanel-drop" class="sidepanel-drop"></div>
-        <div class="sidepanel-inner d-flex flex-column">
-            <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
-            <div class="app-branding">
-                <a class="app-logo" href="../dashboard"><img class="logo-icon" src="../assets/images/logo.png"
-                        alt="logo"></a>    
+            <div id="app-sidepanel" class="app-sidepanel sidepanel-hidden">
+                <div id="sidepanel-drop" class="sidepanel-drop"></div>
+                <div class="sidepanel-inner d-flex flex-column">
+                    <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+                    <div class="app-branding">
+                        <a class="app-logo" href="../dashboard"><img class="logo-icon" src="../assets/images/logo.png"
+                                alt="logo"></a>
+                    </div>
+                    <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+                        <ul class="app-menu list-unstyled align-items-center justify-content-center"
+                            id="menu-accordion">
+                            <li class="nav-item">
+
+
+                                <a class="nav-link" href="../dashboard" title="Dashboard" aria-expanded="false"
+                                    aria-controls="submenu-1">
+                                    <span class="nav-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                                        </svg>
+                                    </span>
+                                </a>
+
+                                <a class="nav-link submenu-toggle active" title="Archive Records" href="archive"
+                                    aria-expanded="false" aria-controls="submenu-1">
+                                    <span class="nav-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi-active bi bi-archive" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                                        </svg>
+                                    </span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="app-sidepanel-footer">
+                        <nav class="app-nav app-nav-footer">
+                            <ul class="app-menu footer-menu list-unstyled">
+                                <li class="nav-item">
+
+                                    <a class="nav-link" title="Logout" href="logout" aria-expanded="false" aria-controls="submenu-1">
+                                        <span class="nav-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
+                                                <path fill-rule="evenodd"
+                                                    d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+                                            </svg>
+                                        </span>
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
-                <ul class="app-menu list-unstyled align-items-center justify-content-center" id="menu-accordion">
-                    <li class="nav-item">
-
-
-                        <a class="nav-link" href="../dashboard" aria-expanded="false"
-                            aria-controls="submenu-1">
-                            <span class="nav-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-house" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
-                                </svg>
-                            </span>
-                        </a>
-
-                        <a class="nav-link submenu-toggle active" href="archive" aria-expanded="false" aria-controls="submenu-1">
-                            <span class="nav-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi-active bi bi-archive" viewBox="0 0 16 16">
-                                    <path
-                                        d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
-                                </svg>
-                            </span>
-                        </a>
-
-                    </li>
-                </ul>
-            </nav>
-            <div class="app-sidepanel-footer">
-                <nav class="app-nav app-nav-footer">
-                    <ul class="app-menu footer-menu list-unstyled">
-                        <li class="nav-item">
-
-                            <a class="nav-link" href="logout" aria-expanded="false" aria-controls="submenu-1">
-                                <span class="nav-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
-                                        <path fill-rule="evenodd"
-                                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-                                    </svg>
-                                </span>
-                            </a>
-
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
+        </header>
 
         <div class="app-wrapper">
 
@@ -139,28 +139,16 @@
                                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
                                     <div class="col-auto">
                                         <div class="form-group">
-                                            <!-- <button type="button" class="btn btn app-btn-secondary me-1"
-                                                data-bs-toggle="modal" data-bs-target="#filterModal"> <i
-                                                    class="fa fa-sliders" aria-hidden="true"></i>
-                                                Filter</button>
-                                            <div id="filterTopCriteria"></div>
-                                            <a class="btn app-btn-primary" href="new-record">
-                                                <i class="fa fa-plus" aria-hidden="true"></i>
-                                                &nbsp New Record
-                                            </a> -->
                                         </div>
                                     </div>
                                 </div>
-                                <!--//row-->
+                                =
                             </div>
-                            <!--//table-utilities-->
                         </div>
-                        <!--//col-auto-->
                     </div>
-                    <!--//row-->
 
                     <div id="message"></div>
-                   
+
                     <div class="all-1" id="orders-table-tab-content">
                         <div class="tab-content" style="width:100%">
                             <div class="tab-pane fade show active" name="orders-all" id="orders-all" role="tabpanel"
@@ -176,17 +164,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end of line -->
                 </div>
-
-                <!--//container-fluid-->
             </div>
-            <!--//app-content-->
-
-
-
         </div>
-        <!--//app-wrapper-->
 
 
         <!-- Javascript -->
@@ -199,16 +179,11 @@
         <script
             src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.js">
         </script>
-
-
-
-        <!-- Page Specific JS -->
         <script src="../assets/js/app.js"></script>
-
         <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
         <script>
         $(document).ready(function() {
-           
+
             load_data();
             var count = 1;
 

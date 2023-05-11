@@ -102,7 +102,7 @@ $(document).ready(function () {
         buttons: [
           {
             extend: "pdf",
-            title: `Inventory Logs ${new Date()
+            title: `Inventory Records of ICT Equipment ${new Date()
               .toLocaleDateString()
               .replace(/\//g, "-")}`,
             footer: false,
@@ -114,7 +114,7 @@ $(document).ready(function () {
           },
           {
             extend: "excel",
-            title: `Inventory Logs${new Date().toLocaleDateString()}`,
+            title: `Inventory Records of ICT Equipment ${new Date().toLocaleDateString()}`,
             footer: false,
             orientation: "landscape",
             pageSize: "LEGAL",
@@ -155,7 +155,7 @@ $(document).ready(function () {
         buttons: [
           {
             extend: "pdf",
-            title: `Inventory Logs ${new Date()
+            title: `Inventory Records of ICT Equipment ${new Date()
               .toLocaleDateString()
               .replace(/\//g, "-")}`,
             footer: false,
@@ -167,7 +167,7 @@ $(document).ready(function () {
           },
           {
             extend: "excel",
-            title: `Inventory Logs${new Date().toLocaleDateString()}`,
+            title: `Inventory Records of ICT Equipment ${new Date().toLocaleDateString()}`,
             footer: false,
             orientation: "landscape",
             pageSize: "LEGAL",

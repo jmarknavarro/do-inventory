@@ -25,11 +25,7 @@
             href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.css"
             rel="stylesheet" />
 
-        <!-- FontAwesome JS-->
-        <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-        <!-- App CSS -->
         <link rel="stylesheet" href="https://use.typekit.net/xit8hti.css">
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
         <link rel="stylesheet" href="../assets/vendor/sweetalert2/dist/sweetalert2.css">
@@ -78,7 +74,7 @@
                             <li class="nav-item">
 
 
-                                <a class="nav-link submenu-toggle active" href="../dashboard" aria-expanded="false"
+                                <a class="nav-link submenu-toggle active" title="Dashboard" href="../dashboard" aria-expanded="false"
                                     aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -89,7 +85,7 @@
                                     </span>
                                 </a>
 
-                                <a class="nav-link" href="archive" aria-expanded="false" aria-controls="submenu-1">
+                                <a class="nav-link" title="Archive Records" href="archive" aria-expanded="false" aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16">
@@ -107,7 +103,7 @@
                             <ul class="app-menu footer-menu list-unstyled">
                                 <li class="nav-item">
 
-                                    <a class="nav-link" href="logout" aria-expanded="false" aria-controls="submenu-1">
+                                    <a class="nav-link" title="Logout" href="logout" aria-expanded="false" aria-controls="submenu-1">
                                         <span class="nav-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                 fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -126,7 +122,6 @@
                 </div>
             </div>
         </header>
-
 
         <div class="app-wrapper">
 
@@ -156,13 +151,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--//row-->
                             </div>
-                            <!--//table-utilities-->
                         </div>
-                        <!--//col-auto-->
                     </div>
-                    <!--//row-->
 
                     <div id="message"></div>
                     <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel"
@@ -296,33 +287,24 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end of line -->
                 </div>
-
-                <!--//container-fluid-->
             </div>
-            <!--//app-content-->
-
-
 
         </div>
-        <!--//app-wrapper-->
 
 
         <!-- Javascript -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="../assets/plugins/popper.min.js"></script>
         <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="../assets/js/bootstrap-datepicker.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+        <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
         <script
             src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.4/b-2.3.6/b-html5-2.3.6/b-print-2.3.6/cr-1.6.2/fc-4.2.2/r-2.4.1/sc-2.1.1/sb-1.4.2/sp-2.1.2/sl-1.6.2/datatables.min.js">
         </script>
-
-        <!-- Page Specific JS -->
         <script src="../assets/js/app.js"></script>
-
         <script src="../assets/vendor/sweetalert2/dist/sweetalert2.min.js"></script>
         <script>
         $(document).ready(function() {
@@ -359,8 +341,8 @@
                             if (result.isConfirmed) {
                                 Swal.fire({
                                     icon: 'success',
-                                    title: 'Deleted',
-                                    text: 'Record has been removed.',
+                                    title: 'Archived',
+                                    text: 'Record has been archived.',
                                     showCancelButton: false,
                                     showConfirmButton: false,
                                     timer: 1500

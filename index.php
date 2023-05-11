@@ -1,10 +1,11 @@
 <?php
 session_start();
-session_destroy(); 
-session_unset();
-
-unset($_SESSION['user']);
+if (isset($_SESSION['user'])) {
+    header("Location: ./dashboard");
+    exit;
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en"> 
