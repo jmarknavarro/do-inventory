@@ -159,7 +159,7 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Department</label>
+                                                    <label class="col-form-label">Department <span class="r_title">*</span></label>
                                                     <select class="form-select" id="dept" name="dept">
                                                         <option value="" selected disabled>Select Department</option>;
                                                         <?php  
@@ -173,7 +173,7 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Office/Unit</label>
+                                                    <label class="col-form-label">Office/Unit <span class="r_title">*</span></label>
                                                     <select class="form-select" id="office" name="office">
                                                         <option value="" selected disabled>Select Department</option>;
                                                         <?php  
@@ -186,7 +186,7 @@
 
                                             <div class="col-md-4 mb-2">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Category</label>
+                                                    <label class="col-form-label">Category <span class="r_title">*</span></label>
                                                     <select class="form-select" id="cat" name="cat">
                                                         <option value="" selected disabled>Select Category</option>;
                                                         <?php  
@@ -200,7 +200,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
-                                                    <label class="col-form-label">Name</label>
+                                                    <label class="col-form-label">Name <span class="r_title">*</span></label>
                                                     <input type="text" id="name" name="name" class="form-control"
                                                         value="<?php echo isset($name) ? $name : ''; ?>">
                                                 </div>
@@ -208,14 +208,14 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
-                                                    <label class="col-form-label">Serial No.</label>
+                                                    <label class="col-form-label">Serial No.<span class="r_title">*</span></label>
                                                     <input type="text" id="s_num" name="s_num" class="form-control"
                                                         value="<?php echo isset($s_num) ? $s_num : ''; ?>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2">
-                                                    <label class="col-form-label">Device Description</label>
+                                                    <label class="col-form-label">Device Description <span class="r_title">*</span></label>
                                                     <input type="text" id="desc" name="desc" class="form-control"
                                                         value="<?php echo isset($desc) ? $desc : ''; ?>">
                                                 </div>
@@ -236,7 +236,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2 ">
-                                                    <label class="col-form-label">Warranty Status</label>
+                                                    <label class="col-form-label">Warranty Status <span class="r_title">*</span></label>
                                                     <select class="form-select" id="w_stat" name="w_stat">
                                                         <option value="" selected disabled>Select Warranty Status
                                                         </option>
@@ -247,7 +247,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group pt-2 ">
-                                                    <label class="col-form-label">Status</label>
+                                                    <label class="col-form-label">Status <span class="r_title">*</span></label>
                                                     <select class="form-select" id="stat" name="stat">
                                                         <option value="" selected disabled>Select Status</option>;
                                                         <option>FUNCTIONAL</option>

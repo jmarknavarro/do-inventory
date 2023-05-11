@@ -3274,7 +3274,7 @@ textarea.form-control.is-invalid {
 .btn {
     --bs-btn-padding-x: 0.75rem;
     --bs-btn-padding-y: 0.375rem;
-    --bs-btn-font-family: "Montserrat";
+    --bs-btn-font-family: "Poppins";
     --bs-btn-font-size: 1rem;
     --bs-btn-font-weight: 400;
     --bs-btn-line-height: 1.5;
@@ -14171,4 +14171,9 @@ table.dataTable.table-striped>tbody>tr.odd>* {
     left: 53%;
     top: 50%;
     margin: -100px 0 0 -100px;
+}
+
+.r_title {
+    color: #dd2a3b;
+    font-weight: bold;
 }
