@@ -350,7 +350,11 @@ caption {
 
 th {
     text-align: inherit;
-    text-align: -webkit-match-parent
+    padding-top: .75rem !important;
+    padding-bottom: .75rem !important;
+    text-align: -webkit-]-parent;
+    text-transform: uppercase;
+
 }
 
 thead,
@@ -14094,6 +14098,7 @@ button.dt-button,div.dt-button,a.dt-button,input.dt-button {
 #result_table {
     width: 1800px;
 }
+
 
 /* FILTER BADGE */
 .app-filter-badge{
