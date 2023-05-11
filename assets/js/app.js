@@ -135,7 +135,7 @@ $(document).ready(function () {
     lengthChange: false,
     scrollX: true,
     pageLength: 15,
-    columnDefs: [{ "max-width": "10%", targets: 9 }],
+    columnDefs: [{ "max-width": "450", targets: 1 }],
     fixedColumns: { left: 0, right: 1 },
     language: {
       paginate: {

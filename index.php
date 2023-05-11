@@ -73,15 +73,9 @@ if (isset($_SESSION['user'])) {
 
     <script>
         $('form[name="login_form"]').on('submit', function(e) {
-
             e.preventDefault();
-
             var a = $('#username').val();
-            console.log(a);
-
             var b = $('#password').val();
-            console.log(b);
-
             if (a === '' || b === '') { // VERIFY DATA
                 $('#message').html('<div class="alert alert-danger"> Required All Fields</div>');
             } else {
@@ -94,10 +88,8 @@ if (isset($_SESSION['user'])) {
                     },
                     success: function(response) {
                         if (response == 1) {
-                            // alert("Logged In");
                             window.location = "./dashboard/";
                           } else {
-                            // alert("Wrong Details");
                             $('#message').html(
                                 '<div class="alert alert-danger">Wrong Details</div>');
                         }

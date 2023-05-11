@@ -84,18 +84,18 @@
                             <li class="nav-item">
 
 
-                                <a class="nav-link" href="../dashboard" title="Dashboard" aria-expanded="false"
+                                <a class="nav-link submenu-toggle active" title="Dashboard" href="../dashboard" aria-expanded="false"
                                     aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                            fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                            fill="currentColor" class="bi-active bi bi-house" viewBox="0 0 16 16">
                                             <path
                                                 d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
                                         </svg>
                                     </span>
                                 </a>
 
-                                <a class="nav-link" href="archive" title="Archive Records" aria-expanded="false" aria-controls="submenu-1">
+                                <a class="nav-link" title="Archive Records" href="archive" aria-expanded="false" aria-controls="submenu-1">
                                     <span class="nav-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                             fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16">
@@ -136,7 +136,7 @@
 
         <div class="app-wrapper">
 
-            <div class="app-content pt-3 p-md-3 p-lg-4">
+            <div class="app-content pt-3 p-md-3 p-lg-5">
                 <div class="container-xl">
 
                     <h1 class="app-page-title">Edit Record</h1>
@@ -307,15 +307,16 @@
         <script type="text/javascript"
             src="https://cdn.datatables.net/v/bs4/dt-1.12.1/r-2.3.0/sc-2.0.7/sp-2.0.2/datatables.min.js"></script>
         </script>
+        <script src="../assets/js/selectize.js"></script>
 
-        <!-- <script>
+        <script>
         var $dept = $('#dept').selectize();
         var $office = $('#office').selectize();
         var $cat = $('#cat').selectize();
         var $year_i = $('#year_i').selectize();
         var $w_stat = $('#w_stat').selectize();
         var $stat = $('#stat').selectize();
-        </script> -->
+        </script>
 
         <script>
         if (window.history.replaceState) {

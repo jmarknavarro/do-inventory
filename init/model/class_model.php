@@ -206,8 +206,7 @@ class class_model
 				$data->execute();
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
-				echo "<h6>All Devices</h6>";
-				echo "<table id='table' style='width:100%' class='table table-hover table-striped mb-0 text-left'>";
+				echo "<table id='table' style='width:100%' class='table table-hover table-striped'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
@@ -227,7 +226,14 @@ class class_model
 
 					echo "<tr>";
 					echo "<td>$row[dept_id]</td>";
-					echo "<td>$row[office_id]</td>";
+					if($row['office_id'] == 'Learning Resources Management and Development System (LRMDS)'){
+					echo "<td>Learning Resources Management <br> and Development System (LRMDS)</td>";}	
+					else if($row['office_id'] == 'School Management, Monitoring & Evaluation (SMME)'){
+					echo "<td>School Management, Monitoring<br> & Evaluation(SMME)</td>";}	
+					else if($row['office_id'] == 'Social Mobilization and Networking (SOCMOB)'){
+					echo "<td>Social Mobilization and Networking<br>(SOCMOB)</td>";}	
+					else{
+					echo "<td>$row[office_id]</td>";}
 					echo "<td class='text-center'>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
 					echo "<td>$row[serial_no]</td>";
@@ -266,8 +272,7 @@ class class_model
 				$data->execute();
 				$rows = $data->fetchAll(PDO::FETCH_ASSOC);
 				echo "<div class='table-responsive'>";
-				echo "<h6>All Devices</h6>";
-				echo "<table id='table' style='width:100%' class='table table-hover table-striped mb-0 text-left'>";
+				echo "<table id='table' style='width:100%' class='table table-hover table-striped'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
 				echo "<th>Office/Unit</th>";
@@ -287,7 +292,14 @@ class class_model
 
 					echo "<tr>";
 					echo "<td>$row[dept_id]</td>";
-					echo "<td>$row[office_id]</td>";
+					if($row['office_id'] == 'Learning Resources Management and Development System (LRMDS)'){
+						echo "<td>Learning Resources Management <br> and Development System (LRMDS)</td>";}	
+						else if($row['office_id'] == 'School Management, Monitoring & Evaluation (SMME)'){
+						echo "<td>School Management, Monitoring<br> & Evaluation(SMME)</td>";}	
+						else if($row['office_id'] == 'Social Mobilization and Networking (SOCMOB)'){
+						echo "<td>Social Mobilization and Networking<br>(SOCMOB)</td>";}	
+						else{
+						echo "<td>$row[office_id]</td>";}
 					echo "<td class='text-center'>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
 					echo "<td>$row[serial_no]</td>";
@@ -296,11 +308,7 @@ class class_model
 					echo "<td>$row[warranty_status]</td>";
 					echo "<td>$row[status]</td>";
 					echo "<td>$row[remarks]</td>";
-					echo "<td>
-					<a title='Edit' class='btn text-center btn-sm' href='edit-record?id=$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil-square' viewBox='0 0 16 16'>
-					<path d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/>
-					<path fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/>
-				  </svg></a>
+					echo "<td class='text-center'>
 				 	<a title='Archive' class='btn text-center btn-action btn-sm delete my-1' data-id='$row[id]'><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-archive' viewBox='0 0 16 16'>
 					 <path d='M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z'/>
 				   </svg>
@@ -374,7 +382,7 @@ class class_model
 				echo "<table id='result_table' style='width:100%' class='table table-hover table-striped mb-0 text-left'>";
 				echo "<thead>";
 				echo "<th>Department</th>";
-				echo "<th>Office/Unit</th>";
+				echo "<th style='width: 10% !important'>Office/Unit</th>";
 				echo "<th>Category</th>";
 				echo "<th>User's Name</th>";
 				echo "<th>Serial No.</th>";
@@ -391,7 +399,14 @@ class class_model
 
 					echo "<tr>";
 					echo "<td>$row[dept_id]</td>";
-					echo "<td>$row[office_id]</td>";
+					if($row['office_id'] == 'Learning Resources Management and Development System (LRMDS)'){
+						echo "<td>Learning Resources Management <br> and Development System (LRMDS)</td>";}	
+						else if($row['office_id'] == 'School Management, Monitoring & Evaluation (SMME)'){
+						echo "<td>School Management, Monitoring<br> & Evaluation(SMME)</td>";}	
+						else if($row['office_id'] == 'Social Mobilization and Networking (SOCMOB)'){
+						echo "<td>Social Mobilization and Networking<br>(SOCMOB)</td>";}	
+						else{
+						echo "<td>$row[office_id]</td>";}
 					echo "<td class='text-center'>$row[category_id]</td>";
 					echo "<td>$row[user_name]</td>";
 					echo "<td>$row[serial_no]</td>";
